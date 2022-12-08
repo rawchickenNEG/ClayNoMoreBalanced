@@ -4,6 +4,7 @@ import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
 import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -42,31 +43,30 @@ public class ThrownExchangeClayBall extends ThrowableItemProjectile {
         return ItemRegistry.exchangeClayBall.get();
     }
 
-    protected void onHitEntity(EntityHitResult p_37486_) {
-        super.onHitEntity(p_37486_);
+    protected void onHitEntity(EntityHitResult hitResult) {
         if (!this.level.isClientSide && !this.isRemoved()) {
-            Entity entity = this.getOwner();
-            Entity target = p_37486_.getEntity();
-            if (entity != target) {
-                assert entity != null;
-                target.teleportTo(entity.getX(), entity.getY(), entity.getZ());
+            Entity owner = this.getOwner();
+            Entity target = hitResult.getEntity();
+            if (owner != null && target != owner) {
+                BlockPos pos = target.getOnPos(); //先提前把目标实体的坐标给获取到
+                target.hurt(DamageSource.thrown(this, owner), Config.CONFIG.EXCHANGE.get());
+                target.teleportTo(owner.getX(), owner.getY(), owner.getZ());
+                owner.teleportTo(pos.getX(), pos.getY(), pos.getZ());
+                owner.resetFallDistance();
+                this.spawnAtLocation(ItemRegistry.exchangeClayBall.get());
+                this.playSound(SoundEvents.ENDERMAN_TELEPORT, 1.0F, 1.0F);
+                this.discard();
             }
-            entity.teleportTo(this.getX(), this.getY(), this.getZ());
-            entity.resetFallDistance();
         }
-        p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.EXCHANGE.get());
-        this.spawnAtLocation(ItemRegistry.exchangeClayBall.get()).setPickUpDelay(0);
-        this.playSound(SoundEvents.ENDERMAN_TELEPORT, 1.0F, 1.0F);
-        this.discard();
     }
 
     protected void onHitBlock(BlockHitResult p_37488_){
         super.onHitBlock(p_37488_);
         if (!this.level.isClientSide && !this.isRemoved()) {
-            Entity entity = this.getOwner();
-            if (entity != null) {
-                entity.teleportTo(this.getX(), this.getY(), this.getZ());
-                entity.resetFallDistance();
+            Entity owner = this.getOwner();
+            if (owner != null) {
+                owner.teleportTo(this.getX(), this.getY(), this.getZ());
+                owner.resetFallDistance();
             }
             this.spawnAtLocation(ItemRegistry.exchangeClayBall.get());
             this.playSound(SoundEvents.ENDERMAN_TELEPORT, 1.0F, 1.0F);
@@ -87,4 +87,5 @@ public class ThrownExchangeClayBall extends ThrowableItemProjectile {
     public Packet<?> getAddEntityPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
+
 }
