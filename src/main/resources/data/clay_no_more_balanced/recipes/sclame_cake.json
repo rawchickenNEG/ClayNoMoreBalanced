@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#!#",
+    "#$#",
+    "#%#"
+  ],
+  "key": {
+    "#": {
+      "item": "clay_no_more_balanced:sclame_ball"
+    },
+    "$": {
+      "item": "clay_no_more_balanced:sclame_bread"
+    },
+    "%": {
+      "item": "clay_no_more_balanced:sclame_pie"
+    },
+    "!": {
+      "item": "clay_no_more_balanced:sclame_potato"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:sclame_cake"
+  }
+}

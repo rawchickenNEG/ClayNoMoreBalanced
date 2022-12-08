@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "minecraft:item/fire_charge",
+    "layer1": "clay_no_more_balanced:item/throwable_item_layer"
+  }
+}

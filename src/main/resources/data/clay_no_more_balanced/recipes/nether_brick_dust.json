@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:nether_bricks"
+    },
+    {
+      "item": "clay_no_more_balanced:clay_ring"
+    }
+  ],
+  "result": {
+    "item": "clay_no_more_balanced:nether_brick_dust",
+    "count": 4
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "clay_no_more_balanced:block/medium_rose_quartz_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "clay_no_more_balanced:block/medium_rose_quartz_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "clay_no_more_balanced:block/medium_rose_quartz_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "clay_no_more_balanced:block/medium_rose_quartz_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "clay_no_more_balanced:block/medium_rose_quartz_bud"
+    },
+    "facing=west": {
+      "model": "clay_no_more_balanced:block/medium_rose_quartz_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

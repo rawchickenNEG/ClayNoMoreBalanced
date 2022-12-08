@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:glazed_terracotta"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:porcelain_brick",
+    "count": 4
+  }
+}

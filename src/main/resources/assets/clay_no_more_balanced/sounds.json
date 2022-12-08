@@ -1,0 +1,32 @@
+{
+  "tnt_explode": {
+    "subtitle": "tnt explode",
+    "replace": "true",
+    "sounds": [
+      {
+        "name": "clay_no_more_balanced:tnt_explode",
+        "stream": true
+      }
+    ]
+  },
+  "tnt_launch": {
+    "subtitle": "tnt launch",
+    "replace": "true",
+    "sounds": [
+      {
+        "name": "clay_no_more_balanced:tnt_launch",
+        "stream": true
+      }
+    ]
+  },
+  "egg_launch": {
+    "subtitle": "egg launch",
+    "replace": "true",
+    "sounds": [
+      {
+        "name": "clay_no_more_balanced:egg_launch",
+        "stream": true
+      }
+    ]
+  }
+}

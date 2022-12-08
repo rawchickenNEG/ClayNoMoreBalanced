@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#@#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:fishing_rod"
+    },
+    "@": {
+      "item": "clay_no_more_balanced:basket_clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:pull_clay_ball"
+  }
+}

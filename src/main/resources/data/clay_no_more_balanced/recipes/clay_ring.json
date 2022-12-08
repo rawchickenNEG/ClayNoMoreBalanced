@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "# #",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:clay_ring"
+  }
+}

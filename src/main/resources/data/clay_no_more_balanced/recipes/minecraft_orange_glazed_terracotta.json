@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "clay_no_more_balanced:porcelain_brick"
+    },
+    "$": {
+      "tag": "forge:dyes/orange"
+    }
+  },
+  "result": {
+    "item": "minecraft:orange_glazed_terracotta",
+    "count": 8
+  }
+}

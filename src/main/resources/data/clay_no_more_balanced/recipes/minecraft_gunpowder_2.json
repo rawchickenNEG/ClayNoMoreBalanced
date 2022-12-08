@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "clay_no_more_balanced:nether_brick_dust"
+    },
+    {
+      "item": "clay_no_more_balanced:nether_brick_dust"
+    },
+    {
+      "item": "clay_no_more_balanced:nether_brick_dust"
+    },
+    {
+      "item": "clay_no_more_balanced:nether_brick_dust"
+    },
+    {
+      "item": "minecraft:magma_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:gunpowder",
+    "count": 4
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#$#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:chorus_fruit"
+    },
+    "$": {
+      "item": "minecraft:clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:chorus_clay_ball"
+  }
+}

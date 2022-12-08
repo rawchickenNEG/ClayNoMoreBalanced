@@ -1,0 +1,32 @@
+# This is an example mods.toml file. It contains the data relating to the loading mods.
+# There are several mandatory fields (#mandatory), and many more that are optional (#optional).
+# The overall format is standard TOML format, v0.5.0.
+# Note that there are a couple of TOML lists in this file.
+# Find more information on toml format here:  https://github.com/toml-lang/toml
+# The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
+modLoader="javafml" #mandatory
+# A version range to match for said mod loader - for regular FML @Mod it will be the forge version
+loaderVersion="[40,)"
+license="All rights reserved"
+[[mods]]
+modId="clay_no_more_balanced"
+version="${file.jarVersion}"
+displayName="Clay No More Balanced"
+logoFile="clay_no_more_balanced.png"
+credits="鸡姬NEG (rawchickenNEG)"
+authors="鸡姬NEG (rawchickenNEG)"
+description='''这是一个以黏土为主题的mod，你可以在本模组中体验到大量和黏土相关的内容，比如各种可以投掷的黏土球，奇奇怪怪的黏土食物以及制作一把强大的黏土武器——黏土大阔剑...总之，玩的愉快~
+It's a clay-themed mod, and you can experience a lot of clay-related things in this mod, such as various clay balls you can throw, weird clay food, and crafting a powerful clay weapon, the claymore... All in all, have fun~
+'''
+[[dependencies.clay_no_more_balanced]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.clay_no_more_balanced]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"

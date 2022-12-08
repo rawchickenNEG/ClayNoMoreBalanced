@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "clay_no_more_balanced:porcelain_brick"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:porcelain_chestplate"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "clay_no_more_balanced:terracotta_dust"
+    },
+    {
+      "item": "clay_no_more_balanced:terracotta_dust"
+    },
+    {
+      "item": "clay_no_more_balanced:terracotta_dust"
+    },
+    {
+      "item": "clay_no_more_balanced:terracotta_dust"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "item": "minecraft:clay_ball",
+    "count": 4
+  }
+}

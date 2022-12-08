@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "clay_no_more_balanced:dry_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:flower_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:gilded_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:honey_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:clay_no_more_balanced"
+    },
+    {
+      "item": "clay_no_more_balanced:sponge_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:leaves_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:sticky_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:stone_clay_ball"
+    }
+  ],
+  "result": {
+    "item": "clay_no_more_balanced:duplicate_clay_ball"
+  }
+}

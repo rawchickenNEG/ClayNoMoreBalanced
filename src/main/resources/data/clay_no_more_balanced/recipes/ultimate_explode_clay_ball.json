@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#@#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:dragon_breath"
+    },
+    "@": {
+      "item": "clay_no_more_balanced:advanced_explode_clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:ultimate_explode_clay_ball"
+  }
+}

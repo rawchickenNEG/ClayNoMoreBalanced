@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#$#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:ender_eye"
+    },
+    "$": {
+      "item": "clay_no_more_balanced:phantom_clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:recall_clay_ball"
+  }
+}

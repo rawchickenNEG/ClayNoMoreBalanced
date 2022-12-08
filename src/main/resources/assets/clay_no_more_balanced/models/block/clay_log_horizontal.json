@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "clay_no_more_balanced:block/clay_log_top",
+    "side": "clay_no_more_balanced:block/clay_roll_side"
+  }
+}

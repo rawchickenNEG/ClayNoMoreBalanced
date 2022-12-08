@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "clay_no_more_balanced:ender_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:chorus_clay_ball"
+    }
+  ],
+  "result": {
+    "item": "clay_no_more_balanced:exchange_clay_ball",
+    "count": 2
+  }
+}

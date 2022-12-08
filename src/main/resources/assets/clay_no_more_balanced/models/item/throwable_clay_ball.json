@@ -1,0 +1,21 @@
+{
+  "parent": "item/generated",
+  "overrides": [
+    {
+      "predicate": {
+        "cb": 1.0
+      },
+      "model": "clay_no_more_balanced:item/chrome_ball"
+    },
+    {
+      "predicate": {
+        "clay": 1.0
+      },
+      "model": "clay_no_more_balanced:item/dream_clay_ball"
+    }
+  ],
+  "textures": {
+    "layer0": "minecraft:item/clay_ball",
+    "layer1": "clay_no_more_balanced:item/throwable_item_layer"
+  }
+}

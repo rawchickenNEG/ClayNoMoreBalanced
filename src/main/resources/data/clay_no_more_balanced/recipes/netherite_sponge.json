@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:sponge"
+    },
+    "$": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:netherite_sponge",
+    "count": 8
+  }
+}

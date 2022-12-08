@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "clay_no_more_balanced:block/clay_roll_block_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "clay_no_more_balanced:block/clay_roll_block"
+    },
+    "axis=z": {
+      "model": "clay_no_more_balanced:block/clay_roll_block_horizontal",
+      "x": 90
+    }
+  }
+}

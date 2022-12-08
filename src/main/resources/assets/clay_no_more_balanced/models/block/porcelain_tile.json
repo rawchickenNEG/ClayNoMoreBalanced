@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "clay_no_more_balanced:block/porcelain_tile"
+  }
+}

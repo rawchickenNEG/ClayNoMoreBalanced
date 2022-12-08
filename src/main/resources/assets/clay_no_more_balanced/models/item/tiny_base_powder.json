@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "clay_no_more_balanced:item/tiny_base_powder"
+  }
+}

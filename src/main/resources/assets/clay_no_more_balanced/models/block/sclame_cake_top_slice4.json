@@ -1,0 +1,33 @@
+{
+  "textures": {
+    "particle": "clay_no_more_balanced:block/sclame_cake_side",
+    "bottom": "clay_no_more_balanced:block/sclame_cake_bottom",
+    "top": "clay_no_more_balanced:block/sclame_cake_top",
+    "side": "clay_no_more_balanced:block/sclame_cake_side",
+    "inside": "clay_no_more_balanced:block/sclame_cake_inner"
+  },
+  "elements": [
+    {   "from": [ 1, 0, 1 ],
+      "to": [ 15, 8, 15 ],
+      "faces": {
+        "down":  { "texture": "#bottom", "cullface": "down" },
+        "up":    { "texture": "#top" },
+        "north": { "texture": "#side" },
+        "south": { "texture": "#side" },
+        "west":  { "texture": "#side" },
+        "east":  { "texture": "#side" }
+      }
+    },
+    {   "from": [ 10, 8, 2 ],
+      "to": [ 14, 15, 14 ],
+      "faces": {
+        "down":  { "texture": "#bottom", "cullface": "down" },
+        "up":    { "texture": "#top" },
+        "north": { "texture": "#side" },
+        "south": { "texture": "#side" },
+        "west":  { "texture": "#inside" },
+        "east":  { "texture": "#side" }
+      }
+    }
+  ]
+}

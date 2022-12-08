@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#$#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "clay_no_more_balanced:clay_rod"
+    },
+    "$": {
+      "item": "minecraft:dead_bush"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:clay_tree_sapling"
+  }
+}

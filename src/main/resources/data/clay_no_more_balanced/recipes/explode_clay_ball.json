@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#@#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:fire_charge"
+    },
+    "@": {
+      "item": "clay_no_more_balanced:tnt_clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:explode_clay_ball"
+  }
+}

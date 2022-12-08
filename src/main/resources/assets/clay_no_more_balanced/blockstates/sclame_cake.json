@@ -1,0 +1,43 @@
+{
+  "variants": {
+    "bites=0": {
+      "model": "clay_no_more_balanced:block/sclame_cake"
+    },
+    "bites=1": {
+      "model": "clay_no_more_balanced:block/sclame_cake_top_slice1"
+    },
+    "bites=2": {
+      "model": "clay_no_more_balanced:block/sclame_cake_top_slice2"
+    },
+    "bites=3": {
+      "model": "clay_no_more_balanced:block/sclame_cake_top_slice3"
+    },
+    "bites=4": {
+      "model": "clay_no_more_balanced:block/sclame_cake_top_slice4"
+    },
+    "bites=5": {
+      "model": "clay_no_more_balanced:block/sclame_cake_top_slice5"
+    },
+    "bites=6": {
+      "model": "clay_no_more_balanced:block/sclame_cake_slice0"
+    },
+    "bites=7": {
+      "model": "clay_no_more_balanced:block/sclame_cake_slice1"
+    },
+    "bites=8": {
+      "model": "clay_no_more_balanced:block/sclame_cake_slice2"
+    },
+    "bites=9": {
+      "model": "clay_no_more_balanced:block/sclame_cake_slice3"
+    },
+    "bites=10": {
+      "model": "clay_no_more_balanced:block/sclame_cake_slice4"
+    },
+    "bites=11": {
+      "model": "clay_no_more_balanced:block/sclame_cake_slice5"
+    },
+    "bites=12": {
+      "model": "clay_no_more_balanced:block/sclame_cake_slice6"
+    }
+  }
+}

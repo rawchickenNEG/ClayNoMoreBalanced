@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#@#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:crying_obsidian"
+    },
+    "@": {
+      "item": "clay_no_more_balanced:vex_clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:void_clay_ball"
+  }
+}

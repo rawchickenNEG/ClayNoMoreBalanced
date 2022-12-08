@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#$#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "$": {
+      "item": "clay_no_more_balanced:stone_clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:lazuli_clay_ball"
+  }
+}

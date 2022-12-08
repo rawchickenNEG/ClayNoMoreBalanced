@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#$#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:crossbow"
+    },
+    "$": {
+      "item": "clay_no_more_balanced:ravager_clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:pillager_clay_ball"
+  }
+}

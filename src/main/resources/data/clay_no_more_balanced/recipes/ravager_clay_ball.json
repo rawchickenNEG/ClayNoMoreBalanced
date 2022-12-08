@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#$#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "clay_no_more_balanced:ravager_metal_parts"
+    },
+    "$": {
+      "item": "clay_no_more_balanced:golden_clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:ravager_clay_ball"
+  }
+}

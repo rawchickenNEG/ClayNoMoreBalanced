@@ -1,0 +1,17 @@
+{
+  "return": false,
+  "values": [
+    "clay_no_more_balanced:clay_block",
+    "clay_no_more_balanced:porcelain_block",
+    "clay_no_more_balanced:porcelain_tile",
+    "clay_no_more_balanced:porcelain_tile_tiny",
+    "clay_no_more_balanced:porcelain_tile_large",
+    "clay_no_more_balanced:toilet",
+    "clay_no_more_balanced:ender_pearl_block",
+    "clay_no_more_balanced:small_rose_quartz_bud",
+    "clay_no_more_balanced:medium_rose_quartz_bud",
+    "clay_no_more_balanced:large_rose_quartz_bud",
+    "clay_no_more_balanced:budding_rose_quartz",
+    "clay_no_more_balanced:rose_quartz_cluster"
+  ]
+}

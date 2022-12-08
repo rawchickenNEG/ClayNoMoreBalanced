@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#$#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "clay_no_more_balanced:tiny_vex_clay_ball"
+    },
+    "$": {
+      "item": "clay_no_more_balanced:recall_clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:vex_clay_ball"
+  }
+}
