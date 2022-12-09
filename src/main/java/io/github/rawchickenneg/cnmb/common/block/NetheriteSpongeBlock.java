@@ -14,10 +14,10 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraft.world.level.material.Material;
 
 import java.util.Queue;
 
+@SuppressWarnings("deprecation")
 public class NetheriteSpongeBlock extends Block{
 
     public NetheriteSpongeBlock(BlockBehaviour.Properties p_56796_) {
@@ -56,7 +56,6 @@ public class NetheriteSpongeBlock extends Block{
                 BlockPos blockpos1 = blockpos.relative(direction);
                 BlockState blockstate = p_56808_.getBlockState(blockpos1);
                 FluidState fluidstate = p_56808_.getFluidState(blockpos1);
-                Material material = blockstate.getMaterial();
                 if (fluidstate.is(FluidTags.LAVA)) {
                     if (blockstate.getBlock() instanceof BucketPickup && !((BucketPickup)blockstate.getBlock()).pickupBlock(p_56808_, blockpos1, blockstate).isEmpty()) {
                         ++i;

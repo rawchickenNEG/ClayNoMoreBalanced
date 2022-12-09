@@ -20,6 +20,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.Collections;
 import java.util.List;
 
+@SuppressWarnings("deprecation")
 public class Toilet extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 

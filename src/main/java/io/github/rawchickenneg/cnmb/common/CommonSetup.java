@@ -2,6 +2,7 @@ package io.github.rawchickenneg.cnmb.common;
 
 import io.github.rawchickenneg.cnmb.common.entity.*;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -12,14 +13,16 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+import javax.annotation.ParametersAreNonnullByDefault;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+@ParametersAreNonnullByDefault
+@MethodsReturnNonnullByDefault
 public class CommonSetup {
+
     @SubscribeEvent
     public static void init(FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            registerDispenserBehaviors();
-        });
+        event.enqueueWork(CommonSetup::registerDispenserBehaviors);
     }
 
     public static void registerDispenserBehaviors() {

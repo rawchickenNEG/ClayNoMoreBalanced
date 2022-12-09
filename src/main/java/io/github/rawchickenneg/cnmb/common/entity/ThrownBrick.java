@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -17,10 +16,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownBrick extends ThrowableItemProjectile {
 
     public ThrownBrick(EntityType<? extends ThrownBrick> entityType, Level level) {
@@ -28,13 +23,12 @@ public class ThrownBrick extends ThrowableItemProjectile {
     }
 
     public ThrownBrick(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownBrick.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_BRICK.get(), entity, level);
     }
 
     public ThrownBrick(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownBrick.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_BRICK.get(), x, y, z, level);
     }
-
 
     @Override
     protected Item getDefaultItem() {

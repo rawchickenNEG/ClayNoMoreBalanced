@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.resources.ResourceLocation;
@@ -22,10 +21,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownStoneClayBall extends ThrowableItemProjectile {
 
     public ThrownStoneClayBall(EntityType<? extends ThrownStoneClayBall> entityType, Level level) {
@@ -33,13 +28,12 @@ public class ThrownStoneClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownStoneClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownStoneClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_STONE_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownStoneClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownStoneClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_STONE_CLAY_BALL.get(), x, y, z, level);
     }
-
 
     @Override
     protected Item getDefaultItem() {
@@ -52,7 +46,6 @@ public class ThrownStoneClayBall extends ThrowableItemProjectile {
         this.spawnAtLocation(ItemRegistry.stoneClayBall.get());
     }
 
-
     protected void onHitBlock(BlockHitResult p_37488_){
         super.onHitBlock(p_37488_);
         BlockPos pos = p_37488_.getBlockPos();
@@ -61,16 +54,14 @@ public class ThrownStoneClayBall extends ThrowableItemProjectile {
                 if (this.random.nextInt() <= (10 / 20)){
                     this.playSound(SoundEvents.PLAYER_LEVELUP , 1.0F, 1.0F);
                     Block.dropResources(this.level.getBlockState(pos), this.level, pos, null);
-                    this.level.levelEvent(2001, pos,
-                            Block.getId(this.level.getBlockState(pos)));
-                }else{
+                    this.level.levelEvent(2001, pos, Block.getId(this.level.getBlockState(pos)));
+                } else {
                     this.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
                     this.playSound(SoundEvents.ITEM_BREAK , 1.0F, 1.0F);
                     this.spawnAtLocation(ItemRegistry.stoneClayBall.get());
-                    this.level.levelEvent(2001, pos,
-                            Block.getId(Blocks.COAL_BLOCK.defaultBlockState()));
+                    this.level.levelEvent(2001, pos, Block.getId(Blocks.COAL_BLOCK.defaultBlockState()));
                 }
-            }else{
+            } else {
                 this.spawnAtLocation(ItemRegistry.stoneClayBall.get());
             }
         }
@@ -83,7 +74,6 @@ public class ThrownStoneClayBall extends ThrowableItemProjectile {
             this.discard();
         }
     }
-
 
     @Override
     public Packet<?> getAddEntityPacket() {

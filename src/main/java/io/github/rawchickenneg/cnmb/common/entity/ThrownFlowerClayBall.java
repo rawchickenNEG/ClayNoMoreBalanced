@@ -2,7 +2,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
@@ -19,10 +18,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownFlowerClayBall extends ThrowableItemProjectile {
 
     public ThrownFlowerClayBall(EntityType<? extends ThrownFlowerClayBall> entityType, Level level) {
@@ -30,13 +25,12 @@ public class ThrownFlowerClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownFlowerClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownFlowerClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_FLOWER_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownFlowerClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownFlowerClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_FLOWER_CLAY_BALL.get(), x, y, z, level);
     }
-
 
     @Override
     protected Item getDefaultItem() {
@@ -68,9 +62,6 @@ public class ThrownFlowerClayBall extends ThrowableItemProjectile {
             this.discard();
         }
     }
-
-
-
 
     @Override
     public Packet<?> getAddEntityPacket() {

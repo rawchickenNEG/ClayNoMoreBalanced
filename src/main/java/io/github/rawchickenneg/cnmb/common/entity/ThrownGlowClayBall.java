@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
@@ -19,10 +18,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownGlowClayBall extends ThrowableItemProjectile {
 
     public ThrownGlowClayBall(EntityType<? extends ThrownGlowClayBall> entityType, Level level) {
@@ -30,11 +25,11 @@ public class ThrownGlowClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownGlowClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownGlowClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_GLOW_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownGlowClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownGlowClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_GLOW_CLAY_BALL.get(), x, y, z, level);
     }
 
     public void tick() {
@@ -62,10 +57,7 @@ public class ThrownGlowClayBall extends ThrowableItemProjectile {
             this.spawnAtLocation(ItemRegistry.glowClayBall.get());
             this.discard();
         }
-
     }
-
-
 
     @Override
     public Packet<?> getAddEntityPacket() {

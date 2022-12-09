@@ -2,7 +2,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.world.damagesource.DamageSource;
@@ -19,10 +18,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownTorch extends ThrowableItemProjectile {
 
     public ThrownTorch(EntityType<? extends ThrownTorch> entityType, Level level) {
@@ -30,11 +25,11 @@ public class ThrownTorch extends ThrowableItemProjectile {
     }
 
     public ThrownTorch(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownTorch.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_TORCH.get(), entity, level);
     }
 
     public ThrownTorch(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownTorch.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_TORCH.get(), x, y, z, level);
     }
 
     @Override
@@ -67,10 +62,9 @@ public class ThrownTorch extends ThrowableItemProjectile {
             BlockPos blockpos = p_37384_.getBlockPos().relative(p_37384_.getDirection());
             if (this.level.isEmptyBlock(blockpos)) {
                 this.level.setBlockAndUpdate(blockpos, Blocks.TORCH.defaultBlockState());
-            }else{
+            } else {
                 this.spawnAtLocation(ItemRegistry.throwableTorch.get());
             }
-
         }
     }
 

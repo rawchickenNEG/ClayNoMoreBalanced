@@ -1,7 +1,6 @@
 package io.github.rawchickenneg.cnmb.common.entity;
 
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.world.damagesource.DamageSource;
@@ -18,10 +17,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownFireCharge extends ThrowableItemProjectile {
 
     public ThrownFireCharge(EntityType<? extends ThrownFireCharge> entityType, Level level) {
@@ -29,11 +24,11 @@ public class ThrownFireCharge extends ThrowableItemProjectile {
     }
 
     public ThrownFireCharge(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownFireCharge.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_FIRE_CHARGE.get(), entity, level);
     }
 
     public ThrownFireCharge(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownFireCharge.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_FIRE_CHARGE.get(), x, y, z, level);
     }
 
     @Override
@@ -73,7 +68,6 @@ public class ThrownFireCharge extends ThrowableItemProjectile {
             if (this.level.isEmptyBlock(blockpos)) {
                 this.level.setBlockAndUpdate(blockpos, BaseFireBlock.getState(this.level, blockpos));
             }
-
         }
     }
 
@@ -82,7 +76,6 @@ public class ThrownFireCharge extends ThrowableItemProjectile {
         if (!this.level.isClientSide) {
             this.discard();
         }
-
     }
 
     @Override

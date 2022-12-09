@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.config.Config;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
@@ -21,10 +20,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownGildedClayBall extends ThrowableItemProjectile {
 
     public ThrownGildedClayBall(EntityType<? extends ThrownGildedClayBall> entityType, Level level) {
@@ -32,11 +27,11 @@ public class ThrownGildedClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownGildedClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownGildedClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_GILDED_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownGildedClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownGildedClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_GILDED_CLAY_BALL.get(), x, y, z, level);
     }
 
     @Override
@@ -49,7 +44,7 @@ public class ThrownGildedClayBall extends ThrowableItemProjectile {
         if (p_37486_.getEntity() instanceof Piglin piglin && !piglin.hasEffect(MobEffects.CONFUSION)) {
             piglin.setItemInHand(InteractionHand.OFF_HAND, Items.GOLD_INGOT.getDefaultInstance());
             piglin.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 20 * 10, 0));
-        }else{
+        } else {
             p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.GILDED.get());
         }
     }
@@ -61,10 +56,7 @@ public class ThrownGildedClayBall extends ThrowableItemProjectile {
             this.spawnAtLocation(ItemRegistry.gildedClayBall.get());
             this.discard();
         }
-
     }
-
-
 
     @Override
     public Packet<?> getAddEntityPacket() {

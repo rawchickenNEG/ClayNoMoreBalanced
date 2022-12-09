@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
@@ -17,12 +16,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraftforge.network.NetworkHooks;
-
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Objects;
 
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownVoidClayBall extends ThrowableItemProjectile {
 
     public ThrownVoidClayBall(EntityType<? extends ThrownVoidClayBall> entityType, Level level) {
@@ -30,13 +25,12 @@ public class ThrownVoidClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownVoidClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownVoidClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_VOID_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownVoidClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownVoidClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_VOID_CLAY_BALL.get(), x, y, z, level);
     }
-
 
     @Override
     protected Item getDefaultItem() {

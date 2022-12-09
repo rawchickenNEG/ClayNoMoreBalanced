@@ -2,7 +2,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
@@ -23,10 +22,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownDuplicateClayBall extends ThrowableItemProjectile {
 
     public ThrownDuplicateClayBall(EntityType<? extends ThrownDuplicateClayBall> entityType, Level level) {
@@ -34,11 +29,11 @@ public class ThrownDuplicateClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownDuplicateClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownDuplicateClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_DUPLICATE_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownDuplicateClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownDuplicateClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_DUPLICATE_CLAY_BALL.get(), x, y, z, level);
     }
 
 
@@ -85,7 +80,6 @@ public class ThrownDuplicateClayBall extends ThrowableItemProjectile {
             this.discard();
         }
     }
-
 
     @Override
     public Packet<?> getAddEntityPacket() {

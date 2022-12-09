@@ -15,6 +15,7 @@ import net.minecraft.world.level.material.PushReaction;
 
 import java.util.Random;
 
+@SuppressWarnings("deprecation")
 public class BuddingRoseQuartzBlock extends AmethystBlock {
     public static final int GROWTH_CHANCE = 5;
     private static final Direction[] DIRECTIONS = Direction.values();

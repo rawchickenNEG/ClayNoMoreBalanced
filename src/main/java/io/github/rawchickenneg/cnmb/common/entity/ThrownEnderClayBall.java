@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -21,8 +20,6 @@ import net.minecraftforge.network.NetworkHooks;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownEnderClayBall extends ThrowableItemProjectile {
 
     public ThrownEnderClayBall(EntityType<? extends ThrownEnderClayBall> entityType, Level level) {
@@ -30,11 +27,11 @@ public class ThrownEnderClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownEnderClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownEnderClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_ENDER_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownEnderClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownEnderClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_ENDER_CLAY_BALL.get(), x, y, z, level);
     }
 
     @Override
