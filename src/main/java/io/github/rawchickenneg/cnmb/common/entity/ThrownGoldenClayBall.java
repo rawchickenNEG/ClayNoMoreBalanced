@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -19,10 +18,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownGoldenClayBall extends ThrowableItemProjectile {
 
     public ThrownGoldenClayBall(EntityType<? extends ThrownGoldenClayBall> entityType, Level level) {
@@ -50,10 +45,9 @@ public class ThrownGoldenClayBall extends ThrowableItemProjectile {
             zombifiedPiglin.convertTo(EntityType.PIGLIN, true);
         } else if (p_37486_.getEntity() instanceof Zoglin zoglin) {
             zoglin.convertTo(EntityType.HOGLIN, true);
-        } else{
+        } else {
             p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.GOLDEN.get());
         }
-
     }
 
     protected void onHit(HitResult p_37488_) {
@@ -63,10 +57,7 @@ public class ThrownGoldenClayBall extends ThrowableItemProjectile {
             this.spawnAtLocation(ItemRegistry.goldenClayBall.get());
             this.discard();
         }
-
     }
-
-
 
     @Override
     public Packet<?> getAddEntityPacket() {

@@ -4,7 +4,6 @@ import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.SoundEventRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.world.damagesource.DamageSource;
@@ -18,10 +17,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownTNTClayBall extends ThrowableItemProjectile {
 
     public ThrownTNTClayBall(EntityType<? extends ThrownTNTClayBall> entityType, Level level) {
@@ -59,7 +54,6 @@ public class ThrownTNTClayBall extends ThrowableItemProjectile {
             this.playSound(SoundEventRegistry.TNT_EXPLODE.get(), 1.0F, 1.0F);
             this.discard();
         }
-
     }
 
     @Override

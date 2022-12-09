@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import com.google.common.collect.Lists;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.protocol.Packet;
@@ -24,14 +23,10 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
-
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Queue;
 
 import static net.minecraft.world.level.block.Block.dropResources;
 
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownSpongeClayBall extends ThrowableItemProjectile {
 
     public ThrownSpongeClayBall(EntityType<? extends ThrownSpongeClayBall> entityType, Level level) {
@@ -46,12 +41,10 @@ public class ThrownSpongeClayBall extends ThrowableItemProjectile {
         super(EntityTypeRegistry.THROWN_SPONGE_CLAY_BALL.get(), x, y, z, level);
     }
 
-
     @Override
     protected Item getDefaultItem() {
         return ItemRegistry.spongeClayBall.get();
     }
-
 
     protected void onHitBlock(BlockHitResult p_37488_){
         super.onHitBlock(p_37488_);
@@ -59,12 +52,10 @@ public class ThrownSpongeClayBall extends ThrowableItemProjectile {
             Queue<Tuple<BlockPos, Integer>> queue = Lists.newLinkedList();
             queue.add(new Tuple<>(p_37488_.getBlockPos(), 0));
             int i = 0;
-
             while (!queue.isEmpty()) {
                 Tuple<BlockPos, Integer> tuple = queue.poll();
                 BlockPos blockpos = tuple.getA();
                 int j = tuple.getB();
-
                 for (Direction direction : Direction.values()) {
                     BlockPos blockpos1 = blockpos.relative(direction);
                     BlockState blockstate = this.level.getBlockState(blockpos1);
@@ -103,6 +94,7 @@ public class ThrownSpongeClayBall extends ThrowableItemProjectile {
             this.discard();
         }
     }
+
     @Override
     public Packet<?> getAddEntityPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);

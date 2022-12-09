@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
@@ -18,12 +17,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraftforge.network.NetworkHooks;
-
-import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Objects;
 
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownRecallClayBall extends ThrowableItemProjectile {
 
     public ThrownRecallClayBall(EntityType<? extends ThrownRecallClayBall> entityType, Level level) {
@@ -37,7 +32,6 @@ public class ThrownRecallClayBall extends ThrowableItemProjectile {
     public ThrownRecallClayBall(Level level, double x, double y, double z) {
         super(EntityTypeRegistry.THROWN_RECALL_CLAY_BALL.get(), x, y, z, level);
     }
-
 
     @Override
     protected Item getDefaultItem() {
@@ -55,7 +49,7 @@ public class ThrownRecallClayBall extends ThrowableItemProjectile {
             if ((thrower instanceof Player player && !player.getAbilities().instabuild)){
                 Objects.requireNonNull(thrower.spawnAtLocation(ItemRegistry.recallClayBall.get())).setPickUpDelay(0);
                 thrower.playSound(SoundEvents.TRIDENT_RETURN , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            }else{
+            } else {
                 this.spawnAtLocation(ItemRegistry.recallClayBall.get());
             }
             this.discard();
@@ -70,7 +64,7 @@ public class ThrownRecallClayBall extends ThrowableItemProjectile {
             if ((thrower instanceof Player player && !player.getAbilities().instabuild)){
                 Objects.requireNonNull(thrower.spawnAtLocation(ItemRegistry.recallClayBall.get())).setPickUpDelay(0);
                 thrower.playSound(SoundEvents.TRIDENT_RETURN , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            }else{
+            } else {
                 this.spawnAtLocation(ItemRegistry.recallClayBall.get());
             }
             this.discard();

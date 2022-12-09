@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
@@ -22,10 +21,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownLeavesClayBall extends ThrowableItemProjectile {
 
     public ThrownLeavesClayBall(EntityType<? extends ThrownLeavesClayBall> entityType, Level level) {
@@ -39,7 +34,6 @@ public class ThrownLeavesClayBall extends ThrowableItemProjectile {
     public ThrownLeavesClayBall(Level level, double x, double y, double z) {
         super(EntityTypeRegistry.THROWN_LEAVES_CLAY_BALL.get(), x, y, z, level);
     }
-
 
     @Override
     protected Item getDefaultItem() {
@@ -66,28 +60,24 @@ public class ThrownLeavesClayBall extends ThrowableItemProjectile {
         if (!this.level.isClientSide) {
             if (!this.level.getBlockState(pos).is(BlockTags.LEAVES)){
                 if (this.level.getBlockState(pos).is(BlockTags.SAND)){
-                        this.playSound(SoundEvents.GRAVEL_BREAK , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-                        this.level.setBlock(pos, Blocks.DIRT.defaultBlockState(), 3);
-                        this.level.levelEvent(2001, pos,
-                                Block.getId(Blocks.DIRT.defaultBlockState()));
-                    }else if (this.level.getBlockState(pos).getBlock() == Blocks.DIRT){
+                    this.playSound(SoundEvents.GRAVEL_BREAK , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
+                    this.level.setBlock(pos, Blocks.DIRT.defaultBlockState(), 3);
+                    this.level.levelEvent(2001, pos, Block.getId(Blocks.DIRT.defaultBlockState()));
+                } else if (this.level.getBlockState(pos).getBlock() == Blocks.DIRT) {
                     this.playSound(SoundEvents.GRASS_BREAK , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
                     this.level.setBlock(pos, Blocks.GRASS_BLOCK.defaultBlockState(), 3);
-                    this.level.levelEvent(2001, pos,
-                            Block.getId(Blocks.GRASS_BLOCK.defaultBlockState()));
-                    }
+                    this.level.levelEvent(2001, pos, Block.getId(Blocks.GRASS_BLOCK.defaultBlockState()));
+                }
                 this.playSound(SoundEvents.GRASS_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
                 this.spawnAtLocation(ItemRegistry.leavesClayBall.get());
                 this.discard();
-            }else{
+            } else {
                 this.playSound(SoundEvents.GRASS_BREAK , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
                 Block.dropResources(this.level.getBlockState(pos), this.level, pos, null);
-                this.level.levelEvent(2001, pos,
-                        Block.getId(this.level.getBlockState(pos)));
+                this.level.levelEvent(2001, pos, Block.getId(this.level.getBlockState(pos)));
             }
         }
     }
-
 
     @Override
     public Packet<?> getAddEntityPacket() {

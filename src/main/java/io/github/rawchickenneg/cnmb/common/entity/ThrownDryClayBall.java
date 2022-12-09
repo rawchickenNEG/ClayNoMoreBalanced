@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
@@ -22,10 +21,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownDryClayBall extends ThrowableItemProjectile {
 
     public ThrownDryClayBall(EntityType<? extends ThrownDryClayBall> entityType, Level level) {
@@ -39,7 +34,6 @@ public class ThrownDryClayBall extends ThrowableItemProjectile {
     public ThrownDryClayBall(Level level, double x, double y, double z) {
         super(EntityTypeRegistry.THROWN_DRY_CLAY_BALL.get(), x, y, z, level);
     }
-
 
     @Override
     protected Item getDefaultItem() {
@@ -74,7 +68,7 @@ public class ThrownDryClayBall extends ThrowableItemProjectile {
                         this.level.setBlock(new BlockPos(x, y, z), Blocks.SAND.defaultBlockState(), 3);
                         this.level.levelEvent(2001, new BlockPos(x, y, z),
                                 Block.getId(Blocks.SAND.defaultBlockState()));
-                    }else {
+                    } else {
                         this.playSound(SoundEvents.GRASS_BREAK, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
                         this.level.setBlock(new BlockPos(x, y, z), Blocks.DIRT.defaultBlockState(), 3);
                         this.level.levelEvent(2001, new BlockPos(x, y, z),
@@ -84,12 +78,11 @@ public class ThrownDryClayBall extends ThrowableItemProjectile {
                 this.playSound(SoundEvents.GRASS_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
                 this.spawnAtLocation(ItemRegistry.dryClayBall.get());
                 this.discard();
-            }else{
+            } else {
                 this.playSound(SoundEvents.GRASS_BREAK , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
                 this.level.setBlock(new BlockPos(x, y, z), Blocks.AIR.defaultBlockState(), 3);
                 Block.dropResources(Blocks.DEAD_BUSH.defaultBlockState(), this.level, new BlockPos(x, y, z), null);
-                this.level.levelEvent(2001, new BlockPos(x, y, z),
-                        Block.getId(Blocks.DEAD_BUSH.defaultBlockState()));
+                this.level.levelEvent(2001, new BlockPos(x, y, z), Block.getId(Blocks.DEAD_BUSH.defaultBlockState()));
             }
         }
     }

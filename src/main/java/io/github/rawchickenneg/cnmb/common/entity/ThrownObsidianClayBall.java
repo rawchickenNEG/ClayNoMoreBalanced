@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -18,10 +17,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownObsidianClayBall extends ThrowableItemProjectile {
 
     public ThrownObsidianClayBall(EntityType<? extends ThrownObsidianClayBall> entityType, Level level) {
@@ -55,7 +50,6 @@ public class ThrownObsidianClayBall extends ThrowableItemProjectile {
             this.spawnAtLocation(ItemRegistry.obsidianClayBall.get());
             this.discard();
         }
-
     }
 
     @Override

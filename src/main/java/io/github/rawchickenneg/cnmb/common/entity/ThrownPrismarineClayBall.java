@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
@@ -27,10 +26,6 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownPrismarineClayBall extends ThrowableItemProjectile {
 
     public ThrownPrismarineClayBall(EntityType<? extends ThrownPrismarineClayBall> entityType, Level level) {
@@ -80,10 +75,8 @@ public class ThrownPrismarineClayBall extends ThrowableItemProjectile {
         double d0 = this.getY() + vec3.y;
         double d1 = this.getZ() + vec3.z;
         this.updateRotation();
-        float f;
-            f = 0.99F;
-
-        this.setDeltaMovement(vec3.scale((double)f));
+        float f = 0.99F;
+        this.setDeltaMovement(vec3.scale(f));
         if (!this.isNoGravity()) {
             Vec3 vec31 = this.getDeltaMovement();
             this.setDeltaMovement(vec31.x, vec31.y - (double)this.getGravity(), vec31.z);
@@ -110,19 +103,17 @@ public class ThrownPrismarineClayBall extends ThrowableItemProjectile {
             Block block = this.level.getBlockState(pos).getBlock();
             if (block == Blocks.PRISMARINE || block == Blocks.PRISMARINE_BRICKS || block == Blocks.DARK_PRISMARINE){
                 int count = (int) Math.round( Math.random() * 3 + 1 );
-                for(int i = 0; i < count; ++i){
+                for (int i = 0; i < count; ++i) {
                     this.spawnAtLocation(Items.PRISMARINE_SHARD);
                 }
-                this.level.levelEvent(2001, pos,
-                        Block.getId(this.level.getBlockState(pos)));
+                this.level.levelEvent(2001, pos, Block.getId(this.level.getBlockState(pos)));
                 this.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-            } else if (block == Blocks.SEA_LANTERN){
-                int count = (int) Math.round( Math.random() * 4 + 1 );
-                for(int i = 0; i < count; ++i){
+            } else if (block == Blocks.SEA_LANTERN) {
+                int count = (int) Math.round(Math.random() * 4 + 1 );
+                for (int i = 0; i < count; ++i) {
                     this.spawnAtLocation(Items.PRISMARINE_CRYSTALS);
                 }
-                this.level.levelEvent(2001, pos,
-                        Block.getId(this.level.getBlockState(pos)));
+                this.level.levelEvent(2001, pos, Block.getId(this.level.getBlockState(pos)));
                 this.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
             }
         }

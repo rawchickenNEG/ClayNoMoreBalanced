@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -21,10 +20,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownPillagerClayBall extends ThrowableItemProjectile {
 
     public ThrownPillagerClayBall(EntityType<? extends ThrownPillagerClayBall> entityType, Level level) {
@@ -47,7 +42,6 @@ public class ThrownPillagerClayBall extends ThrowableItemProjectile {
     protected void onHitEntity(EntityHitResult p_37486_) {
         super.onHitEntity(p_37486_);
             LivingEntity livingEntity = (LivingEntity) p_37486_.getEntity();
-
             for(EquipmentSlot equipmentslot : EquipmentSlot.values()) {
                 ItemStack itemstack = livingEntity.getItemBySlot(equipmentslot);
                 if (!itemstack.isEmpty()) {
@@ -71,8 +65,6 @@ public class ThrownPillagerClayBall extends ThrowableItemProjectile {
             this.discard();
         }
     }
-
-
 
     @Override
     public Packet<?> getAddEntityPacket() {

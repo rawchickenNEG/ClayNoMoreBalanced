@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.world.damagesource.DamageSource;
@@ -17,10 +16,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownExplodeClayBall extends ThrowableItemProjectile {
 
     public ThrownExplodeClayBall(EntityType<? extends ThrownExplodeClayBall> entityType, Level level) {
@@ -59,7 +54,6 @@ public class ThrownExplodeClayBall extends ThrowableItemProjectile {
             level.explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 4.0F, flag, flag ? Explosion.BlockInteraction.BREAK : Explosion.BlockInteraction.NONE);
             this.discard();
         }
-
     }
 
     @Override

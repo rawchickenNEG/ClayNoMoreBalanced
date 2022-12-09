@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.resources.ResourceLocation;
@@ -21,10 +20,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownBaseClayBall extends ThrowableItemProjectile {
 
     public ThrownBaseClayBall(EntityType<? extends ThrownBaseClayBall> entityType, Level level) {
@@ -39,7 +34,6 @@ public class ThrownBaseClayBall extends ThrowableItemProjectile {
         super(EntityTypeRegistry.THROWN_BASE_CLAY_BALL.get(), x, y, z, level);
     }
 
-
     @Override
     protected Item getDefaultItem() {
         return ItemRegistry.baseClayBall.get();
@@ -50,7 +44,6 @@ public class ThrownBaseClayBall extends ThrowableItemProjectile {
         p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.BASE.get());
         this.spawnAtLocation(ItemRegistry.baseClayBall.get());
     }
-
 
     protected void onHitBlock(BlockHitResult p_37488_){
         super.onHitBlock(p_37488_);
@@ -74,7 +67,6 @@ public class ThrownBaseClayBall extends ThrowableItemProjectile {
             this.discard();
         }
     }
-
 
     @Override
     public Packet<?> getAddEntityPacket() {

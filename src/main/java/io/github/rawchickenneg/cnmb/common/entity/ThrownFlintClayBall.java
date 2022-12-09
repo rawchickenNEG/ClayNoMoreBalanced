@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -18,10 +17,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownFlintClayBall extends ThrowableItemProjectile {
 
     public ThrownFlintClayBall(EntityType<? extends ThrownFlintClayBall> entityType, Level level) {
@@ -42,10 +37,11 @@ public class ThrownFlintClayBall extends ThrowableItemProjectile {
         return ItemRegistry.flintClayBall.get();
     }
 
-    protected void onHitEntity(EntityHitResult p_37486_) {
-        super.onHitEntity(p_37486_);
-        Entity thrower = this.getOwner() instanceof Player player ? player : null;
-        p_37486_.getEntity().hurt(DamageSource.playerAttack((Player) thrower), Config.CONFIG.FLINT.get());
+    protected void onHitEntity(EntityHitResult hitResult) {
+        super.onHitEntity(hitResult);
+        if (this.getOwner() instanceof Player player) {
+            hitResult.getEntity().hurt(DamageSource.playerAttack(player), Config.CONFIG.FLINT.get());
+        }
     }
 
     protected void onHit(HitResult p_37488_) {
@@ -55,7 +51,6 @@ public class ThrownFlintClayBall extends ThrowableItemProjectile {
             this.spawnAtLocation(ItemRegistry.flintClayBall.get());
             this.discard();
         }
-
     }
 
     @Override

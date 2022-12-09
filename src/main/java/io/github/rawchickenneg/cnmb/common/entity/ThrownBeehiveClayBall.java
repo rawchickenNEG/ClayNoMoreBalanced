@@ -3,7 +3,6 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
-import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -17,10 +16,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-
-@ParametersAreNonnullByDefault
-@MethodsReturnNonnullByDefault
 public class ThrownBeehiveClayBall extends ThrowableItemProjectile {
 
     public ThrownBeehiveClayBall(EntityType<? extends ThrownBeehiveClayBall> entityType, Level level) {
@@ -61,8 +56,6 @@ public class ThrownBeehiveClayBall extends ThrowableItemProjectile {
         }
 
     }
-
-
 
     @Override
     public Packet<?> getAddEntityPacket() {
