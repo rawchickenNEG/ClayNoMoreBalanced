@@ -32,7 +32,7 @@ public class ThrownAdvancedExplodeClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.advancedExplodeClayBall.get();
+        return ItemRegistry.ADVANCED_EXPLODE_CLAY_BALL.get();
     }
 
     public void tick() {

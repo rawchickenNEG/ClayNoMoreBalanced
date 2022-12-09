@@ -15,6 +15,6 @@ public class ItemTier {
 
     public static final Tier Porcelain = new ForgeTier(2, 225, 6F, 4F, 20,
             BlockTags.NEEDS_IRON_TOOL,
-            () -> Ingredient.of(ItemRegistry.porcelainBrick.get())
+            () -> Ingredient.of(ItemRegistry.PORCELAIN_BRICK.get())
     );
 }

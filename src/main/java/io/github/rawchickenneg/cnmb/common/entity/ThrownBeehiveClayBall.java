@@ -32,7 +32,7 @@ public class ThrownBeehiveClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.honeyClayBall.get();
+        return ItemRegistry.HONEY_CLAY_BALL.get();
     }
 
     protected void onHitEntity(EntityHitResult p_37486_) {
@@ -51,7 +51,7 @@ public class ThrownBeehiveClayBall extends ThrowableItemProjectile {
                 this.level.addFreshEntity(bee);
             }
             this.playSound(SoundEvents.WOOD_BREAK, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.honeyClayBall.get());
+            this.spawnAtLocation(ItemRegistry.HONEY_CLAY_BALL.get());
             this.discard();
         }
 

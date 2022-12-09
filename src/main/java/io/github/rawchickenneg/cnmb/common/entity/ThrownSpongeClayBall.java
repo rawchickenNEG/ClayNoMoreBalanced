@@ -43,7 +43,7 @@ public class ThrownSpongeClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.spongeClayBall.get();
+        return ItemRegistry.SPONGE_CLAY_BALL.get();
     }
 
     protected void onHitBlock(BlockHitResult p_37488_){
@@ -90,7 +90,7 @@ public class ThrownSpongeClayBall extends ThrowableItemProjectile {
                 }
             }
             this.playSound(SoundEvents.GRASS_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.spongeClayBall.get());
+            this.spawnAtLocation(ItemRegistry.SPONGE_CLAY_BALL.get());
             this.discard();
         }
     }

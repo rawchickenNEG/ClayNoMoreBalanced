@@ -6,7 +6,6 @@ import io.github.rawchickenneg.cnmb.config.Config;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -34,7 +33,7 @@ public class ThrownFlintClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.flintClayBall.get();
+        return ItemRegistry.FLINT_CLAY_BALL.get();
     }
 
     protected void onHitEntity(EntityHitResult hitResult) {
@@ -48,7 +47,7 @@ public class ThrownFlintClayBall extends ThrowableItemProjectile {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
             this.playSound(SoundEvents.NETHER_ORE_BREAK, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.flintClayBall.get());
+            this.spawnAtLocation(ItemRegistry.FLINT_CLAY_BALL.get());
             this.discard();
         }
     }

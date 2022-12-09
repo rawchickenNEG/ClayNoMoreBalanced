@@ -37,7 +37,7 @@ public class ThrownLeavesClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.leavesClayBall.get();
+        return ItemRegistry.LEAVES_CLAY_BALL.get();
     }
 
 
@@ -50,7 +50,7 @@ public class ThrownLeavesClayBall extends ThrowableItemProjectile {
         }
         p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.LEAVES.get());
         this.playSound(SoundEvents.GRASS_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-        this.spawnAtLocation(ItemRegistry.leavesClayBall.get());
+        this.spawnAtLocation(ItemRegistry.LEAVES_CLAY_BALL.get());
         this.discard();
     }
 
@@ -69,7 +69,7 @@ public class ThrownLeavesClayBall extends ThrowableItemProjectile {
                     this.level.levelEvent(2001, pos, Block.getId(Blocks.GRASS_BLOCK.defaultBlockState()));
                 }
                 this.playSound(SoundEvents.GRASS_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-                this.spawnAtLocation(ItemRegistry.leavesClayBall.get());
+                this.spawnAtLocation(ItemRegistry.LEAVES_CLAY_BALL.get());
                 this.discard();
             } else {
                 this.playSound(SoundEvents.GRASS_BREAK , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));

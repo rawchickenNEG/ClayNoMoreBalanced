@@ -31,7 +31,7 @@ public class ThrownBasketClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.basketClayBall.get();
+        return ItemRegistry.BASKET_CLAY_BALL.get();
     }
 
     protected void onHitEntity(EntityHitResult p_37486_) {
@@ -47,7 +47,7 @@ public class ThrownBasketClayBall extends ThrowableItemProjectile {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
             this.playSound(SoundEvents.WOOD_BREAK, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.basketClayBall.get());
+            this.spawnAtLocation(ItemRegistry.BASKET_CLAY_BALL.get());
             this.discard();
         }
     }

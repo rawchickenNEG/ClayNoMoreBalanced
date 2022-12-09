@@ -37,13 +37,13 @@ public class ThrownStoneClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.stoneClayBall.get();
+        return ItemRegistry.STONE_CLAY_BALL.get();
     }
 
     protected void onHitEntity(EntityHitResult p_37486_) {
         super.onHitEntity(p_37486_);
         p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.STONE.get());
-        this.spawnAtLocation(ItemRegistry.stoneClayBall.get());
+        this.spawnAtLocation(ItemRegistry.STONE_CLAY_BALL.get());
     }
 
     protected void onHitBlock(BlockHitResult p_37488_){
@@ -58,11 +58,11 @@ public class ThrownStoneClayBall extends ThrowableItemProjectile {
                 } else {
                     this.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
                     this.playSound(SoundEvents.ITEM_BREAK , 1.0F, 1.0F);
-                    this.spawnAtLocation(ItemRegistry.stoneClayBall.get());
+                    this.spawnAtLocation(ItemRegistry.STONE_CLAY_BALL.get());
                     this.level.levelEvent(2001, pos, Block.getId(Blocks.COAL_BLOCK.defaultBlockState()));
                 }
             } else {
-                this.spawnAtLocation(ItemRegistry.stoneClayBall.get());
+                this.spawnAtLocation(ItemRegistry.STONE_CLAY_BALL.get());
             }
         }
     }

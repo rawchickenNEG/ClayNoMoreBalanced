@@ -35,7 +35,7 @@ public class ThrownRecallClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.recallClayBall.get();
+        return ItemRegistry.RECALL_CLAY_BALL.get();
     }
 
     int i = 0;
@@ -47,10 +47,10 @@ public class ThrownRecallClayBall extends ThrowableItemProjectile {
         if (j >= 200 || this.getY() <= -100){
             Entity thrower = this.getOwner() instanceof Player player ? player : null;
             if ((thrower instanceof Player player && !player.getAbilities().instabuild)){
-                Objects.requireNonNull(thrower.spawnAtLocation(ItemRegistry.recallClayBall.get())).setPickUpDelay(0);
+                Objects.requireNonNull(thrower.spawnAtLocation(ItemRegistry.RECALL_CLAY_BALL.get())).setPickUpDelay(0);
                 thrower.playSound(SoundEvents.TRIDENT_RETURN , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
             } else {
-                this.spawnAtLocation(ItemRegistry.recallClayBall.get());
+                this.spawnAtLocation(ItemRegistry.RECALL_CLAY_BALL.get());
             }
             this.discard();
         }
@@ -62,10 +62,10 @@ public class ThrownRecallClayBall extends ThrowableItemProjectile {
             this.playSound(SoundEvents.ENDER_EYE_DEATH , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
             Entity thrower = this.getOwner() instanceof Player player ? player : null;
             if ((thrower instanceof Player player && !player.getAbilities().instabuild)){
-                Objects.requireNonNull(thrower.spawnAtLocation(ItemRegistry.recallClayBall.get())).setPickUpDelay(0);
+                Objects.requireNonNull(thrower.spawnAtLocation(ItemRegistry.RECALL_CLAY_BALL.get())).setPickUpDelay(0);
                 thrower.playSound(SoundEvents.TRIDENT_RETURN , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
             } else {
-                this.spawnAtLocation(ItemRegistry.recallClayBall.get());
+                this.spawnAtLocation(ItemRegistry.RECALL_CLAY_BALL.get());
             }
             this.discard();
         }

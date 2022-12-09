@@ -11,7 +11,7 @@ public class FuelEvents {
         @SubscribeEvent
         public void fuelEvent(FurnaceFuelBurnTimeEvent e) {
             Item item = e.getItemStack().getItem();
-            if (item == ItemRegistry.netheriteSpongeAbsorbed.get()) {
+            if (item == ItemRegistry.NETHERITE_SPONGE_ABSORBED.get()) {
                 e.setBurnTime(20000);
             }
         }

@@ -44,7 +44,7 @@ public class ThrownIronIngot extends ThrowableItemProjectile {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
             this.playSound(SoundEvents.METAL_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.throwableIronIngot.get());
+            this.spawnAtLocation(ItemRegistry.THROWABLE_IRON_INGOT.get());
             this.discard();
         }
     }

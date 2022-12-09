@@ -36,13 +36,13 @@ public class ThrownBaseClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.baseClayBall.get();
+        return ItemRegistry.BASE_CLAY_BALL.get();
     }
 
     protected void onHitEntity(EntityHitResult p_37486_) {
         super.onHitEntity(p_37486_);
         p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.BASE.get());
-        this.spawnAtLocation(ItemRegistry.baseClayBall.get());
+        this.spawnAtLocation(ItemRegistry.BASE_CLAY_BALL.get());
     }
 
     protected void onHitBlock(BlockHitResult p_37488_){
@@ -55,7 +55,7 @@ public class ThrownBaseClayBall extends ThrowableItemProjectile {
                     this.level.levelEvent(2001, pos,
                             Block.getId(this.level.getBlockState(pos)));
             }else{
-                this.spawnAtLocation(ItemRegistry.baseClayBall.get());
+                this.spawnAtLocation(ItemRegistry.BASE_CLAY_BALL.get());
             }
         }
     }
