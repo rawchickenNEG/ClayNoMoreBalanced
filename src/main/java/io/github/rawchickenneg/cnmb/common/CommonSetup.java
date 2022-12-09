@@ -124,6 +124,13 @@ public class CommonSetup {
                 return new ThrownDryClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
+        DispenserBlock.registerBehavior(ItemRegistry.TRACKING_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
+        {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return new ThrownTrackingClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+            }
+        });
         DispenserBlock.registerBehavior(ItemRegistry.DUPLICATE_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
         {
             @Override
