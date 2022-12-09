@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "clay_no_more_balanced:item/advanced_lightning_clay_ball"
+  }
+}
