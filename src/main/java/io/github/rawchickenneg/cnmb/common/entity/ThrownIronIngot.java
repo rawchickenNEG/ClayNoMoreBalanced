@@ -28,11 +28,11 @@ public class ThrownIronIngot extends ThrowableItemProjectile {
     }
 
     public ThrownIronIngot(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownIronIngot.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_IRON_INGOT.get(), entity, level);
     }
 
     public ThrownIronIngot(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownIronIngot.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_IRON_INGOT.get(), x, y, z, level);
     }
 
 

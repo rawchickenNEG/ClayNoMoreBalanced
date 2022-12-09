@@ -28,11 +28,11 @@ public class ThrownBrick extends ThrowableItemProjectile {
     }
 
     public ThrownBrick(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownBrick.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_BRICK.get(), entity, level);
     }
 
     public ThrownBrick(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownBrick.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_BRICK.get(), x, y, z, level);
     }
 
 

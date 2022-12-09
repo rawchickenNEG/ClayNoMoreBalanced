@@ -29,11 +29,11 @@ public class ThrownObsidianClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownObsidianClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownObsidianClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_OBSIDIAN_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownObsidianClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownObsidianClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_OBSIDIAN_CLAY_BALL.get(), x, y, z, level);
     }
 
 

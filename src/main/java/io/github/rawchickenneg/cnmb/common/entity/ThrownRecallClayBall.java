@@ -31,11 +31,11 @@ public class ThrownRecallClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownRecallClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownRecallClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_RECALL_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownRecallClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownRecallClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_RECALL_CLAY_BALL.get(), x, y, z, level);
     }
 
 

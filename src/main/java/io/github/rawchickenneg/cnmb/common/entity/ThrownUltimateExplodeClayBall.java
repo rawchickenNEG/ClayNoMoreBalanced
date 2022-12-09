@@ -28,11 +28,11 @@ public class ThrownUltimateExplodeClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownUltimateExplodeClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownUltimateExplodeClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_ULTIMATE_EXPLODE_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownUltimateExplodeClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownUltimateExplodeClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_ULTIMATE_EXPLODE_CLAY_BALL.get(), x, y, z, level);
     }
 
     @Override

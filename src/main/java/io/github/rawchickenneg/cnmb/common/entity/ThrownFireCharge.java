@@ -29,11 +29,11 @@ public class ThrownFireCharge extends ThrowableItemProjectile {
     }
 
     public ThrownFireCharge(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownFireCharge.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_FIRE_CHARGE.get(), entity, level);
     }
 
     public ThrownFireCharge(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownFireCharge.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_FIRE_CHARGE.get(), x, y, z, level);
     }
 
     @Override

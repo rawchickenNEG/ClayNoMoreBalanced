@@ -30,11 +30,11 @@ public class ThrownVexClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownVexClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownVexClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_VEX_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownVexClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownVexClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_VEX_CLAY_BALL.get(), x, y, z, level);
     }
 
 

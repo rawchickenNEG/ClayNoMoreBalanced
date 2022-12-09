@@ -30,11 +30,11 @@ public class ThrownEnderClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownEnderClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownEnderClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_ENDER_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownEnderClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownEnderClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_ENDER_CLAY_BALL.get(), x, y, z, level);
     }
 
     @Override

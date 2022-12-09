@@ -33,11 +33,11 @@ public class ThrownLazuliClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownLazuliClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownLazuliClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_LAZULI_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownLazuliClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownLazuliClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_LAZULI_CLAY_BALL.get(), x, y, z, level);
     }
 
 

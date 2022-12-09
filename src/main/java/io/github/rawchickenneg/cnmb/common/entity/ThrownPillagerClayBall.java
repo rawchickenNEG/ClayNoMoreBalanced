@@ -32,11 +32,11 @@ public class ThrownPillagerClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownPillagerClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownPillagerClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_PILLAGER_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownPillagerClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownPillagerClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_PILLAGER_CLAY_BALL.get(), x, y, z, level);
     }
 
     @Override

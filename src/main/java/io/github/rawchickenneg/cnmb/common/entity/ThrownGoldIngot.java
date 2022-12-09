@@ -28,11 +28,11 @@ public class ThrownGoldIngot extends ThrowableItemProjectile {
     }
 
     public ThrownGoldIngot(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownGoldIngot.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_GOLD_INGOT.get(), entity, level);
     }
 
     public ThrownGoldIngot(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownGoldIngot.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_GOLD_INGOT.get(), x, y, z, level);
     }
 
 

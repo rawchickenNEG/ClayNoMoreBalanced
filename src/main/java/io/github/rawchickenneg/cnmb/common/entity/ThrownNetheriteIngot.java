@@ -28,11 +28,11 @@ public class ThrownNetheriteIngot extends ThrowableItemProjectile {
     }
 
     public ThrownNetheriteIngot(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownNetheriteIngot.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_NETHERITE_INGOT.get(), entity, level);
     }
 
     public ThrownNetheriteIngot(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownNetheriteIngot.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_NETHERITE_INGOT.get(), x, y, z, level);
     }
 
 

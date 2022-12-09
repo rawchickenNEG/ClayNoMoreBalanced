@@ -32,11 +32,11 @@ public class ThrownChorusClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownChorusClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownChorusClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_CHORUS_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownChorusClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownChorusClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_CHORUS_CLAY_BALL.get(), x, y, z, level);
     }
 
 

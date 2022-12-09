@@ -38,11 +38,11 @@ public class ThrownPrismarineClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownPrismarineClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownPrismarineClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_PRISMARINE_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownPrismarineClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownPrismarineClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_PRISMARINE_CLAY_BALL.get(), x, y, z, level);
     }
 
     @Override

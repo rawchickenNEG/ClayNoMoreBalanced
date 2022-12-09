@@ -29,11 +29,11 @@ public class ThrownQuartzClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownQuartzClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownQuartzClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_QUARTZ_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownQuartzClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownQuartzClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_QUARTZ_CLAY_BALL.get(), x, y, z, level);
     }
 
 

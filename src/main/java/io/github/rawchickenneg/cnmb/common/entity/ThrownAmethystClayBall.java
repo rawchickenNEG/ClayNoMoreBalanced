@@ -30,11 +30,11 @@ public class ThrownAmethystClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownAmethystClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownAmethystClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_AMETHYST_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownAmethystClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownAmethystClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_AMETHYST_CLAY_BALL.get(), x, y, z, level);
     }
 
 

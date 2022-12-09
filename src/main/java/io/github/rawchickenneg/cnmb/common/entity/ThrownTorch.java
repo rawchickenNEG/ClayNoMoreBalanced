@@ -30,11 +30,11 @@ public class ThrownTorch extends ThrowableItemProjectile {
     }
 
     public ThrownTorch(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownTorch.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_TORCH.get(), entity, level);
     }
 
     public ThrownTorch(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownTorch.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_TORCH.get(), x, y, z, level);
     }
 
     @Override

@@ -28,11 +28,11 @@ public class ThrownBeehiveClayBall extends ThrowableItemProjectile {
     }
 
     public ThrownBeehiveClayBall(Level level, LivingEntity entity) {
-        super(EntityTypeRegistry.thrownBeehiveClayBall.get(), entity, level);
+        super(EntityTypeRegistry.THROWN_BEEHIVE_CLAY_BALL.get(), entity, level);
     }
 
     public ThrownBeehiveClayBall(Level level, double x, double y, double z) {
-        super(EntityTypeRegistry.thrownBeehiveClayBall.get(), x, y, z, level);
+        super(EntityTypeRegistry.THROWN_BEEHIVE_CLAY_BALL.get(), x, y, z, level);
     }
 
     @Override
