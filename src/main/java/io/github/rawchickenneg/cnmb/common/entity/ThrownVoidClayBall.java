@@ -34,7 +34,7 @@ public class ThrownVoidClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.voidClayBall.get();
+        return ItemRegistry.VOID_CLAY_BALL.get();
     }
 
     int i = 0;
@@ -47,10 +47,10 @@ public class ThrownVoidClayBall extends ThrowableItemProjectile {
         if (j >= 50 || this.getY() <= -100){
             Entity thrower = this.getOwner() instanceof Player player ? player : null;
             if (thrower instanceof Player player && !player.getAbilities().instabuild){
-                Objects.requireNonNull(thrower.spawnAtLocation(ItemRegistry.voidClayBall.get())).setPickUpDelay(0);
+                Objects.requireNonNull(thrower.spawnAtLocation(ItemRegistry.VOID_CLAY_BALL.get())).setPickUpDelay(0);
                 thrower.playSound(SoundEvents.TRIDENT_RETURN , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
             }else{
-                this.spawnAtLocation(ItemRegistry.voidClayBall.get());
+                this.spawnAtLocation(ItemRegistry.VOID_CLAY_BALL.get());
             }
             this.discard();
         }

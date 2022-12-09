@@ -39,7 +39,7 @@ public class ThrownDuplicateClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.duplicateClayBall.get();
+        return ItemRegistry.DUPLICATE_CLAY_BALL.get();
     }
 
     public void tick() {
@@ -76,7 +76,7 @@ public class ThrownDuplicateClayBall extends ThrowableItemProjectile {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
             this.playSound(SoundEvents.STONE_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.duplicateClayBall.get());
+            this.spawnAtLocation(ItemRegistry.DUPLICATE_CLAY_BALL.get());
             this.discard();
         }
     }

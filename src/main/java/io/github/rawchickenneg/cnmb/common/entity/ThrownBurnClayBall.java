@@ -35,7 +35,7 @@ public class ThrownBurnClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.burnClayBall.get();
+        return ItemRegistry.BURN_CLAY_BALL.get();
     }
 
     public void tick() {
@@ -76,7 +76,7 @@ public class ThrownBurnClayBall extends ThrowableItemProjectile {
     protected void onHit(HitResult p_37388_) {
         super.onHit(p_37388_);
         if (!this.level.isClientSide) {
-            this.spawnAtLocation(ItemRegistry.burnClayBall.get());
+            this.spawnAtLocation(ItemRegistry.BURN_CLAY_BALL.get());
             this.discard();
         }
 

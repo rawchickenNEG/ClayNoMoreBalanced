@@ -54,177 +54,143 @@ public class Config {
     public final ForgeConfigSpec.ConfigValue<Boolean> EXPLODE;
     public final ForgeConfigSpec.ConfigValue<Boolean> ADVANCED;
     public final ForgeConfigSpec.ConfigValue<Boolean> ULTIMATE;
+    public final ForgeConfigSpec.ConfigValue<Double> TRACKING;
 
     public Config(ForgeConfigSpec.Builder builder){
         builder.push("Weapon Damage");
         builder.push("Claymore");
-        CLAYMORE = builder
-                .defineInRange("hurt damage", 24, 1, Long.MAX_VALUE);
+        CLAYMORE = builder.defineInRange("hurt damage", 24, 1, Long.MAX_VALUE);
         builder.pop();
         builder.pop();
         builder.push("Thrown Projectile Damage");
         builder.push("Clay Ball");
-        CLAY = builder
-                .defineInRange("hurt damage", 2, 0, Integer.MAX_VALUE);
+        CLAY = builder.defineInRange("hurt damage", 2, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Iron Ingot");
-        IRON = builder
-                .defineInRange("hurt damage", 6, 0, Integer.MAX_VALUE);
+        IRON = builder.defineInRange("hurt damage", 6, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Gold Ingot");
-        GOLD = builder
-                .defineInRange("hurt damage", 10, 0, Integer.MAX_VALUE);
+        GOLD = builder.defineInRange("hurt damage", 10, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Netherite Ingot");
-        NETHERITE = builder
-                .defineInRange("hurt damage", 12, 0, Integer.MAX_VALUE);
+        NETHERITE = builder.defineInRange("hurt damage", 12, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Brick");
-        BRICK = builder
-                .defineInRange("hurt damage", 6, 0, Integer.MAX_VALUE);
+        BRICK = builder.defineInRange("hurt damage", 6, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Glow Clay Ball");
-        GLOW = builder
-                .defineInRange("hurt damage", 1, 0, Integer.MAX_VALUE);
+        GLOW = builder.defineInRange("hurt damage", 1, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Gilded Clay Ball");
-        GILDED = builder
-                .defineInRange("hurt damage", 7, 0, Integer.MAX_VALUE);
+        GILDED = builder.defineInRange("hurt damage", 7, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Honey Clay Ball");
-        HONEY = builder
-                .defineInRange("hurt damage", 5, 0, Integer.MAX_VALUE);
+        HONEY = builder.defineInRange("hurt damage", 5, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Leaves Clay Ball");
-        LEAVES = builder
-                .defineInRange("hurt damage", 2, 0, Integer.MAX_VALUE);
+        LEAVES = builder.defineInRange("hurt damage", 2, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Dry Clay Ball");
-        DRY = builder
-                .defineInRange("hurt damage", 2, 0, Integer.MAX_VALUE);
+        DRY = builder.defineInRange("hurt damage", 2, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Sticky Clay Ball");
-        STICKY = builder
-                .defineInRange("hurt damage", 3, 0, Integer.MAX_VALUE);
+        STICKY = builder.defineInRange("hurt damage", 3, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Lazuli Clay Ball");
-        LAZULI = builder
-                .defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
+        LAZULI = builder.defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Glowstone Clay Ball");
-        GLOWSTONE = builder
-                .defineInRange("hurt damage", 6, 0, Integer.MAX_VALUE);
+        GLOWSTONE = builder.defineInRange("hurt damage", 6, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Base Clay Ball");
-        BASE = builder
-                .defineInRange("hurt damage", 6, 0, Integer.MAX_VALUE);
+        BASE = builder.defineInRange("hurt damage", 6, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Amethyst Clay Ball");
-        AMETHYST = builder
-                .defineInRange("hurt damage", 6, 0, Integer.MAX_VALUE);
+        AMETHYST = builder.defineInRange("hurt damage", 6, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Duplicate Clay Ball");
-        DUPLICATE = builder
-                .defineInRange("hurt damage", 0, 0, Integer.MAX_VALUE);
+        DUPLICATE = builder.defineInRange("hurt damage", 0, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Burn Clay Ball");
-        BURN = builder
-                .defineInRange("hurt damage", 5, 0, Integer.MAX_VALUE);
+        BURN = builder.defineInRange("hurt damage", 5, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Bone Clay Ball");
-        BONE = builder
-                .defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
+        BONE = builder.defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Stone Clay Ball");
-        STONE = builder
-                .defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
+        STONE = builder.defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Prismarine Clay Ball");
-        PRISMARINE = builder
-                .defineInRange("hurt damage", 8, 0, Integer.MAX_VALUE);
+        PRISMARINE = builder.defineInRange("hurt damage", 8, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Phantom Clay Ball");
-        PHANTOM = builder
-                .defineInRange("hurt damage", 8, 0, Integer.MAX_VALUE);
+        PHANTOM = builder.defineInRange("hurt damage", 8, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Lighting Clay Ball");
-        LIGHTING = builder
-                .defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
+        LIGHTING = builder.defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Golden Clay Ball");
-        GOLDEN = builder
-                .defineInRange("hurt damage", 7, 0, Integer.MAX_VALUE);
+        GOLDEN = builder.defineInRange("hurt damage", 7, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Chorus Clay Ball");
-        CHORUS = builder
-                .defineInRange("hurt damage", 8, 0, Integer.MAX_VALUE);
+        CHORUS = builder.defineInRange("hurt damage", 8, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Recall Clay Ball");
-        RECALL = builder
-                .defineInRange("hurt damage", 8, 0, Integer.MAX_VALUE);
+        RECALL = builder.defineInRange("hurt damage", 8, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Vex Clay Ball");
-        VEX = builder
-                .defineInRange("hurt damage", 12, 0, Integer.MAX_VALUE);
+        VEX = builder.defineInRange("hurt damage", 12, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Void Clay Ball");
-        VOID = builder
-                .defineInRange("hurt damage", 12, 0, Integer.MAX_VALUE);
+        VOID = builder.defineInRange("hurt damage", 12, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Basket Clay Ball");
-        BASKET = builder
-                .defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
+        BASKET = builder.defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Pull Clay Ball");
-        PULL = builder
-                .defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
+        PULL = builder.defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Flint Clay Ball");
-        FLINT = builder
-                .defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
+        FLINT = builder.defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Quartz Clay Ball");
-        QUARTZ = builder
-                .defineInRange("hurt damage", 6, 0, Integer.MAX_VALUE);
+        QUARTZ = builder.defineInRange("hurt damage", 6, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Obsidian Clay Ball");
-        OBSIDIAN = builder
-                .defineInRange("hurt damage", 8, 0, Integer.MAX_VALUE);
+        OBSIDIAN = builder.defineInRange("hurt damage", 8, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Pillager Clay Ball");
-        PILLAGER = builder
-                .defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
+        PILLAGER = builder.defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Ravager Clay Ball");
-        RAVAGER = builder
-                .defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
+        RAVAGER = builder.defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Ender Clay Ball");
-        ENDER = builder
-                .defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
+        ENDER = builder.defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Exchange Clay Ball");
-        EXCHANGE = builder
-                .defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
+        EXCHANGE = builder.defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.pop();
         builder.push("Explode Projectile Settings");
         builder.push("TNT Clay Ball");
-        TNT = builder
-                .define("explode with terrain destruction", true);
+        TNT = builder.define("explode with terrain destruction", true);
         builder.pop();
         builder.push("Explode Clay Ball");
-        EXPLODE = builder
-                .define("explode with terrain destruction", true);
+        EXPLODE = builder.define("explode with terrain destruction", true);
         builder.pop();
         builder.push("Advanced Explode Clay Ball");
-        ADVANCED = builder
-                .define("explode with terrain destruction", true);
+        ADVANCED = builder.define("explode with terrain destruction", true);
         builder.pop();
         builder.push("Ultimate Explode Clay Ball");
-        ULTIMATE = builder
-                .define("explode with terrain destruction", true);
+        ULTIMATE = builder.define("explode with terrain destruction", true);
+        builder.pop();
+        builder.pop();
+        builder.push("Other Settings");
+        builder.push("Tracking Clay Ball");
+        TRACKING = builder.defineInRange("tracking radius", 200.0D, 1.0D, Double.MAX_VALUE);
         builder.pop();
         builder.pop();
     }
+
 }

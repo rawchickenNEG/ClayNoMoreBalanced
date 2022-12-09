@@ -44,7 +44,7 @@ public class ThrownBrick extends ThrowableItemProjectile {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
             this.playSound(SoundEvents.DEEPSLATE_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.throwableBrick.get());
+            this.spawnAtLocation(ItemRegistry.THROWABLE_BRICK.get());
             this.discard();
         }
 

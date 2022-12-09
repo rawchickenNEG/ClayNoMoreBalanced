@@ -35,7 +35,7 @@ public class ThrownRavagerClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.ravagerClayBall.get();
+        return ItemRegistry.RAVAGER_CLAY_BALL.get();
     }
 
     protected void onHitEntity(EntityHitResult hitResult) {
@@ -64,7 +64,7 @@ public class ThrownRavagerClayBall extends ThrowableItemProjectile {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
             this.playSound(SoundEvents.METAL_BREAK, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.ravagerClayBall.get());
+            this.spawnAtLocation(ItemRegistry.RAVAGER_CLAY_BALL.get());
             this.discard();
         }
     }

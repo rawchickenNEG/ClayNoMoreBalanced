@@ -34,14 +34,14 @@ public class ThrownAmethystClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.amethystClayBall.get();
+        return ItemRegistry.AMETHYST_CLAY_BALL.get();
     }
 
     protected void onHitEntity(EntityHitResult p_37486_) {
         super.onHitEntity(p_37486_);
         p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.AMETHYST.get());
         this.playSound(SoundEvents.AMETHYST_BLOCK_PLACE , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-        this.spawnAtLocation(ItemRegistry.amethystClayBall.get());
+        this.spawnAtLocation(ItemRegistry.AMETHYST_CLAY_BALL.get());
         this.discard();
     }
 
@@ -56,7 +56,7 @@ public class ThrownAmethystClayBall extends ThrowableItemProjectile {
                         Block.getId(Blocks.AMETHYST_BLOCK.defaultBlockState()));
             }else{
                 this.playSound(SoundEvents.AMETHYST_BLOCK_PLACE , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-                this.spawnAtLocation(ItemRegistry.amethystClayBall.get());
+                this.spawnAtLocation(ItemRegistry.AMETHYST_CLAY_BALL.get());
             }
             this.discard();
         }

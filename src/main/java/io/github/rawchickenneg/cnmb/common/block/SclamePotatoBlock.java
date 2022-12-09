@@ -36,7 +36,7 @@ public class SclamePotatoBlock extends CropBlock {
 
     @Override
     protected ItemLike getBaseSeedId() {
-        return ItemRegistry.sclamePotato.get();
+        return ItemRegistry.SCLAME_POTATO.get();
     }
 
     @Override

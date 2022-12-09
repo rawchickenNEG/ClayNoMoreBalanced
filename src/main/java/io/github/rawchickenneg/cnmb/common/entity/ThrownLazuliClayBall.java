@@ -37,7 +37,7 @@ public class ThrownLazuliClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.lazuliClayBall.get();
+        return ItemRegistry.LAZULI_CLAY_BALL.get();
     }
 
     protected void onHitEntity(EntityHitResult p_37486_) {
@@ -69,7 +69,7 @@ public class ThrownLazuliClayBall extends ThrowableItemProjectile {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
             this.playSound(SoundEvents.STONE_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.lazuliClayBall.get());
+            this.spawnAtLocation(ItemRegistry.LAZULI_CLAY_BALL.get());
             this.discard();
         }
     }

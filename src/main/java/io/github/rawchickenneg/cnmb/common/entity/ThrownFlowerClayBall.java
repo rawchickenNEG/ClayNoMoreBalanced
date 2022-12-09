@@ -34,7 +34,7 @@ public class ThrownFlowerClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.flowerClayBall.get();
+        return ItemRegistry.FLOWER_CLAY_BALL.get();
     }
 
     public void tick() {
@@ -58,7 +58,7 @@ public class ThrownFlowerClayBall extends ThrowableItemProjectile {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
             this.playSound(SoundEvents.GRASS_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.flowerClayBall.get());
+            this.spawnAtLocation(ItemRegistry.FLOWER_CLAY_BALL.get());
             this.discard();
         }
     }

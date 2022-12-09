@@ -63,7 +63,7 @@ public class ThrownTorch extends ThrowableItemProjectile {
             if (this.level.isEmptyBlock(blockpos)) {
                 this.level.setBlockAndUpdate(blockpos, Blocks.TORCH.defaultBlockState());
             } else {
-                this.spawnAtLocation(ItemRegistry.throwableTorch.get());
+                this.spawnAtLocation(ItemRegistry.THROWABLE_TORCH.get());
             }
         }
     }

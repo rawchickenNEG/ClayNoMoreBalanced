@@ -36,7 +36,7 @@ public class ThrownChorusClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.chorusClayBall.get();
+        return ItemRegistry.CHORUS_CLAY_BALL.get();
     }
 
 
@@ -82,7 +82,7 @@ public class ThrownChorusClayBall extends ThrowableItemProjectile {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
             this.playSound(SoundEvents.WOOD_BREAK, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.chorusClayBall.get());
+            this.spawnAtLocation(ItemRegistry.CHORUS_CLAY_BALL.get());
             this.discard();
         }
 

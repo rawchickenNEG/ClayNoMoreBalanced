@@ -31,7 +31,7 @@ public class ThrownPullClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.pullClayBall.get();
+        return ItemRegistry.PULL_CLAY_BALL.get();
     }
 
     protected void onHitEntity(EntityHitResult p_37486_) {
@@ -54,7 +54,7 @@ public class ThrownPullClayBall extends ThrowableItemProjectile {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
             this.playSound(SoundEvents.FISHING_BOBBER_RETRIEVE, 1.0F, 1.0F / (this.random.nextFloat() * 0.2F));
-            this.spawnAtLocation(ItemRegistry.pullClayBall.get());
+            this.spawnAtLocation(ItemRegistry.PULL_CLAY_BALL.get());
             this.discard();
         }
     }

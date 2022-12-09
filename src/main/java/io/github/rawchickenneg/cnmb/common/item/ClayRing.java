@@ -13,7 +13,7 @@ public class ClayRing extends Item {
     @Override
     public ItemStack getContainerItem(ItemStack itemStack)
     {
-        return new ItemStack(ItemRegistry.clayRing.get(), 1);
+        return new ItemStack(ItemRegistry.CLAY_RING.get(), 1);
     }
 
     @Override

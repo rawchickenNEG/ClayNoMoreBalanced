@@ -18,7 +18,6 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
 import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
 
 public class ThrownEnderClayBall extends ThrowableItemProjectile {
 
@@ -36,7 +35,7 @@ public class ThrownEnderClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.enderClayBall.get();
+        return ItemRegistry.ENDER_CLAY_BALL.get();
     }
 
     protected void onHitEntity(EntityHitResult p_37486_) {
@@ -52,7 +51,7 @@ public class ThrownEnderClayBall extends ThrowableItemProjectile {
                 entity.teleportTo(this.getX(), this.getY(), this.getZ());
                 entity.resetFallDistance();
             }
-            this.spawnAtLocation(ItemRegistry.enderClayBall.get()).setPickUpDelay(0);
+            this.spawnAtLocation(ItemRegistry.ENDER_CLAY_BALL.get()).setPickUpDelay(0);
             this.playSound(SoundEvents.ENDERMAN_TELEPORT, 1.0F, 1.0F);
             this.discard();
         }

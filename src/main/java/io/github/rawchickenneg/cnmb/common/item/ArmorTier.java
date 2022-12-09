@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 
 public enum ArmorTier implements ArmorMaterial {
     PORCELAIN("porcelain", 15, new int[]{2, 5, 6, 2}, 9, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> {
-        return Ingredient.of(ItemRegistry.porcelainBrick.get());
+        return Ingredient.of(ItemRegistry.PORCELAIN_BRICK.get());
     });
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};

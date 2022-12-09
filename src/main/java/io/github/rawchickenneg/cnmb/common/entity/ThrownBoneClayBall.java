@@ -34,7 +34,7 @@ public class ThrownBoneClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.boneClayBall.get();
+        return ItemRegistry.BONE_CLAY_BALL.get();
     }
 
 
@@ -42,7 +42,7 @@ public class ThrownBoneClayBall extends ThrowableItemProjectile {
         super.onHitEntity(p_37486_);
         p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.AMETHYST.get());
         this.playSound(SoundEvents.AMETHYST_BLOCK_PLACE , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-        this.spawnAtLocation(ItemRegistry.boneClayBall.get());
+        this.spawnAtLocation(ItemRegistry.BONE_CLAY_BALL.get());
         this.discard();
     }
 
@@ -65,7 +65,7 @@ public class ThrownBoneClayBall extends ThrowableItemProjectile {
                 }
             }
             this.playSound(SoundEvents.BONE_MEAL_USE , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.boneClayBall.get());
+            this.spawnAtLocation(ItemRegistry.BONE_CLAY_BALL.get());
             this.discard();
         }
 

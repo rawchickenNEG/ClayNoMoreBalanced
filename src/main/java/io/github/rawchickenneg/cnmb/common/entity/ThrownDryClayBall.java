@@ -37,7 +37,7 @@ public class ThrownDryClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.dryClayBall.get();
+        return ItemRegistry.DRY_CLAY_BALL.get();
     }
 
 
@@ -50,7 +50,7 @@ public class ThrownDryClayBall extends ThrowableItemProjectile {
         }
         p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.DRY.get());
         this.playSound(SoundEvents.GRASS_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-        this.spawnAtLocation(ItemRegistry.dryClayBall.get());
+        this.spawnAtLocation(ItemRegistry.DRY_CLAY_BALL.get());
         this.discard();
     }
 
@@ -76,7 +76,7 @@ public class ThrownDryClayBall extends ThrowableItemProjectile {
                     }
                 }
                 this.playSound(SoundEvents.GRASS_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-                this.spawnAtLocation(ItemRegistry.dryClayBall.get());
+                this.spawnAtLocation(ItemRegistry.DRY_CLAY_BALL.get());
                 this.discard();
             } else {
                 this.playSound(SoundEvents.GRASS_BREAK , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));

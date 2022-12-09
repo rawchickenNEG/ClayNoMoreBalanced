@@ -33,7 +33,7 @@ public class ThrownTNTClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.TNTClayBall.get();
+        return ItemRegistry.TNT_CLAY_BALL.get();
     }
 
     public void tick() {

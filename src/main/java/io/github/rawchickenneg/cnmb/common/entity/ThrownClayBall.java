@@ -70,15 +70,15 @@ public class ThrownClayBall extends ThrowableItemProjectile {
         super.onHitEntity(p_37486_);
         if (p_37486_.getEntity() instanceof Axolotl axolotl){
             if (axolotl.getVariant() == Axolotl.Variant.BLUE){
-                this.spawnAtLocation(ItemRegistry.axolotlClayBallBlue.get());
+                this.spawnAtLocation(ItemRegistry.AXOLOTL_CLAY_BALL_BLUE.get());
             }else if (axolotl.getVariant() == Axolotl.Variant.WILD){
-                this.spawnAtLocation(ItemRegistry.axolotlClayBallWild.get());
+                this.spawnAtLocation(ItemRegistry.AXOLOTL_CLAY_BALL_WILD.get());
             }else if (axolotl.getVariant() == Axolotl.Variant.GOLD){
-                this.spawnAtLocation(ItemRegistry.axolotlClayBallGold.get());
+                this.spawnAtLocation(ItemRegistry.AXOLOTL_CLAY_BALL_GOLD.get());
             }else if (axolotl.getVariant() == Axolotl.Variant.LUCY){
-                this.spawnAtLocation(ItemRegistry.axolotlClayBallLucy.get());
+                this.spawnAtLocation(ItemRegistry.AXOLOTL_CLAY_BALL_LUCY.get());
             }else if (axolotl.getVariant() == Axolotl.Variant.CYAN){
-                this.spawnAtLocation(ItemRegistry.axolotlClayBallCyan.get());
+                this.spawnAtLocation(ItemRegistry.AXOLOTL_CLAY_BALL_CYAN.get());
             }
             p_37486_.getEntity().discard();
         } else if (p_37486_.getEntity() instanceof Rabbit rabbit){
@@ -86,28 +86,28 @@ public class ThrownClayBall extends ThrowableItemProjectile {
         } else if (p_37486_.getEntity() instanceof Ravager ravager && ravager.getStunnedTick() != 0){
             this.playSound(SoundEvents.RAVAGER_ROAR, 1.0F, 1.0F);
             level.explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 2.0F, Explosion.BlockInteraction.NONE);
-            this.spawnAtLocation(ItemRegistry.ravagerMetalParts.get());
+            this.spawnAtLocation(ItemRegistry.RAVAGER_METAL_PARTS.get());
             this.spawnAtLocation(Items.SADDLE);
             ravager.discard();
         } else if (p_37486_.getEntity() instanceof Vex vex){
-            this.spawnAtLocation(ItemRegistry.tinyVexClayBall.get());
+            this.spawnAtLocation(ItemRegistry.TINY_VEX_CLAY_BALL.get());
             vex.discard();
         } else if (p_37486_.getEntity() instanceof Bat bat){
-            this.spawnAtLocation(ItemRegistry.batClayBall.get());
+            this.spawnAtLocation(ItemRegistry.BAT_CLAY_BALL.get());
             bat.discard();
         }else if (p_37486_.getEntity() instanceof Chicken chicken && chicken.isInLove() && chicken.isOnFire()){
-            this.spawnAtLocation(ItemRegistry.chickenChop.get());
+            this.spawnAtLocation(ItemRegistry.CHICKEN_CHOP.get());
             chicken.discard();
         }else{
             p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.CLAY.get());
-            this.spawnAtLocation(ItemRegistry.throwableClayBall.get());
+            this.spawnAtLocation(ItemRegistry.THROWABLE_CLAY_BALL.get());
         }
     }
 
     protected void onHitBlock(BlockHitResult p_37488_) {
         super.onHitBlock(p_37488_);
         if (!this.level.isClientSide){
-            this.spawnAtLocation(ItemRegistry.throwableClayBall.get());
+            this.spawnAtLocation(ItemRegistry.THROWABLE_CLAY_BALL.get());
         }
     }
 

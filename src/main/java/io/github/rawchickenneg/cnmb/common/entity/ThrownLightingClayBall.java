@@ -33,7 +33,7 @@ public class ThrownLightingClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.lightingClayBall.get();
+        return ItemRegistry.LIGHTING_CLAY_BALL.get();
     }
 
     public void tick() {

@@ -29,7 +29,7 @@ public class ClayNoMoreBalanced {
         @Nonnull
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ItemRegistry.claymore.get());
+            return new ItemStack(ItemRegistry.CLAYMORE.get());
         }
     };
     public static final String MOD_ID = "clay_no_more_balanced";

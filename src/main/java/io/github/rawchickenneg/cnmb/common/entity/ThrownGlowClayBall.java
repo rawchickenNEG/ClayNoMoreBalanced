@@ -39,7 +39,7 @@ public class ThrownGlowClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.glowClayBall.get();
+        return ItemRegistry.GLOW_CLAY_BALL.get();
     }
 
     protected void onHitEntity(EntityHitResult p_37486_) {
@@ -54,7 +54,7 @@ public class ThrownGlowClayBall extends ThrowableItemProjectile {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
             this.playSound(SoundEvents.GRASS_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.glowClayBall.get());
+            this.spawnAtLocation(ItemRegistry.GLOW_CLAY_BALL.get());
             this.discard();
         }
     }

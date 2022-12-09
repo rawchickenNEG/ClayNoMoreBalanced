@@ -44,7 +44,7 @@ public class ThrownNetheriteIngot extends ThrowableItemProjectile {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
             this.playSound(SoundEvents.NETHERITE_BLOCK_PLACE, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.throwableNetheriteIngot.get());
+            this.spawnAtLocation(ItemRegistry.THROWABLE_NETHERITE_INGOT.get());
             this.discard();
         }
     }

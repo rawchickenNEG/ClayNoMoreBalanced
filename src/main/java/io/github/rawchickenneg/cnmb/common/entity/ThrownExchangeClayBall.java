@@ -36,7 +36,7 @@ public class ThrownExchangeClayBall extends ThrowableItemProjectile {
 
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.exchangeClayBall.get();
+        return ItemRegistry.EXCHANGE_CLAY_BALL.get();
     }
 
     protected void onHitEntity(EntityHitResult hitResult) {
@@ -49,7 +49,7 @@ public class ThrownExchangeClayBall extends ThrowableItemProjectile {
                 target.teleportTo(owner.getX(), owner.getY(), owner.getZ());
                 owner.teleportTo(pos.getX(), pos.getY(), pos.getZ());
                 owner.resetFallDistance();
-                this.spawnAtLocation(ItemRegistry.exchangeClayBall.get());
+                this.spawnAtLocation(ItemRegistry.EXCHANGE_CLAY_BALL.get());
                 this.playSound(SoundEvents.ENDERMAN_TELEPORT, 1.0F, 1.0F);
                 this.discard();
             }
@@ -64,7 +64,7 @@ public class ThrownExchangeClayBall extends ThrowableItemProjectile {
                 owner.teleportTo(this.getX(), this.getY(), this.getZ());
                 owner.resetFallDistance();
             }
-            this.spawnAtLocation(ItemRegistry.exchangeClayBall.get());
+            this.spawnAtLocation(ItemRegistry.EXCHANGE_CLAY_BALL.get());
             this.playSound(SoundEvents.ENDERMAN_TELEPORT, 1.0F, 1.0F);
             this.discard();
         }
