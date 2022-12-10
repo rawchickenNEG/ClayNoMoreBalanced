@@ -1,6 +1,7 @@
 package io.github.rawchickenneg.cnmb.common.item.clayballs;
 
 import io.github.rawchickenneg.cnmb.common.entity.ThrownExplodeClayBall;
+import io.github.rawchickenneg.cnmb.config.Config;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -28,12 +29,15 @@ public class ExplodeClayBallItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack heldStack = player.getItemInHand(hand);
-        level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.FIRECHARGE_USE, SoundSource.NEUTRAL, 1.0F, 1F / (level.random.nextFloat() * 0.4F + 0.8F));
+        float pitch = 1F / (level.random.nextFloat() * 0.4F + 0.8F);
+        level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.FIRECHARGE_USE, SoundSource.NEUTRAL, 1.0F, pitch);
         if (!level.isClientSide) {
-            ThrownExplodeClayBall clayball = new ThrownExplodeClayBall(level, player);
-            clayball.setItem(heldStack);
-            clayball.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
-            level.addFreshEntity(clayball);
+            ThrownExplodeClayBall clayBall = new ThrownExplodeClayBall(level, player);
+            clayBall.setItem(heldStack);
+            clayBall.setExplosionPower(4);
+            clayBall.setCanBreak(Config.CONFIG.EXPLODE.get());
+            clayBall.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
+            level.addFreshEntity(clayBall);
         }
 
         player.awardStat(Stats.ITEM_USED.get(this));
@@ -45,9 +49,7 @@ public class ExplodeClayBallItem extends Item {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn)
-    {
-        super.appendHoverText(stack, worldIn, tooltip, flagIn);
+    public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
         tooltip.add(new TranslatableComponent("item.clay_no_more_balanced.advanced_explode_clay_ball.tip").withStyle(ChatFormatting.GOLD));
         tooltip.add(new TranslatableComponent("item.clay_no_more_balanced.explode_clay_ball.tip2").withStyle(ChatFormatting.GRAY));
     }

@@ -2,6 +2,7 @@ package io.github.rawchickenneg.cnmb.common;
 
 import io.github.rawchickenneg.cnmb.common.entity.*;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
+import io.github.rawchickenneg.cnmb.config.Config;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
@@ -61,11 +62,13 @@ public class CommonSetup {
                 return new ThrownNetheriteIngot(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
-        DispenserBlock.registerBehavior(ItemRegistry.ADVANCED_EXPLODE_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
-        {
+        DispenserBlock.registerBehavior(ItemRegistry.ADVANCED_EXPLODE_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
-                return new ThrownAdvancedExplodeClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                ThrownExplodeClayBall clayBall = new ThrownExplodeClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                clayBall.setCanBreak(Config.CONFIG.ADVANCED.get());
+                clayBall.setExplosionPower(8);
+                return clayBall;
             }
         });
         DispenserBlock.registerBehavior(ItemRegistry.AMETHYST_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
@@ -124,11 +127,16 @@ public class CommonSetup {
                 return new ThrownDryClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
-        DispenserBlock.registerBehavior(ItemRegistry.TRACKING_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
-        {
+        DispenserBlock.registerBehavior(ItemRegistry.TRACKING_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
                 return new ThrownTrackingClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+            }
+        });
+        DispenserBlock.registerBehavior(ItemRegistry.FREEZING_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return new ThrownFreezingClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
         DispenserBlock.registerBehavior(ItemRegistry.DUPLICATE_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
@@ -138,11 +146,13 @@ public class CommonSetup {
                 return new ThrownDuplicateClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
-        DispenserBlock.registerBehavior(ItemRegistry.EXPLODE_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
-        {
+        DispenserBlock.registerBehavior(ItemRegistry.EXPLODE_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
-                return new ThrownExplodeClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                ThrownExplodeClayBall clayBall = new ThrownExplodeClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                clayBall.setCanBreak(Config.CONFIG.EXPLODE.get());
+                clayBall.setExplosionPower(4);
+                return clayBall;
             }
         });
         DispenserBlock.registerBehavior(ItemRegistry.THROWABLE_FIRE_CHARGE.get(), new AbstractProjectileDispenseBehavior()
@@ -297,11 +307,13 @@ public class CommonSetup {
                 return new ThrownTNTClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
-        DispenserBlock.registerBehavior(ItemRegistry.ULTIMATE_EXPLODE_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
-        {
+        DispenserBlock.registerBehavior(ItemRegistry.ULTIMATE_EXPLODE_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
-                return new ThrownUltimateExplodeClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                ThrownExplodeClayBall clayBall = new ThrownExplodeClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                clayBall.setCanBreak(Config.CONFIG.ULTIMATE.get());
+                clayBall.setExplosionPower(16);
+                return clayBall;
             }
         });
         DispenserBlock.registerBehavior(ItemRegistry.VEX_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
