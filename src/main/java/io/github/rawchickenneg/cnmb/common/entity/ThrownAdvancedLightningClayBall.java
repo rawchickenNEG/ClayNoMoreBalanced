@@ -18,7 +18,7 @@ import net.minecraftforge.network.NetworkHooks;
 
 public class ThrownAdvancedLightningClayBall extends ThrowableItemProjectile {
 
-    public ThrownAdvancedLightningClayBall(EntityType<? extends ThrowableItemProjectile> type, Level level) {
+    public ThrownAdvancedLightningClayBall(EntityType<? extends ThrownAdvancedLightningClayBall> type, Level level) {
         super(type, level);
     }
 
