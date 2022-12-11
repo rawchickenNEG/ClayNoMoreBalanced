@@ -40,6 +40,17 @@ public class ThrownPhantomClayBall extends ThrowableItemProjectile {
         super.tick();
         setNoGravity(true);
         this.level.addParticle(ParticleTypes.ASH, this.getRandomX(0.6D), this.getRandomY(), this.getRandomZ(0.6D), 0.0D, 0.0D, 0.0D);
+        if (Math.abs(this.getDeltaMovement().x + this.getDeltaMovement().z)< 0.1){
+            this.onHit();
+        }
+    }
+
+    public void onHit(){
+        if (!this.level.isClientSide) {
+            this.playSound(SoundEvents.ENDER_EYE_DEATH , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
+            this.spawnAtLocation(ItemRegistry.PHANTOM_CLAY_BALL.get());
+            this.discard();
+        }
     }
 
     protected void onHitEntity(EntityHitResult p_37486_) {
@@ -50,11 +61,7 @@ public class ThrownPhantomClayBall extends ThrowableItemProjectile {
 
     protected void onHitBlock(BlockHitResult p_37488_){
         super.onHitBlock(p_37488_);
-        if (!this.level.isClientSide) {
-            this.playSound(SoundEvents.ENDER_EYE_DEATH , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.PHANTOM_CLAY_BALL.get());
-            this.discard();
-        }
+        this.onHit();
     }
 
     @Override

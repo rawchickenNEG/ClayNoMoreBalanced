@@ -44,7 +44,14 @@ public class ThrownRecallClayBall extends ThrowableItemProjectile {
         setNoGravity(true);
         this.level.addParticle(ParticleTypes.ASH, this.getRandomX(0.6D), this.getRandomY(), this.getRandomZ(0.6D), 0.0D, 0.0D, 0.0D);
         int j = ++i;
-        if (j >= 200 || this.getY() <= -100){
+        if (j >= 200 || this.getY() <= -100 || Math.abs(this.getDeltaMovement().x + this.getDeltaMovement().z)< 0.1){
+            this.onVanish();
+        }
+    }
+
+    public void onVanish(){
+        if (!this.level.isClientSide) {
+            this.playSound(SoundEvents.ENDER_EYE_DEATH , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
             Entity thrower = this.getOwner() instanceof Player player ? player : null;
             if ((thrower instanceof Player player && !player.getAbilities().instabuild)){
                 Objects.requireNonNull(thrower.spawnAtLocation(ItemRegistry.RECALL_CLAY_BALL.get())).setPickUpDelay(0);
@@ -59,15 +66,7 @@ public class ThrownRecallClayBall extends ThrowableItemProjectile {
     protected void onHitBlock(BlockHitResult p_37488_){
         super.onHitBlock(p_37488_);
         if (!this.level.isClientSide) {
-            this.playSound(SoundEvents.ENDER_EYE_DEATH , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            Entity thrower = this.getOwner() instanceof Player player ? player : null;
-            if ((thrower instanceof Player player && !player.getAbilities().instabuild)){
-                Objects.requireNonNull(thrower.spawnAtLocation(ItemRegistry.RECALL_CLAY_BALL.get())).setPickUpDelay(0);
-                thrower.playSound(SoundEvents.TRIDENT_RETURN , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            } else {
-                this.spawnAtLocation(ItemRegistry.RECALL_CLAY_BALL.get());
-            }
-            this.discard();
+            this.onVanish();
         }
     }
 

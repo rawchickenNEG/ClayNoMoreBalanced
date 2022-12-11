@@ -51,6 +51,9 @@ public class ThrownExplodeClayBall extends ThrowableItemProjectile {
         setRemainingFireTicks(10);
         setNoGravity(true);
         this.level.addParticle(ParticleTypes.FLAME, this.getRandomX(0.6D), this.getRandomY(), this.getRandomZ(0.6D), 0.0D, 0.0D, 0.0D);
+        if (Math.abs(this.getDeltaMovement().x + this.getDeltaMovement().z)< 0.1){
+            this.discard();
+        }
     }
 
     protected void onHitEntity(EntityHitResult p_37486_) {

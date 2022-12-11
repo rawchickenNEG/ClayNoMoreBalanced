@@ -44,12 +44,19 @@ public class ThrownVoidClayBall extends ThrowableItemProjectile {
         this.level.addParticle(ParticleTypes.ASH, this.getRandomX(0.6D), this.getRandomY(), this.getRandomZ(0.6D), 0.0D, 0.0D, 0.0D);
         this.level.addParticle(ParticleTypes.FALLING_OBSIDIAN_TEAR, this.getRandomX(0.6D), this.getRandomY(), this.getRandomZ(0.6D), 0.0D, 0.0D, 0.0D);
         int j = ++i;
-        if (j >= 50 || this.getY() <= -100){
+        if (j >= 50 || this.getY() <= -100 || Math.abs(this.getDeltaMovement().x + this.getDeltaMovement().z)< 0.1){
+            this.onVanish();
+        }
+    }
+
+    public void onVanish(){
+        if (!this.level.isClientSide) {
+            this.playSound(SoundEvents.ENDER_EYE_DEATH , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
             Entity thrower = this.getOwner() instanceof Player player ? player : null;
-            if (thrower instanceof Player player && !player.getAbilities().instabuild){
+            if ((thrower instanceof Player player && !player.getAbilities().instabuild)){
                 Objects.requireNonNull(thrower.spawnAtLocation(ItemRegistry.VOID_CLAY_BALL.get())).setPickUpDelay(0);
                 thrower.playSound(SoundEvents.TRIDENT_RETURN , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            }else{
+            } else {
                 this.spawnAtLocation(ItemRegistry.VOID_CLAY_BALL.get());
             }
             this.discard();
