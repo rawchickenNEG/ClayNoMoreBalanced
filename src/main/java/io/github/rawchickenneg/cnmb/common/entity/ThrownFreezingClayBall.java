@@ -101,14 +101,15 @@ public class ThrownFreezingClayBall extends ThrowableItemProjectile {
     private void doTerrainEffect(BlockPos pos) {
         BlockState state = this.level.getBlockState(pos);
         Material material = state.getMaterial();
-        if (!state.is(BlockTags.ICE) && !state.is(BlockTags.SNOW) && !state.is(Blocks.OBSIDIAN)) {
+        float hardness = state.getDestroySpeed(this.level, pos);
+        if (!state.is(BlockTags.ICE) && !state.is(BlockTags.SNOW) && hardness <= 50.0F && hardness >= 0F) {
             if (!state.is(BlockTags.REPLACEABLE_PLANTS) && !state.isAir()) {
                 if (material == Material.WATER) {
                     this.level.setBlockAndUpdate(pos, Blocks.ICE.defaultBlockState());
                 } else if (material == Material.LAVA) {
                     this.level.setBlockAndUpdate(pos, Blocks.OBSIDIAN.defaultBlockState());
                 } else {
-                    this.level.setBlockAndUpdate(pos, Blocks.BLUE_ICE.defaultBlockState());
+                    this.level.setBlockAndUpdate(pos, Blocks.PACKED_ICE.defaultBlockState());
                 }
             }
         }
