@@ -85,6 +85,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> PRISMARINE_CLAY_BALL = ITEMS.register("prismarine_clay_ball", () -> new PrismarineClayBall(defaultBuilder()));
     public static final RegistryObject<Item> TRACKING_CLAY_BALL = ITEMS.register("tracking_clay_ball", () -> new TrackingClayBall(defaultBuilder()));
     public static final RegistryObject<Item> FREEZING_CLAY_BALL = ITEMS.register("freezing_clay_ball", () -> new FreezingClayBall(defaultBuilder()));
+    public static final RegistryObject<Item> MINER_CLAY_BALL = ITEMS.register("miner_clay_ball", () -> new MinerClayBall(defaultBuilder()));
     public static final RegistryObject<Item> DUPLICATE_CLAY_BALL = ITEMS.register("duplicate_clay_ball", () -> new DuplicateClayBall(defaultBuilder().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> THROWABLE_CLAY_BALL = ITEMS.register("throwable_clay_ball", () -> new ThrowableClayBallItem(defaultBuilder()));
     public static final RegistryObject<Item> THROWABLE_BRICK = ITEMS.register("throwable_brick", () -> new ThrowableBrickItem(defaultBuilder()));

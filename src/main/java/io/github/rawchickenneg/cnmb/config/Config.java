@@ -50,6 +50,7 @@ public class Config {
     public final ForgeConfigSpec.ConfigValue<Integer> LAZULI;
     public final ForgeConfigSpec.ConfigValue<Integer> GLOWSTONE;
     public final ForgeConfigSpec.ConfigValue<Integer> FREEZING_RADIUS;
+    public final ForgeConfigSpec.ConfigValue<Integer> MINING_RADIUS;
     public final ForgeConfigSpec.ConfigValue<Integer> BASE;
     public final ForgeConfigSpec.ConfigValue<Boolean> TNT;
     public final ForgeConfigSpec.ConfigValue<Boolean> EXPLODE;
@@ -193,6 +194,9 @@ public class Config {
         builder.pop();
         builder.push("Freezing Clay Ball");
         FREEZING_RADIUS = builder.defineInRange("freeze radius", 3, 1, Integer.MAX_VALUE);
+        builder.pop();
+        builder.push("Miner Clay Ball");
+        MINING_RADIUS = builder.defineInRange("mining radius", 3, 1, Integer.MAX_VALUE);
         builder.pop();
         builder.pop();
     }
