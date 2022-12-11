@@ -13,8 +13,8 @@ public class Config {
         SPEC = entry.getValue();
     }
 
-    public final ForgeConfigSpec.ConfigValue<Integer> CLAY;
     public final ForgeConfigSpec.ConfigValue<Long> CLAYMORE;
+    public final ForgeConfigSpec.ConfigValue<Integer> CLAY;
     public final ForgeConfigSpec.ConfigValue<Integer> BRICK;
     public final ForgeConfigSpec.ConfigValue<Integer> GLOW;
     public final ForgeConfigSpec.ConfigValue<Integer> AMETHYST;
@@ -49,6 +49,7 @@ public class Config {
     public final ForgeConfigSpec.ConfigValue<Integer> STONE;
     public final ForgeConfigSpec.ConfigValue<Integer> LAZULI;
     public final ForgeConfigSpec.ConfigValue<Integer> GLOWSTONE;
+    public final ForgeConfigSpec.ConfigValue<Integer> FREEZING_RADIUS;
     public final ForgeConfigSpec.ConfigValue<Integer> BASE;
     public final ForgeConfigSpec.ConfigValue<Boolean> TNT;
     public final ForgeConfigSpec.ConfigValue<Boolean> EXPLODE;
@@ -189,6 +190,9 @@ public class Config {
         builder.push("Other Settings");
         builder.push("Tracking Clay Ball");
         TRACKING = builder.defineInRange("tracking radius", 200.0D, 1.0D, Double.MAX_VALUE);
+        builder.pop();
+        builder.push("Freezing Clay Ball");
+        FREEZING_RADIUS = builder.defineInRange("freeze radius", 3, 1, Integer.MAX_VALUE);
         builder.pop();
         builder.pop();
     }

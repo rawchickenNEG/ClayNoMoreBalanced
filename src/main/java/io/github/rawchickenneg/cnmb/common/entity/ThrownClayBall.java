@@ -56,10 +56,12 @@ public class ThrownClayBall extends ThrowableItemProjectile {
             double r0 = 2.0D;
             double n0 = 32.0D;
             for(int i = 0; i < n0; ++i) {
+                double sin = r0 * Math.sin((0.5 * i / n0) * 180D * Math.PI);
+                double cos = Math.cos((0.5 * i / n0) * 180D * Math.PI);
                 if (i % 2 == 0){
-                    this.level.addParticle(ParticleTypes.DRIPPING_WATER, this.getX() + r0 * Math.sin((0.5 * i / n0) * 180D * Math.PI), this.getY(), this.getZ() + r0 * Math.cos((0.5 * i / n0) * 180D * Math.PI), 0, 0, 0);
+                    this.level.addParticle(ParticleTypes.DRIPPING_WATER, this.getX() + sin, this.getY(), this.getZ() + r0 * cos, 0, 0, 0);
                 }else {
-                    this.level.addParticle(ParticleTypes.DRIPPING_LAVA, this.getX() + r0 * Math.sin((0.5 * i / n0) * 180D * Math.PI), this.getY(), this.getZ() + r0 * Math.cos((0.5 * i / n0) * 180D * Math.PI), 0, 0, 0);
+                    this.level.addParticle(ParticleTypes.DRIPPING_LAVA, this.getX() + sin, this.getY(), this.getZ() + r0 * cos, 0, 0, 0);
                 }
 
             }

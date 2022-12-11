@@ -49,6 +49,7 @@ public class ThrownTrackingClayBall extends ThrowableItemProjectile {
         this.level.addParticle(ParticleTypes.CLOUD, rx, this.getRandomY(),
                 rz, 0.0D, 0.0D, 0.0D);
         if (this.tickCount > this.trackCountdown) {
+            this.setSharedFlag(6, true);
             LivingEntity target = this.getTarget();
             if (!this.level.isClientSide && target != null) {
                 Vec3 vec3 = this.getDeltaMovement();
@@ -64,10 +65,6 @@ public class ThrownTrackingClayBall extends ThrowableItemProjectile {
 
     @Override
     protected void onHitEntity(EntityHitResult result) {
-        this.explode();
-    }
-
-    private void explode() {
         if (!this.level.isClientSide) {
             Explosion.BlockInteraction type = Explosion.BlockInteraction.NONE;
             this.level.explode(this, this.getX(), this.getY(), this.getZ(), this.explosionRadius, type);

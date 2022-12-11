@@ -18,7 +18,7 @@ public class EggClayBall extends Item {
 
     public InteractionResultHolder<ItemStack> use(Level p_43142_, Player p_43143_, InteractionHand p_43144_) {
         ItemStack itemstack = p_43143_.getItemInHand(p_43144_);
-        p_43142_.playSound((Player)null, p_43143_.getX(), p_43143_.getY(), p_43143_.getZ(), SoundEventRegistry.EGG_LAUNCH.get(), SoundSource.NEUTRAL, 1.0F, 1.0F);
+        p_43142_.playSound(null, p_43143_.getX(), p_43143_.getY(), p_43143_.getZ(), SoundEventRegistry.EGG_LAUNCH.get(), SoundSource.NEUTRAL, 1.0F, 1.0F);
         if (!p_43142_.isClientSide) {
             ThrownEgg egg = new ThrownEgg(p_43142_, p_43143_);
             egg.setItem(itemstack);

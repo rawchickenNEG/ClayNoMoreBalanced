@@ -1,9 +1,9 @@
 package io.github.rawchickenneg.cnmb.common.entity;
 
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
-import io.github.rawchickenneg.cnmb.config.Config;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
@@ -17,6 +17,9 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
 
 public class ThrownExplodeClayBall extends ThrowableItemProjectile {
+
+    private boolean canBreak;
+    private int explosionPower = 4;
 
     public ThrownExplodeClayBall(EntityType<? extends ThrownExplodeClayBall> entityType, Level level) {
         super(entityType, level);
@@ -35,6 +38,14 @@ public class ThrownExplodeClayBall extends ThrowableItemProjectile {
         return ItemRegistry.EXPLODE_CLAY_BALL.get();
     }
 
+    public void setCanBreak(boolean canBreak) {
+        this.canBreak = canBreak;
+    }
+
+    public void setExplosionPower(int explosionPower) {
+        this.explosionPower = explosionPower;
+    }
+
     public void tick() {
         super.tick();
         setRemainingFireTicks(10);
@@ -50,9 +61,23 @@ public class ThrownExplodeClayBall extends ThrowableItemProjectile {
     protected void onHit(HitResult p_37488_) {
         super.onHit(p_37488_);
         if (!this.level.isClientSide) {
-            boolean flag = Config.CONFIG.EXPLODE.get();
-            level.explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 4.0F, flag, flag ? Explosion.BlockInteraction.BREAK : Explosion.BlockInteraction.NONE);
+            Explosion.BlockInteraction type = this.canBreak ? Explosion.BlockInteraction.BREAK : Explosion.BlockInteraction.NONE;
+            level.explode(this, this.getX(), this.getY(0.0625D), this.getZ(), this.explosionPower, this.canBreak, type);
             this.discard();
+        }
+    }
+
+    public void addAdditionalSaveData(CompoundTag tag) {
+        super.addAdditionalSaveData(tag);
+        tag.putBoolean("CanBreak", this.canBreak);
+        tag.putByte("ExplosionPower", (byte)this.explosionPower);
+    }
+
+    public void readAdditionalSaveData(CompoundTag tag) {
+        super.readAdditionalSaveData(tag);
+        this.setCanBreak(tag.getBoolean("CanBreak"));
+        if (tag.contains("ExplosionPower", 99)) {
+            this.explosionPower = tag.getByte("ExplosionPower");
         }
     }
 
@@ -60,4 +85,5 @@ public class ThrownExplodeClayBall extends ThrowableItemProjectile {
     public Packet<?> getAddEntityPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
+
 }
