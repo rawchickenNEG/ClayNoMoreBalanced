@@ -65,10 +65,9 @@ public class ThrownMinerClayBall extends ThrowableItemProjectile {
     public void tick() {
         super.tick();
         this.makeTrail();
-        this.makeIceZone();
         HitResult hitResult = ProjectileUtil.getHitResult(this, this::canHitEntity);
         if (hitResult.getType() == HitResult.Type.BLOCK) {
-            if (!this.level.isClientSide && this.tickCount > this.freezingCountdown) {
+            if (!this.level.isClientSide && this.tickCount > this.freezingCountdown || Math.abs(this.getDeltaMovement().x + this.getDeltaMovement().z)< 0.1) {
                 this.discard();
             }
         }
@@ -111,7 +110,7 @@ public class ThrownMinerClayBall extends ThrowableItemProjectile {
 
     private void makeTrail() {
         Vec3 vec3 = this.getDeltaMovement();
-        BlockState stateId = Blocks.SNOW.defaultBlockState();
+        BlockState stateId = Blocks.GRAVEL.defaultBlockState();
         ParticleType<BlockParticleOption> type = ParticleTypes.FALLING_DUST;
         ParticleOptions particle = new BlockParticleOption(type, stateId);
         for (int i = 0; i < 10; i++) {
@@ -122,19 +121,6 @@ public class ThrownMinerClayBall extends ThrowableItemProjectile {
         }
     }
 
-    private void makeIceZone() {
-        if (this.level.isClientSide) {
-            BlockState stateId = Blocks.SNOW.defaultBlockState();
-            ParticleType<BlockParticleOption> type = ParticleTypes.FALLING_DUST;
-            ParticleOptions particle = new BlockParticleOption(type, stateId);
-            for (int i = 0; i < 15; i++) {
-                double dx = this.getX() + (random.nextFloat() - random.nextFloat()) * 3.0F;
-                double dy = this.getY() + (random.nextFloat() - random.nextFloat()) * 3.0F;
-                double dz = this.getZ() + (random.nextFloat() - random.nextFloat()) * 3.0F;
-                this.level.addParticle(particle, dx, dy, dz, 0, 0, 0);
-            }
-        }
-    }
 
     @Override
     public Packet<?> getAddEntityPacket() {
