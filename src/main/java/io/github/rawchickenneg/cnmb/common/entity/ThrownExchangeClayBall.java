@@ -47,7 +47,7 @@ public class ThrownExchangeClayBall extends ThrowableItemProjectile {
                 BlockPos pos = target.getOnPos(); //先提前把目标实体的坐标给获取到
                 target.hurt(DamageSource.thrown(this, owner), Config.CONFIG.EXCHANGE.get());
                 target.teleportTo(owner.getX(), owner.getY(), owner.getZ());
-                owner.teleportTo(pos.getX(), pos.getY(), pos.getZ());
+                owner.teleportTo(pos.getX(), pos.getY() + 1, pos.getZ());
                 owner.resetFallDistance();
                 this.spawnAtLocation(ItemRegistry.EXCHANGE_CLAY_BALL.get());
                 this.playSound(SoundEvents.ENDERMAN_TELEPORT, 1.0F, 1.0F);
