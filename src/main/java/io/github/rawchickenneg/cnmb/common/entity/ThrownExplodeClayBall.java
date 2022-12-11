@@ -5,6 +5,7 @@ import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -51,7 +52,8 @@ public class ThrownExplodeClayBall extends ThrowableItemProjectile {
         setRemainingFireTicks(10);
         setNoGravity(true);
         this.level.addParticle(ParticleTypes.FLAME, this.getRandomX(0.6D), this.getRandomY(), this.getRandomZ(0.6D), 0.0D, 0.0D, 0.0D);
-        if (Math.abs(this.getDeltaMovement().x + this.getDeltaMovement().z)< 0.1){
+        if (Math.abs(this.getDeltaMovement().x + this.getDeltaMovement().y + this.getDeltaMovement().z)< 0.01){
+            this.playSound(SoundEvents.FIRE_EXTINGUISH, 1.0F, 1.0F);
             this.discard();
         }
     }

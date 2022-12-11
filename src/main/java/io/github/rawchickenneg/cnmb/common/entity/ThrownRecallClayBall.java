@@ -44,7 +44,7 @@ public class ThrownRecallClayBall extends ThrowableItemProjectile {
         setNoGravity(true);
         this.level.addParticle(ParticleTypes.ASH, this.getRandomX(0.6D), this.getRandomY(), this.getRandomZ(0.6D), 0.0D, 0.0D, 0.0D);
         int j = ++i;
-        if (j >= 200 || this.getY() <= -100 || Math.abs(this.getDeltaMovement().x + this.getDeltaMovement().z)< 0.1){
+        if (j >= 200 || this.getY() <= -100 || Math.abs(this.getDeltaMovement().x + this.getDeltaMovement().y + this.getDeltaMovement().z)< 0.01){
             this.onVanish();
         }
     }

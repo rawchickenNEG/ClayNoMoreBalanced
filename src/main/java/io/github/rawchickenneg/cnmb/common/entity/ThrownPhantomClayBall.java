@@ -40,7 +40,7 @@ public class ThrownPhantomClayBall extends ThrowableItemProjectile {
         super.tick();
         setNoGravity(true);
         this.level.addParticle(ParticleTypes.ASH, this.getRandomX(0.6D), this.getRandomY(), this.getRandomZ(0.6D), 0.0D, 0.0D, 0.0D);
-        if (Math.abs(this.getDeltaMovement().x + this.getDeltaMovement().z)< 0.1){
+        if (Math.abs(this.getDeltaMovement().x + this.getDeltaMovement().y + this.getDeltaMovement().z)< 0.01){
             this.onHit();
         }
     }
