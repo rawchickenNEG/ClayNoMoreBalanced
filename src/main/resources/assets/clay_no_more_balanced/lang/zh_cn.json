@@ -137,6 +137,8 @@
   "item.clay_no_more_balanced.tracking_clay_ball.tip": "自动跟踪一个目标实体并爆炸",
   "item.clay_no_more_balanced.freezing_clay_ball": "冰冻黏土球",
   "item.clay_no_more_balanced.freezing_clay_ball.tip": "可以冻住方块和实体",
+  "item.clay_no_more_balanced.miner_clay_ball": "矿工黏土球",
+  "item.clay_no_more_balanced.miner_clay_ball.tip": "直线大范围破坏非矿物方块",
   "item.clay_no_more_balanced.duplicate_clay_ball": "复制黏土球",
   "item.clay_no_more_balanced.duplicate_clay_ball.tip": "从目标无限获取掉落物",
   "item.clay_no_more_balanced.duplicate_clay_ball.tip2": "为什么不试试潜影盒呢？",

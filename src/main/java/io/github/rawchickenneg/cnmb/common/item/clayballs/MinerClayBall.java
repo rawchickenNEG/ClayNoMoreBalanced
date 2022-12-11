@@ -47,7 +47,7 @@ public class MinerClayBall extends Item {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag isAdvanced) {
-        tooltip.add(new TranslatableComponent("item.clay_no_more_balanced.freezing_clay_ball.tip").withStyle(ChatFormatting.BLUE));
+        tooltip.add(new TranslatableComponent("item.clay_no_more_balanced.miner_clay_ball.tip").withStyle(ChatFormatting.YELLOW));
         tooltip.add(new TextComponent(""));
     }
 
