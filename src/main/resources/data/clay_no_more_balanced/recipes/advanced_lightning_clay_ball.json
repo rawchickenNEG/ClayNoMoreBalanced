@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "clay_no_more_balanced:advanced_explode_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:lighting_clay_ball"
+    }
+  ],
+  "result": {
+    "item": "clay_no_more_balanced:advanced_lightning_clay_ball"
+  }
+}

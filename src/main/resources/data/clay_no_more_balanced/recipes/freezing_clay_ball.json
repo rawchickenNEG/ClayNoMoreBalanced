@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#$#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:blue_ice"
+    },
+    "$": {
+      "item": "clay_no_more_balanced:advanced_lightning_clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:freezing_clay_ball"
+  }
+}

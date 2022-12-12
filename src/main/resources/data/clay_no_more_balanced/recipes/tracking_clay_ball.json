@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#$#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:ghast_tear"
+    },
+    "$": {
+      "item": "clay_no_more_balanced:explode_clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:tracking_clay_ball",
+    "count": 4
+  }
+}
