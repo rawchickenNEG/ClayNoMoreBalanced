@@ -66,11 +66,9 @@ public class ThrownMinerClayBall extends ThrowableItemProjectile {
         super.tick();
         this.makeTrail();
         HitResult hitResult = ProjectileUtil.getHitResult(this, this::canHitEntity);
-        if (hitResult.getType() == HitResult.Type.BLOCK) {
             if (!this.level.isClientSide && this.tickCount > this.freezingCountdown || Math.abs(this.getDeltaMovement().x + this.getDeltaMovement().z)< 0.1) {
                 this.discard();
             }
-        }
     }
 
     @Override
