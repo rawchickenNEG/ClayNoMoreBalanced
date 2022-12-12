@@ -17,13 +17,13 @@ import net.minecraftforge.registries.RegistryObject;
 public class ItemRegistry {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ClayNoMoreBalanced.MOD_ID);
-    public static final RegistryObject<Item> CLAY_INGOT = ITEMS.register("clay_ingot", () -> new SimpleFoiledItem(defaultBuilder().rarity(Rarity.RARE)));
-    public static final RegistryObject<Item> CLAY_NUGGET = ITEMS.register("clay_nugget", () -> new SimpleFoiledItem(defaultBuilder().rarity(Rarity.RARE)));
-    public static final RegistryObject<Item> CLAY_SCRAP = ITEMS.register("clay_scrap", () -> new SimpleFoiledItem(defaultBuilder().rarity(Rarity.RARE)));
-    public static final RegistryObject<Item> CLAY_SHARD = ITEMS.register("clay_shard", () -> new SimpleFoiledItem(defaultBuilder().rarity(Rarity.RARE)));
-    public static final RegistryObject<Item> CLAY_VUG = ITEMS.register("clay_vug", () -> new SimpleFoiledItem(defaultBuilder().rarity(Rarity.RARE)));
-    public static final RegistryObject<Item> CLAY_PEARL = ITEMS.register("clay_pearl", () -> new SimpleFoiledItem(defaultBuilder().rarity(Rarity.RARE)));
-    public static final RegistryObject<Item> CLAY_GEM = ITEMS.register("clay_gem", () -> new SimpleFoiledItem(defaultBuilder().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CLAY_INGOT = ITEMS.register("clay_ingot", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CLAY_NUGGET = ITEMS.register("clay_nugget", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CLAY_SCRAP = ITEMS.register("clay_scrap", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CLAY_SHARD = ITEMS.register("clay_shard", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CLAY_VUG = ITEMS.register("clay_vug", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CLAY_PEARL = ITEMS.register("clay_pearl", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CLAY_GEM = ITEMS.register("clay_gem", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CLAY_STAR = ITEMS.register("clay_star", () -> new SimpleFoiledItem(defaultBuilder().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> THE_ULTIMATE_GALACLAY = ITEMS.register("the_ultimate_galaclay", () -> new SimpleFoiledItem(defaultBuilder().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> CLAY_NO_MORE_BALANCED = ITEMS.register("clay_no_more_balanced", () -> new SimpleFoiledItem(defaultBuilder().rarity(Rarity.EPIC)));
@@ -32,7 +32,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CLAY_TOTEM = ITEMS.register("clay_totem", () -> new Item(defaultBuilder()));
     public static final RegistryObject<Item> CLAY_TRIDENT = ITEMS.register("clay_trident", () -> new Item(defaultBuilder()));
     public static final RegistryObject<Item> CLAY_ELYTRA = ITEMS.register("clay_elytra", () -> new Item(defaultBuilder().craftRemainder(Items.ELYTRA).stacksTo(1)));
-    public static final RegistryObject<Item> CLAY_ROD = ITEMS.register("clay_rod", () -> new SimpleFoiledItem(defaultBuilder().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CLAY_ROD = ITEMS.register("clay_rod", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CLAYMORE = ITEMS.register("claymore", () -> new Claymore(defaultBuilder().rarity(Rarity.EPIC).stacksTo(1)));
     public static final RegistryObject<Item> CLAY_BOW = ITEMS.register("clay_bow", () -> new ClayBowItem(defaultBuilder().rarity(Rarity.RARE).stacksTo(1)));
     public static final RegistryObject<Item> AXOLOTL_CLAY_BALL_BLUE = ITEMS.register("axolotl_clay_ball_blue", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
