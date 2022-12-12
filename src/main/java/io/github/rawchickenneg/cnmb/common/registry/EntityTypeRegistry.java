@@ -52,7 +52,7 @@ public class EntityTypeRegistry {
     public static final RegistryObject<EntityType<ThrownFlowerClayBall>> THROWN_FLOWER_CLAY_BALL = throwableItem("flower_clay_ball", ThrownFlowerClayBall::new);
     public static final RegistryObject<EntityType<ThrownTrackingClayBall>> THROWN_TRACKING_CLAY_BALL = throwableItem("tracking_clay_ball", ThrownTrackingClayBall::new);
     public static final RegistryObject<EntityType<ThrownFreezingClayBall>> THROWN_FREEZING_CLAY_BALL = throwableItem("freezing_clay_ball", ThrownFreezingClayBall::new);
-    public static final RegistryObject<EntityType<ThrownFreezingClayBall>> THROWN_MINER_CLAY_BALL = throwableItem("miner_clay_ball", ThrownFreezingClayBall::new);
+    public static final RegistryObject<EntityType<ThrownMinerClayBall>> THROWN_MINER_CLAY_BALL = throwableItem("miner_clay_ball", ThrownMinerClayBall::new);
     public static final RegistryObject<EntityType<ThrownDuplicateClayBall>> THROWN_DUPLICATE_CLAY_BALL = throwableItem("duplicate_clay_ball", ThrownDuplicateClayBall::new);
     public static final RegistryObject<EntityType<ThrownBrick>> THROWN_BRICK = throwableItem("brick", ThrownBrick::new);
     public static final RegistryObject<EntityType<ThrownFireCharge>> THROWN_FIRE_CHARGE = throwableItem("fire_charge", ThrownFireCharge::new);

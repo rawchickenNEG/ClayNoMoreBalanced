@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "clay_no_more_balanced:phantom_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:advanced_explode_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:obsidian_clay_ball"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "item": "clay_no_more_balanced:miner_clay_ball",
+    "count": 4
+  }
+}
