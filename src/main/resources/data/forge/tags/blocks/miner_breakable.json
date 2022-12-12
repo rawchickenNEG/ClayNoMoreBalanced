@@ -5,6 +5,8 @@
     "#minecraft:base_stone_nether",
     "#minecraft:dirt",
     "minecraft:gravel",
-    "minecraft:end_stone"
+    "minecraft:end_stone",
+    "minecraft:water",
+    "minecraft:lava"
   ]
 }
