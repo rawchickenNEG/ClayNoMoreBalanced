@@ -3,6 +3,7 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -60,8 +62,18 @@ public class ThrownTorch extends ThrowableItemProjectile {
         super.onHitBlock(p_37384_);
         if (!this.level.isClientSide) {
             BlockPos blockpos = p_37384_.getBlockPos().relative(p_37384_.getDirection());
-            if (this.level.isEmptyBlock(blockpos)) {
-                this.level.setBlockAndUpdate(blockpos, Blocks.TORCH.defaultBlockState());
+            if (this.level.isEmptyBlock(blockpos) && p_37384_.getDirection() != Direction.DOWN) {
+                if (p_37384_.getDirection() == Direction.UP){
+                    this.level.setBlockAndUpdate(blockpos, Blocks.TORCH.defaultBlockState());
+                } else if (p_37384_.getDirection() == Direction.NORTH) {
+                    this.level.setBlockAndUpdate(blockpos, Blocks.WALL_TORCH.defaultBlockState());
+                }else if (p_37384_.getDirection() == Direction.EAST) {
+                    this.level.setBlockAndUpdate(blockpos, Blocks.WALL_TORCH.defaultBlockState().rotate(this.level, blockpos, Rotation.CLOCKWISE_90));
+                } else if (p_37384_.getDirection() == Direction.WEST) {
+                    this.level.setBlockAndUpdate(blockpos, Blocks.WALL_TORCH.defaultBlockState().rotate(this.level, blockpos, Rotation.COUNTERCLOCKWISE_90));
+                } else if (p_37384_.getDirection() == Direction.SOUTH) {
+                    this.level.setBlockAndUpdate(blockpos, Blocks.WALL_TORCH.defaultBlockState().rotate(this.level, blockpos, Rotation.CLOCKWISE_180));
+                }
             } else {
                 this.spawnAtLocation(ItemRegistry.THROWABLE_TORCH.get());
             }
