@@ -34,6 +34,11 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CLAY_ELYTRA = ITEMS.register("clay_elytra", () -> new Item(defaultBuilder().craftRemainder(Items.ELYTRA).stacksTo(1)));
     public static final RegistryObject<Item> CLAY_ROD = ITEMS.register("clay_rod", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CLAYMORE = ITEMS.register("claymore", () -> new Claymore(defaultBuilder().rarity(Rarity.EPIC).stacksTo(1)));
+    public static final RegistryObject<Item> CLAY_HOE = ITEMS.register("clay_hoe", () -> new HoeItem(ItemTier.ClayIngot, -10, -1.0F, defaultBuilder().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CLAY_AXE = ITEMS.register("clay_axe", () -> new AxeItem(ItemTier.ClayIngot, 6.0F, -3.1F, defaultBuilder().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CLAY_PICKAXE = ITEMS.register("clay_pickaxe", () -> new PickaxeItem(ItemTier.ClayIngot, 1, -2.8F, defaultBuilder().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CLAY_SWORD = ITEMS.register("clay_sword", () -> new SwordItem(ItemTier.ClayIngot, 3, -2.4F, defaultBuilder().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CLAY_SHOVEL = ITEMS.register("clay_shovel", () -> new ShovelItem(ItemTier.ClayIngot, 1.5F, -1F, defaultBuilder().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CLAY_BOW = ITEMS.register("clay_bow", () -> new ClayBowItem(defaultBuilder().rarity(Rarity.RARE).stacksTo(1)));
     public static final RegistryObject<Item> AXOLOTL_CLAY_BALL_BLUE = ITEMS.register("axolotl_clay_ball_blue", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> AXOLOTL_CLAY_BALL_CYAN = ITEMS.register("axolotl_clay_ball_cyan", () -> new Item(defaultBuilder().rarity(Rarity.UNCOMMON)));
