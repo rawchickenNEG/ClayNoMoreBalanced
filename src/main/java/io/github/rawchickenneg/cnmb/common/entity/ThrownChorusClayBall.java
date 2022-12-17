@@ -2,6 +2,7 @@ package io.github.rawchickenneg.cnmb.common.entity;
 
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
+import io.github.rawchickenneg.cnmb.config.Config;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.server.level.ServerLevel;
@@ -59,7 +60,7 @@ public class ThrownChorusClayBall extends ThrowableItemProjectile {
                     break;
                 }
             }
-            p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), 6.0F);
+            p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.CHORUS.get());
         }
     }
 
