@@ -67,7 +67,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> ENDER_CLAY_BALL = ITEMS.register("ender_clay_ball", () -> new EnderClayBall(defaultBuilder()));
     public static final RegistryObject<Item> EXCHANGE_CLAY_BALL = ITEMS.register("exchange_clay_ball", () -> new ExchangeClayBall(defaultBuilder()));
     public static final RegistryObject<Item> BURN_CLAY_BALL = ITEMS.register("burn_clay_ball", () -> new BurnClayBallItem(defaultBuilder()));
-    public static final RegistryObject<Item> CACTUS_CLAY_BALL = ITEMS.register("cactus_clay_ball", () -> new CactusClayBallItem(defaultBuilder()));
+    //public static final RegistryObject<Item> CACTUS_CLAY_BALL = ITEMS.register("cactus_clay_ball", () -> new CactusClayBallItem(defaultBuilder()));
     public static final RegistryObject<Item> TNT_CLAY_BALL = ITEMS.register("tnt_clay_ball", () -> new TNTClayBall(defaultBuilder()));
     public static final RegistryObject<Item> EXPLODE_CLAY_BALL = ITEMS.register("explode_clay_ball", () -> new ExplodeClayBallItem(defaultBuilder()));
     public static final RegistryObject<Item> ADVANCED_EXPLODE_CLAY_BALL = ITEMS.register("advanced_explode_clay_ball", () -> new AdvancedExplodeClayBallItem(defaultBuilder()));
