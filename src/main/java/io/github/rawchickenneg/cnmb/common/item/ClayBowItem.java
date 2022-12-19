@@ -43,7 +43,6 @@ public class ClayBowItem extends ProjectileWeaponItem implements Vanishable {
                         AbstractArrow abstractarrow = arrowitem.createArrow(pLevel, itemstack, player);
                         abstractarrow = customArrow(abstractarrow);
                         abstractarrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, f * 6F, 0F);
-                        abstractarrow.setNoGravity(true);
                         abstractarrow.setBaseDamage(6.0D);
                         if (f == 1.0F) {
                             abstractarrow.setCritArrow(true);
