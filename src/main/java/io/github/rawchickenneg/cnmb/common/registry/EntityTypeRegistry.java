@@ -5,11 +5,18 @@ import io.github.rawchickenneg.cnmb.common.entity.*;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-
+@Mod.EventBusSubscriber(modid = ClayNoMoreBalanced.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EntityTypeRegistry {
 
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, ClayNoMoreBalanced.MOD_ID);
@@ -18,7 +25,7 @@ public class EntityTypeRegistry {
     public static final RegistryObject<EntityType<ThrownClayBallFromBow>> THROWN_CLAY_BALL_FROM_BOW = throwableItem("clay_ball_from_bow", ThrownClayBallFromBow::new);
     public static final RegistryObject<EntityType<ThrownBurnClayBall>> THROWN_BURN_CLAY_BALL = throwableItem("burn_clay_ball", ThrownBurnClayBall::new);
     public static final RegistryObject<EntityType<ThrownBoneClayBall>> THROWN_BONE_CLAY_BALL = throwableItem("bone_clay_ball", ThrownBoneClayBall::new);
-    public static final RegistryObject<EntityType<ThrownCactusClayBall>> THROWN_CACTUS_CLAY_BALL = throwableItem("cactus_clay_ball", ThrownCactusClayBall::new);
+    //public static final RegistryObject<EntityType<ThrownCactusClayBall>> THROWN_CACTUS_CLAY_BALL = throwableItem("cactus_clay_ball", ThrownCactusClayBall::new);
     public static final RegistryObject<EntityType<ThrownTNTClayBall>> THROWN_TNT_CLAY_BALL = throwableItem("tnt_clay_ball", ThrownTNTClayBall::new);
     public static final RegistryObject<EntityType<ThrownExplodeClayBall>> THROWN_EXPLODE_CLAY_BALL = throwableItem("explode_clay_ball", ThrownExplodeClayBall::new);
     public static final RegistryObject<EntityType<ThrownPullClayBall>> THROWN_PULL_CLAY_BALL = throwableItem("pull_clay_ball", ThrownPullClayBall::new);
@@ -61,15 +68,25 @@ public class EntityTypeRegistry {
     public static final RegistryObject<EntityType<ThrownGoldIngot>> THROWN_GOLD_INGOT = throwableItem("gold_ingot", ThrownGoldIngot::new);
     public static final RegistryObject<EntityType<ThrownNetheriteIngot>> THROWN_NETHERITE_INGOT = throwableItem("netherite_ingot", ThrownNetheriteIngot::new);
     public static final RegistryObject<EntityType<ThrownTorch>> THROWN_TORCH = throwableItem("torch", ThrownTorch::new);
-    public static final RegistryObject<EntityType<ClayChicken>> CLAY_CHICKEN = register("clay_chicken", EntityType.Builder.<ClayChicken>of(ClayChicken::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).sized(0.4F, 0.7F).clientTrackingRange(10));
+    public static final RegistryObject<EntityType<ClayChicken>> CLAY_CHICKEN = register("clay_chicken", EntityType.Builder.of(ClayChicken::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).sized(0.4F, 0.7F).clientTrackingRange(10));
 
     private static <T extends Entity> RegistryObject<EntityType<T>> throwableItem(String name, EntityType.EntityFactory<T> factory) {
         return ENTITIES.register("thrown_" + name, () -> (EntityType.Builder.of(factory, MobCategory.MISC).sized(0.25F, 0.25F)
                 .clientTrackingRange(4).updateInterval(10).build(name)));
     }
-    private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
-        return ENTITIES.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
+
+    private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
+        return ENTITIES.register(name, () -> entityTypeBuilder.build(name));
     }
 
+    @SubscribeEvent
+    public static void registerEntities(RegistryEvent.Register<EntityType<?>> event) {
+        SpawnPlacements.register(CLAY_CHICKEN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+    }
+
+    @SubscribeEvent
+    public static void addEntityAttributes(EntityAttributeCreationEvent event) {
+        event.put(CLAY_CHICKEN.get(), ClayChicken.createAttributes().build());
+    }
 
 }

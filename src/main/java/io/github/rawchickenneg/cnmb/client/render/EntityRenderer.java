@@ -13,6 +13,7 @@ public class EntityRenderer {
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_CLAY_BALL.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(EntityTypeRegistry.CLAY_CHICKEN.get(), ClayChickenRenderer::new);
     }
-}
 
+}
