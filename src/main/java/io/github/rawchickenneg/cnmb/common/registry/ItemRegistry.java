@@ -41,6 +41,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CLAY_SHOVEL = ITEMS.register("clay_shovel", () -> new ShovelItem(ItemTier.ClayIngot, 1.5F, -1F, defaultBuilder().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CLAY_BOW = ITEMS.register("clay_bow", () -> new ClayBowItem(defaultBuilder().rarity(Rarity.RARE).stacksTo(1)));
     public static final RegistryObject<Item> CLAY_WAND = ITEMS.register("clay_wand", () -> new ClayWand(defaultBuilder().rarity(Rarity.RARE).stacksTo(1)));
+    public static final RegistryObject<Item> TORCH_WAND = ITEMS.register("torch_wand", () -> new TorchWand(defaultBuilder().rarity(Rarity.RARE).stacksTo(1)));
     public static final RegistryObject<Item> AXOLOTL_CLAY_BALL_BLUE = ITEMS.register("axolotl_clay_ball_blue", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> AXOLOTL_CLAY_BALL_CYAN = ITEMS.register("axolotl_clay_ball_cyan", () -> new Item(defaultBuilder().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> AXOLOTL_CLAY_BALL_LUCY = ITEMS.register("axolotl_clay_ball_lucy", () -> new Item(defaultBuilder().rarity(Rarity.UNCOMMON)));
@@ -66,6 +67,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> ENDER_CLAY_BALL = ITEMS.register("ender_clay_ball", () -> new EnderClayBall(defaultBuilder()));
     public static final RegistryObject<Item> EXCHANGE_CLAY_BALL = ITEMS.register("exchange_clay_ball", () -> new ExchangeClayBall(defaultBuilder()));
     public static final RegistryObject<Item> BURN_CLAY_BALL = ITEMS.register("burn_clay_ball", () -> new BurnClayBallItem(defaultBuilder()));
+    public static final RegistryObject<Item> CACTUS_CLAY_BALL = ITEMS.register("cactus_clay_ball", () -> new CactusClayBallItem(defaultBuilder()));
     public static final RegistryObject<Item> TNT_CLAY_BALL = ITEMS.register("tnt_clay_ball", () -> new TNTClayBall(defaultBuilder()));
     public static final RegistryObject<Item> EXPLODE_CLAY_BALL = ITEMS.register("explode_clay_ball", () -> new ExplodeClayBallItem(defaultBuilder()));
     public static final RegistryObject<Item> ADVANCED_EXPLODE_CLAY_BALL = ITEMS.register("advanced_explode_clay_ball", () -> new AdvancedExplodeClayBallItem(defaultBuilder()));
