@@ -1,12 +1,14 @@
 package io.github.rawchickenneg.cnmb.common.item;
 
-import io.github.rawchickenneg.cnmb.ClayNoMoreBalanced;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.api.distmarker.Dist;
@@ -19,10 +21,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class Claymore extends SwordItem {
-    public Claymore(Properties rarity) {
-        super(ItemTier.Clay, 0, -2.4F, new Item.Properties().tab(ClayNoMoreBalanced.CREATIVE_TAB).rarity(Rarity.EPIC));
-    }
 
+
+    public Claymore(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
+        super(pTier, pAttackDamageModifier, pAttackSpeedModifier, pProperties);
+    }
 
     @Override
     public boolean hurtEnemy(ItemStack p_43278_, LivingEntity p_43279_, LivingEntity p_43280_) {
@@ -68,4 +71,6 @@ public class Claymore extends SwordItem {
     }
 
 
+    private class EntityEquipmentSlot {
+    }
 }
