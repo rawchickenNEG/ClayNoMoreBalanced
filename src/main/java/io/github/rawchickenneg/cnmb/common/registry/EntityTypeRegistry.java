@@ -68,6 +68,7 @@ public class EntityTypeRegistry {
     public static final RegistryObject<EntityType<ThrownGoldIngot>> THROWN_GOLD_INGOT = throwableItem("gold_ingot", ThrownGoldIngot::new);
     public static final RegistryObject<EntityType<ThrownNetheriteIngot>> THROWN_NETHERITE_INGOT = throwableItem("netherite_ingot", ThrownNetheriteIngot::new);
     public static final RegistryObject<EntityType<ThrownTorch>> THROWN_TORCH = throwableItem("torch", ThrownTorch::new);
+    public static final RegistryObject<EntityType<ThrownSclameEgg>> THROWN_SCLAME_EGG = throwableItem("sclame_egg", ThrownSclameEgg::new);
     public static final RegistryObject<EntityType<ClayChicken>> CLAY_CHICKEN = register("clay_chicken", EntityType.Builder.of(ClayChicken::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).sized(0.4F, 0.7F).clientTrackingRange(10));
 
     private static <T extends Entity> RegistryObject<EntityType<T>> throwableItem(String name, EntityType.EntityFactory<T> factory) {

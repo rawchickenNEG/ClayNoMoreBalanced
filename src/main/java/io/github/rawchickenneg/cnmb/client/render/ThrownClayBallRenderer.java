@@ -24,6 +24,7 @@ public class ThrownClayBallRenderer {
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_CHORUS_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_FLINT_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_BONE_CLAY_BALL.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(EntityTypeRegistry.THROWN_CACTUS_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_LIGHTING_CLAY_BALL.get(), (p_174086_) -> new ThrownItemRenderer<>(p_174086_, 1.0F, true));
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_ADVANCED_LIGHTNING_CLAY_BALL.get(), (p_174086_) -> new ThrownItemRenderer<>(p_174086_, 1.0F, true));
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_TORCH.get(), (p_174086_) -> new ThrownItemRenderer<>(p_174086_, 1.0F, true));
@@ -58,6 +59,7 @@ public class ThrownClayBallRenderer {
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_IRON_INGOT.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_GOLD_INGOT.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_NETHERITE_INGOT.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(EntityTypeRegistry.THROWN_SCLAME_EGG.get(), ThrownItemRenderer::new);
     }
 
 }
