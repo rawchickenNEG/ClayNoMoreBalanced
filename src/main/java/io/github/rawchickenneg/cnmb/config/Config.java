@@ -46,6 +46,7 @@ public class Config {
     public final ForgeConfigSpec.ConfigValue<Integer> RAVAGER;
     public final ForgeConfigSpec.ConfigValue<Integer> ENDER;
     public final ForgeConfigSpec.ConfigValue<Integer> EXCHANGE;
+    public final ForgeConfigSpec.ConfigValue<Integer> CACTUS;
     public final ForgeConfigSpec.ConfigValue<Integer> STONE;
     public final ForgeConfigSpec.ConfigValue<Integer> LAZULI;
     public final ForgeConfigSpec.ConfigValue<Integer> GLOWSTONE;
@@ -172,6 +173,9 @@ public class Config {
         builder.pop();
         builder.push("Exchange Clay Ball");
         EXCHANGE = builder.defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
+        builder.pop();
+        builder.push("Cactus Clay Ball");
+        CACTUS = builder.defineInRange("hurt damage", 4, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.pop();
         builder.push("Explode Projectile Settings");
