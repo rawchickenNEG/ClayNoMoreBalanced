@@ -1,5 +1,7 @@
 package io.github.rawchickenneg.cnmb.common.entity;
 
+import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
+import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
@@ -12,7 +14,6 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -31,7 +32,6 @@ public class ClayChicken extends Animal {
     public float flapping = 1.0F;
     private float nextFlap = 1.0F;
     public int eggTime = this.random.nextInt(6000) + 6000;
-    public boolean isChickenJockey;
 
     public ClayChicken(EntityType<? extends ClayChicken> p_28236_, Level p_28237_) {
         super(p_28236_, p_28237_);
@@ -57,10 +57,6 @@ public class ClayChicken extends Animal {
         return Mob.createMobAttributes().add(Attributes.MAX_HEALTH, 4.0D).add(Attributes.MOVEMENT_SPEED, 0.25D);
     }
 
-    /**
-     * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
-     * use this to react to sunlight and start to burn.
-     */
     public void aiStep() {
         super.aiStep();
         this.oFlap = this.flap;
@@ -78,9 +74,9 @@ public class ClayChicken extends Animal {
         }
 
         this.flap += this.flapping * 2.0F;
-        if (!this.level.isClientSide && this.isAlive() && !this.isBaby() && !this.isChickenJockey() && --this.eggTime <= 0) {
+        if (!this.level.isClientSide && this.isAlive() && !this.isBaby() && --this.eggTime <= 0) {
             this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-            this.spawnAtLocation(Items.EGG);
+            this.spawnAtLocation(ItemRegistry.SCLAME_EGG.get());
             this.eggTime = this.random.nextInt(6000) + 6000;
         }
 
@@ -114,31 +110,20 @@ public class ClayChicken extends Animal {
         this.playSound(SoundEvents.CHICKEN_STEP, 0.15F, 1.0F);
     }
 
-    public Chicken getBreedOffspring(ServerLevel p_148884_, AgeableMob p_148885_) {
-        return EntityType.CHICKEN.create(p_148884_);
+    public ClayChicken getBreedOffspring(ServerLevel p_148884_, AgeableMob p_148885_) {
+        return EntityTypeRegistry.CLAY_CHICKEN.get().create(p_148884_);
     }
 
-    /**
-     * Checks if the parameter is an item which this animal can be fed to breed it (wheat, carrots or seeds depending on
-     * the animal type)
-     */
     public boolean isFood(ItemStack pStack) {
         return FOOD_ITEMS.test(pStack);
     }
 
-    /**
-     * Get the experience points the entity currently has.
-     */
     protected int getExperienceReward(Player pPlayer) {
-        return this.isChickenJockey() ? 10 : super.getExperienceReward(pPlayer);
+        return super.getExperienceReward(pPlayer);
     }
 
-    /**
-     * (abstract) Protected helper method to read subclass entity data from NBT.
-     */
     public void readAdditionalSaveData(CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
-        this.isChickenJockey = pCompound.getBoolean("IsChickenJockey");
         if (pCompound.contains("EggLayTime")) {
             this.eggTime = pCompound.getInt("EggLayTime");
         }
@@ -147,12 +132,11 @@ public class ClayChicken extends Animal {
 
     public void addAdditionalSaveData(CompoundTag pCompound) {
         super.addAdditionalSaveData(pCompound);
-        pCompound.putBoolean("IsChickenJockey", this.isChickenJockey);
         pCompound.putInt("EggLayTime", this.eggTime);
     }
 
     public boolean removeWhenFarAway(double pDistanceToClosestPlayer) {
-        return this.isChickenJockey();
+        return false;
     }
 
     public void positionRider(Entity pPassenger) {
@@ -166,19 +150,5 @@ public class ClayChicken extends Animal {
             ((LivingEntity)pPassenger).yBodyRot = this.yBodyRot;
         }
 
-    }
-
-    /**
-     * Determines if this chicken is a jokey with a zombie riding it.
-     */
-    public boolean isChickenJockey() {
-        return this.isChickenJockey;
-    }
-
-    /**
-     * Sets whether this chicken is a jockey or not.
-     */
-    public void setChickenJockey(boolean pJockey) {
-        this.isChickenJockey = pJockey;
     }
 }

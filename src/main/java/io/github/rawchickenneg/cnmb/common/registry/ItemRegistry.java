@@ -9,6 +9,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -67,7 +68,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> ENDER_CLAY_BALL = ITEMS.register("ender_clay_ball", () -> new EnderClayBall(defaultBuilder()));
     public static final RegistryObject<Item> EXCHANGE_CLAY_BALL = ITEMS.register("exchange_clay_ball", () -> new ExchangeClayBall(defaultBuilder()));
     public static final RegistryObject<Item> BURN_CLAY_BALL = ITEMS.register("burn_clay_ball", () -> new BurnClayBallItem(defaultBuilder()));
-    //public static final RegistryObject<Item> CACTUS_CLAY_BALL = ITEMS.register("cactus_clay_ball", () -> new CactusClayBallItem(defaultBuilder()));
+    public static final RegistryObject<Item> CACTUS_CLAY_BALL = ITEMS.register("cactus_clay_ball", () -> new CactusClayBallItem(defaultBuilder()));
     public static final RegistryObject<Item> TNT_CLAY_BALL = ITEMS.register("tnt_clay_ball", () -> new TNTClayBall(defaultBuilder()));
     public static final RegistryObject<Item> EXPLODE_CLAY_BALL = ITEMS.register("explode_clay_ball", () -> new ExplodeClayBallItem(defaultBuilder()));
     public static final RegistryObject<Item> ADVANCED_EXPLODE_CLAY_BALL = ITEMS.register("advanced_explode_clay_ball", () -> new AdvancedExplodeClayBallItem(defaultBuilder()));
@@ -134,6 +135,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> SCLAME_BREAD = ITEMS.register("sclame_bread", () -> new Item(defaultBuilder().food((new FoodProperties.Builder()).nutrition(10).saturationMod(1.1f).build())));
     public static final RegistryObject<Item> SCLAME_PIE = ITEMS.register("sclame_pie", () -> new Item(defaultBuilder().food((new FoodProperties.Builder()).nutrition(16).saturationMod(1.25f).build())));
     public static final RegistryObject<Item> SCLAME_CAKE = ITEMS.register("sclame_cake", () -> new ItemNameBlockItem(BlockRegistry.SCLAME_CAKE_BLOCK.get(), defaultBuilder()));
+    public static final RegistryObject<Item> SCLAME_EGG = ITEMS.register("sclame_egg", () -> new Item(defaultBuilder()));
     public static final RegistryObject<Item> CLAY_CREAM = ITEMS.register("clay_cream", () -> new ClayCream(new Item.Properties().stacksTo(1).tab(ClayNoMoreBalanced.CREATIVE_TAB).rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> CLAY_CREAM_BALL = ITEMS.register("clay_cream_ball", () -> new ClayCreamBall(defaultBuilder()));
     public static final RegistryObject<Item> TERRACOTTA_DUST = ITEMS.register("terracotta_dust", () -> new Item(defaultBuilder()));
@@ -151,6 +153,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> RUBY = ITEMS.register("ruby", () -> new Item(defaultBuilder()));
     public static final RegistryObject<Item> TINY_BASE_POWDER = ITEMS.register("tiny_base_powder", () -> new Item(defaultBuilder()));
     public static final RegistryObject<Item> BASE_POWDER = ITEMS.register("base_powder", () -> new Item(defaultBuilder()));
+    public static final RegistryObject<Item> CLAY_CHICKEN_SPAWN_EGG = ITEMS.register("clay_chicken_spawn_egg", () -> new ForgeSpawnEggItem(EntityTypeRegistry.CLAY_CHICKEN, -6050617, 16711680, defaultBuilder()));
     public static final RegistryObject<Item> CHICKEN_CHOP = ITEMS.register("chicken_chop", () -> new Item(defaultBuilder().food((new FoodProperties.Builder()).nutrition(10).saturationMod(1.2f).alwaysEat()
             .effect(new MobEffectInstance(MobEffects.REGENERATION, 2400, 1), 1.0F).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 0), 1.0F).build())));
     public static final RegistryObject<Item> BUDDING_ROSE_QUARTZ = ITEMS.register("budding_rose_quartz", () -> new ItemNameBlockItem(BlockRegistry.BUDDING_ROSE_QUARTZ.get(), defaultBuilder()));

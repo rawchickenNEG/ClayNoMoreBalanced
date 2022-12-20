@@ -25,7 +25,7 @@ public class EntityTypeRegistry {
     public static final RegistryObject<EntityType<ThrownClayBallFromBow>> THROWN_CLAY_BALL_FROM_BOW = throwableItem("clay_ball_from_bow", ThrownClayBallFromBow::new);
     public static final RegistryObject<EntityType<ThrownBurnClayBall>> THROWN_BURN_CLAY_BALL = throwableItem("burn_clay_ball", ThrownBurnClayBall::new);
     public static final RegistryObject<EntityType<ThrownBoneClayBall>> THROWN_BONE_CLAY_BALL = throwableItem("bone_clay_ball", ThrownBoneClayBall::new);
-    //public static final RegistryObject<EntityType<ThrownCactusClayBall>> THROWN_CACTUS_CLAY_BALL = throwableItem("cactus_clay_ball", ThrownCactusClayBall::new);
+    public static final RegistryObject<EntityType<ThrownCactusClayBall>> THROWN_CACTUS_CLAY_BALL = throwableItem("cactus_clay_ball", ThrownCactusClayBall::new);
     public static final RegistryObject<EntityType<ThrownTNTClayBall>> THROWN_TNT_CLAY_BALL = throwableItem("tnt_clay_ball", ThrownTNTClayBall::new);
     public static final RegistryObject<EntityType<ThrownExplodeClayBall>> THROWN_EXPLODE_CLAY_BALL = throwableItem("explode_clay_ball", ThrownExplodeClayBall::new);
     public static final RegistryObject<EntityType<ThrownPullClayBall>> THROWN_PULL_CLAY_BALL = throwableItem("pull_clay_ball", ThrownPullClayBall::new);
