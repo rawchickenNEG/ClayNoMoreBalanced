@@ -36,6 +36,7 @@ public class EntityTypeRegistry {
     public static final RegistryObject<EntityType<ThrownRavagerClayBall>> THROWN_RAVAGER_CLAY_BALL = throwableItem("ravager_clay_ball", ThrownRavagerClayBall::new);
     public static final RegistryObject<EntityType<ThrownEnderClayBall>> THROWN_ENDER_CLAY_BALL = throwableItem("ender_clay_ball", ThrownEnderClayBall::new);
     public static final RegistryObject<EntityType<ThrownExchangeClayBall>> THROWN_EXCHANGE_CLAY_BALL = throwableItem("exchange_clay_ball", ThrownExchangeClayBall::new);
+    public static final RegistryObject<EntityType<ThrownVehicleClayBall>> THROWN_VEHICLE_CLAY_BALL = throwableItem("vehicle_clay_ball", ThrownVehicleClayBall::new);
     public static final RegistryObject<EntityType<ThrownPhantomClayBall>> THROWN_PHANTOM_CLAY_BALL = throwableItem("phantom_clay_ball", ThrownPhantomClayBall::new);
     public static final RegistryObject<EntityType<ThrownRecallClayBall>> THROWN_RECALL_CLAY_BALL = throwableItem("recall_clay_ball", ThrownRecallClayBall::new);
     public static final RegistryObject<EntityType<ThrownVexClayBall>> THROWN_VEX_CLAY_BALL = throwableItem("vex_clay_ball", ThrownVexClayBall::new);

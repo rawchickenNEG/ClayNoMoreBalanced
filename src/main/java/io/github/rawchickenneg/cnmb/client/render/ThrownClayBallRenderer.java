@@ -39,6 +39,7 @@ public class ThrownClayBallRenderer {
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_RAVAGER_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_ENDER_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_EXCHANGE_CLAY_BALL.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(EntityTypeRegistry.THROWN_VEHICLE_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_PILLAGER_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_SPONGE_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_FLOWER_CLAY_BALL.get(), ThrownItemRenderer::new);
