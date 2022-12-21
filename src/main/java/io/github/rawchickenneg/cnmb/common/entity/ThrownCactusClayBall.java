@@ -52,7 +52,7 @@ public class ThrownCactusClayBall extends ThrowableItemProjectile {
         super.onHitEntity(p_37386_);
         if (!this.level.isClientSide) {
             Entity entity = p_37386_.getEntity();
-            entity.hurt(DamageSource.indirectMagic(this, this.getOwner()), Config.CONFIG.CACTUS.get());
+            entity.hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.CACTUS.get());
             if (!used){
                 this.startRiding(entity);
                 used = true;

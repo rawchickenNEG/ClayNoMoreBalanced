@@ -51,7 +51,7 @@ public class ThrownVehicleClayBall extends ThrowableItemProjectile {
     protected void onHitEntity(EntityHitResult p_37386_) {
         super.onHitEntity(p_37386_);
         if (!this.level.isClientSide) {
-            p_37386_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.CACTUS.get());
+            p_37386_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.VEHICLE.get());
         }
     }
 
