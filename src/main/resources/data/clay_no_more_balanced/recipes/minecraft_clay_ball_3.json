@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "clay_no_more_balanced:sclame_egg"
+    }
+  ],
+  "result": {
+    "item": "minecraft:clay_ball",
+    "count": 4
+  }
+}
