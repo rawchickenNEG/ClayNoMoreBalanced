@@ -42,7 +42,7 @@ public class ThrownSnowClayBall extends ThrowableItemProjectile {
         if (this.isPassenger() && this.getVehicle() != null){
             int j = ++i;
             this.getVehicle().setIsInPowderSnow(true);
-            this.getVehicle().setTicksFrozen(j);
+            this.getVehicle().setTicksFrozen(Math.min(j, 150));
             if (j >= 600){
                 this.stopRiding();
             }
