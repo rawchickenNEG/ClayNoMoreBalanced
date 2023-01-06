@@ -22,8 +22,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class AmethystClayBall extends Item {
-    public AmethystClayBall(Properties p_41383_) {
+public class SkySlimeClayBall extends Item {
+    public SkySlimeClayBall(Properties p_41383_) {
         super(p_41383_);
     }
 
@@ -34,7 +34,7 @@ public class AmethystClayBall extends Item {
         if (!level.isClientSide) {
             ThrownAmethystClayBall clayball = new ThrownAmethystClayBall(level, player);
             clayball.setItem(heldStack);
-            clayball.setType(0);
+            clayball.setType(3);
             clayball.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
             level.addFreshEntity(clayball);
         }

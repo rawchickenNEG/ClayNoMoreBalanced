@@ -87,6 +87,11 @@ public class ItemRegistry {
     public static final RegistryObject<Item> OBSIDIAN_CLAY_BALL = ITEMS.register("obsidian_clay_ball", () -> new ObsidianClayBall(defaultBuilder()));
     public static final RegistryObject<Item> GOLDEN_CLAY_BALL = ITEMS.register("golden_clay_ball", () -> new GoldenClayBall(defaultBuilder()));
     public static final RegistryObject<Item> AMETHYST_CLAY_BALL = ITEMS.register("amethyst_clay_ball", () -> new AmethystClayBall(defaultBuilder()));
+    public static final RegistryObject<Item> ROSE_QUARTZ_CLAY_BALL = ITEMS.register("rose_quartz_clay_ball", () -> new RoseQuartzClayBall(defaultBuilder()));
+    public static final RegistryObject<Item> EARTH_SLIME_CLAY_BALL = ITEMS.register("earth_slime_clay_ball", () -> new EarthSlimeClayBall(defaultBuilder()));
+    public static final RegistryObject<Item> SKY_SLIME_CLAY_BALL = ITEMS.register("sky_slime_clay_ball", () -> new SkySlimeClayBall(defaultBuilder()));
+    public static final RegistryObject<Item> ICHOR_SLIME_CLAY_BALL = ITEMS.register("ichor_slime_clay_ball", () -> new IchorSlimeClayBall(defaultBuilder()));
+    public static final RegistryObject<Item> ENDER_SLIME_CLAY_BALL = ITEMS.register("ender_slime_clay_ball", () -> new EnderSlimeClayBall(defaultBuilder()));
     public static final RegistryObject<Item> GLOW_CLAY_BALL = ITEMS.register("glow_clay_ball", () -> new GlowClayBall(defaultBuilder()));
     public static final RegistryObject<Item> BONE_CLAY_BALL = ITEMS.register("bone_clay_ball", () -> new BoneClayBall(defaultBuilder()));
     public static final RegistryObject<Item> RAVAGER_CLAY_BALL = ITEMS.register("ravager_clay_ball", () -> new RavagerClayBall(defaultBuilder()));
