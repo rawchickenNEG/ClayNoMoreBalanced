@@ -53,7 +53,7 @@ public class RoseQuartzClayBall extends Item {
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
         String string = new TranslatableComponent("item.clay_no_more_balanced.clay_balls_damage").getString();
         String damage = String.valueOf(Config.CONFIG.AMETHYST.get());
-        tooltip.add(new TranslatableComponent("item.clay_no_more_balanced.amethyst_clay_ball.tip").withStyle(ChatFormatting.LIGHT_PURPLE));
+        tooltip.add(new TranslatableComponent("item.clay_no_more_balanced.rose_quartz_clay_ball.tip").withStyle(ChatFormatting.RED));
         tooltip.add(new TextComponent(""));
         tooltip.add(new TextComponent(" " + damage + " " + string).withStyle(ChatFormatting.DARK_GREEN));
     }
