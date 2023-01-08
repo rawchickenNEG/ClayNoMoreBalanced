@@ -1,10 +1,15 @@
 package io.github.rawchickenneg.cnmb.common.block;
 
+import io.github.rawchickenneg.cnmb.common.entity.ThrownVehicleClayBall;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.Mirror;
@@ -13,6 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -61,5 +67,15 @@ public class Toilet extends Block {
     @Override
     public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
         return Collections.singletonList(new ItemStack(this, 1));
+    }
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+        super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
+            ThrownVehicleClayBall clayball = new ThrownVehicleClayBall(pLevel, pPlayer);
+            clayball.setStaticRide(true);
+            clayball.setNoGravity(true);
+            clayball.moveTo(pPos.getX() + 0.5, pPos.getY() + 0.2, pPos.getZ() + 0.5, pPlayer.getYRot(), 0.0F);
+            clayball.setOwner(pPlayer);
+            pLevel.addFreshEntity(clayball);
+            return InteractionResult.SUCCESS;
     }
 }

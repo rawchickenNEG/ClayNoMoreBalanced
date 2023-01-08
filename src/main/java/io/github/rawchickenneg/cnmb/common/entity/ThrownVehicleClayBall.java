@@ -11,7 +11,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraftforge.network.NetworkHooks;
@@ -31,9 +33,15 @@ public class ThrownVehicleClayBall extends ThrowableItemProjectile {
         super(EntityTypeRegistry.THROWN_VEHICLE_CLAY_BALL.get(), x, y, z, level);
     }
 
+    public boolean staticRide;
+
+    public void setStaticRide(boolean staticRide) {
+        this.staticRide = staticRide;
+    }
+
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.VEHICLE_CLAY_BALL.get();
+        return Items.AIR;
     }
 
     int i = 0;
@@ -46,11 +54,14 @@ public class ThrownVehicleClayBall extends ThrowableItemProjectile {
         if (j >= 10 && !this.isVehicle()){
             this.onVanish();
         }
+        if (this.staticRide && this.level.getBlockState(this.getOnPos()).getBlock() == Blocks.AIR){
+            this.onVanish();
+        }
     }
 
     protected void onHitEntity(EntityHitResult p_37386_) {
         super.onHitEntity(p_37386_);
-        if (!this.level.isClientSide) {
+        if (!this.level.isClientSide || !this.staticRide) {
             p_37386_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.VEHICLE.get());
         }
     }
@@ -65,8 +76,10 @@ public class ThrownVehicleClayBall extends ThrowableItemProjectile {
 
     protected void onVanish(){
         if (!this.level.isClientSide) {
-            this.playSound(SoundEvents.WOOD_BREAK, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-            this.spawnAtLocation(ItemRegistry.VEHICLE_CLAY_BALL.get());
+            if (!this.staticRide){
+                this.playSound(SoundEvents.WOOD_BREAK, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
+                this.spawnAtLocation(ItemRegistry.VEHICLE_CLAY_BALL.get());
+            }
             this.discard();
         }
     }
