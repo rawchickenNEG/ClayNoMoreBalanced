@@ -35,11 +35,11 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CLAY_ELYTRA = ITEMS.register("clay_elytra", () -> new Item(defaultBuilder().craftRemainder(Items.ELYTRA).stacksTo(1)));
     public static final RegistryObject<Item> CLAY_ROD = ITEMS.register("clay_rod", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CLAYMORE = ITEMS.register("claymore", () -> new Claymore(ItemTier.Clay, 0, -2.4F, defaultBuilder().rarity(Rarity.EPIC).fireResistant()));
-    public static final RegistryObject<Item> CLAY_HOE = ITEMS.register("clay_hoe", () -> new HoeItem(ItemTier.ClayIngot, -10, -1.0F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
-    public static final RegistryObject<Item> CLAY_AXE = ITEMS.register("clay_axe", () -> new AxeItem(ItemTier.ClayIngot, 6.0F, -3.1F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
-    public static final RegistryObject<Item> CLAY_PICKAXE = ITEMS.register("clay_pickaxe", () -> new PickaxeItem(ItemTier.ClayIngot, 1, -2.8F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
-    public static final RegistryObject<Item> CLAY_SWORD = ITEMS.register("clay_sword", () -> new SwordItem(ItemTier.ClayIngot, 3, -2.4F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
-    public static final RegistryObject<Item> CLAY_SHOVEL = ITEMS.register("clay_shovel", () -> new ShovelItem(ItemTier.ClayIngot, 1.5F, -1F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
+    public static final RegistryObject<Item> CLAY_HOE = ITEMS.register("clay_hoe", () -> new HoeItem(ItemTier.ClayIngot, -10, 0, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
+    public static final RegistryObject<Item> CLAY_AXE = ITEMS.register("clay_axe", () -> new AxeItem(ItemTier.ClayIngot, 5, -3.1F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
+    public static final RegistryObject<Item> CLAY_PICKAXE = ITEMS.register("clay_pickaxe", () -> new PickaxeItem(ItemTier.ClayIngot, -1, -2.8F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
+    public static final RegistryObject<Item> CLAY_SWORD = ITEMS.register("clay_sword", () -> new SwordItem(ItemTier.ClayIngot, 2, -2.4F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
+    public static final RegistryObject<Item> CLAY_SHOVEL = ITEMS.register("clay_shovel", () -> new ShovelItem(ItemTier.ClayIngot, 0, -1F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
     public static final RegistryObject<Item> CLAY_BOW = ITEMS.register("clay_bow", () -> new ClayBowItem(defaultBuilder().rarity(Rarity.RARE).stacksTo(1).fireResistant()));
     public static final RegistryObject<Item> CLAY_WAND = ITEMS.register("clay_wand", () -> new ClayWand(defaultBuilder().rarity(Rarity.RARE).stacksTo(1).fireResistant()));
     public static final RegistryObject<Item> TORCH_WAND = ITEMS.register("torch_wand", () -> new TorchWand(defaultBuilder().rarity(Rarity.RARE).stacksTo(1)));
