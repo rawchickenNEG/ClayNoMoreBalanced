@@ -34,6 +34,7 @@ public class Config {
     public final ForgeConfigSpec.ConfigValue<Integer> DRY;
     public final ForgeConfigSpec.ConfigValue<Integer> HONEY;
     public final ForgeConfigSpec.ConfigValue<Integer> CHORUS;
+    public final ForgeConfigSpec.ConfigValue<Integer> EGG;
     public final ForgeConfigSpec.ConfigValue<Integer> RECALL;
     public final ForgeConfigSpec.ConfigValue<Integer> VEX;
     public final ForgeConfigSpec.ConfigValue<Integer> VOID;
@@ -139,6 +140,9 @@ public class Config {
         builder.pop();
         builder.push("Chorus Clay Ball");
         CHORUS = builder.defineInRange("hurt damage", 8, 0, Integer.MAX_VALUE);
+        builder.pop();
+        builder.push("Egg Clay Ball");
+        EGG = builder.defineInRange("hurt damage", 1, 0, Integer.MAX_VALUE);
         builder.pop();
         builder.push("Recall Clay Ball");
         RECALL = builder.defineInRange("hurt damage", 8, 0, Integer.MAX_VALUE);
