@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#@#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "create:rose_quartz"
+    },
+    "@": {
+      "item": "minecraft:clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:rose_quartz_clay_ball"
+  }
+}

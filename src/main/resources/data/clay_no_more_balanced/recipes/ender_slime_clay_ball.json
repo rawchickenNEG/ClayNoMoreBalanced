@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#@#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "tconstruct:ender_slime_crystal"
+    },
+    "@": {
+      "item": "minecraft:clay_ball"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:ender_slime_clay_ball"
+  }
+}
