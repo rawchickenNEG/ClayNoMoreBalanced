@@ -47,6 +47,7 @@ public class EntityTypeRegistry {
     public static final RegistryObject<EntityType<ThrownAdvancedLightningClayBall>> THROWN_ADVANCED_LIGHTNING_CLAY_BALL = throwableItem("advanced_lightning_clay_ball", ThrownAdvancedLightningClayBall::new);
     public static final RegistryObject<EntityType<ThrownBeehiveClayBall>> THROWN_BEEHIVE_CLAY_BALL = throwableItem("beehive_clay_ball", ThrownBeehiveClayBall::new);
     public static final RegistryObject<EntityType<ThrownBasketClayBall>> THROWN_BASKET_CLAY_BALL = throwableItem("basket_clay_ball", ThrownBasketClayBall::new);
+    public static final RegistryObject<EntityType<ThrownEggClayBall>> THROWN_EGG_CLAY_BALL = throwableItem("egg_clay_ball", ThrownEggClayBall::new);
     public static final RegistryObject<EntityType<ThrownGoldenClayBall>> THROWN_GOLDEN_CLAY_BALL = throwableItem("golden_clay_ball", ThrownGoldenClayBall::new);
     public static final RegistryObject<EntityType<ThrownGildedClayBall>> THROWN_GILDED_CLAY_BALL = throwableItem("gilded_clay_ball", ThrownGildedClayBall::new);
     public static final RegistryObject<EntityType<ThrownPrismarineClayBall>> THROWN_PRISMARINE_CLAY_BALL = throwableItem("prismarine_clay_ball", ThrownPrismarineClayBall::new);
