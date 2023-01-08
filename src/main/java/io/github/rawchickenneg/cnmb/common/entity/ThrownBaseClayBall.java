@@ -1,9 +1,11 @@
 package io.github.rawchickenneg.cnmb.common.entity;
 
+import io.github.rawchickenneg.cnmb.common.registry.BlockRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
@@ -13,8 +15,10 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -54,6 +58,12 @@ public class ThrownBaseClayBall extends ThrowableItemProjectile {
                     Block.dropResources(this.level.getBlockState(pos), this.level, pos, null);
                     this.level.levelEvent(2001, pos,
                             Block.getId(this.level.getBlockState(pos)));
+                    if(this.level.getBlockState(pos).is(BlockRegistry.CLAY_ROLL_BLOCK.get()) || this.level.getBlockState(pos).is(BlockRegistry.CLAY_BLOCK.get())){
+                    this.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+                    ItemStack itemStack = ItemRegistry.BASE_CLAY_BALL.get().getDefaultInstance();
+                    itemStack.setHoverName(new TranslatableComponent("item.clay_no_more_balanced.base_clay_ball.tip2"));
+                    this.spawnAtLocation(itemStack);
+                    }
             }else{
                 this.spawnAtLocation(ItemRegistry.BASE_CLAY_BALL.get());
             }
