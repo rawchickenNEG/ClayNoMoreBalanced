@@ -5,6 +5,7 @@ import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -62,7 +63,7 @@ public class ThrownTorch extends ThrowableItemProjectile {
         super.onHitBlock(p_37384_);
         if (!this.level.isClientSide) {
             BlockPos blockpos = p_37384_.getBlockPos().relative(p_37384_.getDirection());
-            if (this.level.isEmptyBlock(blockpos) && p_37384_.getDirection() != Direction.DOWN) {
+            if (this.level.isEmptyBlock(blockpos) || this.level.getBlockState(blockpos).is(BlockTags.REPLACEABLE_PLANTS) && p_37384_.getDirection() != Direction.DOWN) {
                 if (p_37384_.getDirection() == Direction.UP){
                     this.level.setBlockAndUpdate(blockpos, Blocks.TORCH.defaultBlockState());
                 } else if (p_37384_.getDirection() == Direction.NORTH) {
