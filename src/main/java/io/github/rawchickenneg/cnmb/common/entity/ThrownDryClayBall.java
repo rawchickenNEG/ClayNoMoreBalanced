@@ -61,17 +61,17 @@ public class ThrownDryClayBall extends ThrowableItemProjectile {
         double z = p_37488_.getBlockPos().getZ();
         BlockPos pos = new BlockPos(x, y, z);
         if (!this.level.isClientSide) {
-            if (!this.level.getBlockState(new BlockPos(x, y, z)).is(BlockTags.LEAVES)){
-                if (this.level.getBlockState(new BlockPos(x, y, z)).is(BlockTags.DIRT)){
-                    if (this.level.getBlockState(new BlockPos(x, y, z)).getBlock() == Blocks.DIRT){
+            if (!this.level.getBlockState(pos).is(BlockTags.LEAVES)){
+                if (this.level.getBlockState(pos).is(BlockTags.DIRT)){
+                    if (this.level.getBlockState(pos).getBlock() == Blocks.DIRT){
                         this.playSound(SoundEvents.GRAVEL_BREAK , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-                        this.level.setBlock(new BlockPos(x, y, z), Blocks.SAND.defaultBlockState(), 3);
-                        this.level.levelEvent(2001, new BlockPos(x, y, z),
+                        this.level.setBlock(pos, Blocks.SAND.defaultBlockState(), 3);
+                        this.level.levelEvent(2001, pos,
                                 Block.getId(Blocks.SAND.defaultBlockState()));
                     } else {
                         this.playSound(SoundEvents.GRASS_BREAK, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-                        this.level.setBlock(new BlockPos(x, y, z), Blocks.DIRT.defaultBlockState(), 3);
-                        this.level.levelEvent(2001, new BlockPos(x, y, z),
+                        this.level.setBlock(pos, Blocks.DIRT.defaultBlockState(), 3);
+                        this.level.levelEvent(2001, pos,
                                 Block.getId(Blocks.DIRT.defaultBlockState()));
                     }
                 }
@@ -80,9 +80,9 @@ public class ThrownDryClayBall extends ThrowableItemProjectile {
                 this.discard();
             } else {
                 this.playSound(SoundEvents.GRASS_BREAK , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-                this.level.setBlock(new BlockPos(x, y, z), Blocks.AIR.defaultBlockState(), 3);
-                Block.dropResources(Blocks.DEAD_BUSH.defaultBlockState(), this.level, new BlockPos(x, y, z), null);
-                this.level.levelEvent(2001, new BlockPos(x, y, z), Block.getId(Blocks.DEAD_BUSH.defaultBlockState()));
+                this.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+                Block.dropResources(Blocks.DEAD_BUSH.defaultBlockState(), this.level, pos, null);
+                this.level.levelEvent(2001, pos, Block.getId(Blocks.DEAD_BUSH.defaultBlockState()));
             }
         }
     }
