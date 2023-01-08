@@ -7,13 +7,13 @@
   ],
   "key": {
     "#": {
-      "item": "minecraft:snowball"
+      "item": "minecraft:egg"
     },
     "$": {
       "item": "minecraft:clay_ball"
     }
   },
   "result": {
-    "item": "clay_no_more_balanced:snow_clay_ball"
+    "item": "clay_no_more_balanced:egg_clay_ball"
   }
 }
