@@ -152,6 +152,7 @@ public class ThrownFreezingClayBall extends ThrowableItemProjectile {
                 BlockPos pos = new BlockPos(entity.xOld, entity.getY(), entity.zOld);
                 this.level.setBlockAndUpdate(pos, Blocks.ICE.defaultBlockState());
                 this.level.setBlockAndUpdate(pos.above(), Blocks.ICE.defaultBlockState());
+                entity.setTicksFrozen(600);
             }
         }
     }
