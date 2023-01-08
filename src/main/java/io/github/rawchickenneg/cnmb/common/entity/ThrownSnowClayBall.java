@@ -21,7 +21,6 @@ public class ThrownSnowClayBall extends ThrowableItemProjectile {
         super(entityType, level);
     }
 
-
     public ThrownSnowClayBall(Level level, LivingEntity entity) {
         super(EntityTypeRegistry.THROWN_SNOW_CLAY_BALL.get(), entity, level);
     }
@@ -30,6 +29,11 @@ public class ThrownSnowClayBall extends ThrowableItemProjectile {
         super(EntityTypeRegistry.THROWN_SNOW_CLAY_BALL.get(), x, y, z, level);
     }
 
+    public boolean disableDrop;
+
+    public void setNoDrop(boolean disableDrop) {
+        this.disableDrop = disableDrop;
+    }
     @Override
     protected Item getDefaultItem() {
         return ItemRegistry.SNOW_CLAY_BALL.get();
@@ -64,7 +68,9 @@ public class ThrownSnowClayBall extends ThrowableItemProjectile {
     protected void onHitBlock(BlockHitResult p_37384_) {
         super.onHitBlock(p_37384_);
         if (!this.level.isClientSide) {
-            this.spawnAtLocation(ItemRegistry.SNOW_CLAY_BALL.get());
+            if (!this.disableDrop){
+                this.spawnAtLocation(ItemRegistry.SNOW_CLAY_BALL.get());
+            }
             this.discard();
         }
     }
