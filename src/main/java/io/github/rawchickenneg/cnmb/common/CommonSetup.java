@@ -62,6 +62,13 @@ public class CommonSetup {
                 return new ThrownNetheriteIngot(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
+        DispenserBlock.registerBehavior(ItemRegistry.THROWABLE_FIRE_CHARGE.get(), new AbstractProjectileDispenseBehavior()
+        {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return new ThrownFireCharge(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+            }
+        });
         DispenserBlock.registerBehavior(ItemRegistry.ADVANCED_EXPLODE_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
@@ -76,6 +83,12 @@ public class CommonSetup {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
                 return new ThrownAmethystClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+            }
+        });
+        DispenserBlock.registerBehavior(ItemRegistry.ADVANCED_LIGHTNING_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return new ThrownAdvancedLightningClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
         DispenserBlock.registerBehavior(ItemRegistry.BASE_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
@@ -113,6 +126,13 @@ public class CommonSetup {
                 return new ThrownBurnClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
+        DispenserBlock.registerBehavior(ItemRegistry.CACTUS_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
+        {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return new ThrownCactusClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+            }
+        });
         DispenserBlock.registerBehavior(ItemRegistry.CHORUS_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
         {
             @Override
@@ -127,16 +147,27 @@ public class CommonSetup {
                 return new ThrownDryClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
-        DispenserBlock.registerBehavior(ItemRegistry.TRACKING_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
+        DispenserBlock.registerBehavior(ItemRegistry.EARTH_SLIME_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
-                return new ThrownTrackingClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                ThrownAmethystClayBall clayBall = new ThrownAmethystClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                clayBall.setType(2);
+                return clayBall;
             }
         });
-        DispenserBlock.registerBehavior(ItemRegistry.FREEZING_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
+        DispenserBlock.registerBehavior(ItemRegistry.EGG_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
+        {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
-                return new ThrownFreezingClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                return new ThrownEggClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+            }
+        });
+        DispenserBlock.registerBehavior(ItemRegistry.ENDER_SLIME_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                ThrownAmethystClayBall clayBall = new ThrownAmethystClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                clayBall.setType(5);
+                return clayBall;
             }
         });
         DispenserBlock.registerBehavior(ItemRegistry.DUPLICATE_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
@@ -155,13 +186,6 @@ public class CommonSetup {
                 return clayBall;
             }
         });
-        DispenserBlock.registerBehavior(ItemRegistry.THROWABLE_FIRE_CHARGE.get(), new AbstractProjectileDispenseBehavior()
-        {
-            @Override
-            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
-                return new ThrownFireCharge(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
-            }
-        });
         DispenserBlock.registerBehavior(ItemRegistry.FLINT_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
         {
             @Override
@@ -174,6 +198,12 @@ public class CommonSetup {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
                 return new ThrownFlowerClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+            }
+        });
+        DispenserBlock.registerBehavior(ItemRegistry.FREEZING_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return new ThrownFreezingClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
         DispenserBlock.registerBehavior(ItemRegistry.GILDED_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
@@ -204,6 +234,14 @@ public class CommonSetup {
                 return new ThrownGoldenClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
+        DispenserBlock.registerBehavior(ItemRegistry.ICHOR_SLIME_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                ThrownAmethystClayBall clayBall = new ThrownAmethystClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                clayBall.setType(4);
+                return clayBall;
+            }
+        });
         DispenserBlock.registerBehavior(ItemRegistry.LEAVES_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
         {
             @Override
@@ -224,10 +262,10 @@ public class CommonSetup {
                 return new ThrownLightingClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
-        DispenserBlock.registerBehavior(ItemRegistry.ADVANCED_LIGHTNING_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
+        DispenserBlock.registerBehavior(ItemRegistry.MINER_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
-                return new ThrownAdvancedLightningClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                return new ThrownMinerClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
         DispenserBlock.registerBehavior(ItemRegistry.OBSIDIAN_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
@@ -286,6 +324,35 @@ public class CommonSetup {
                 return new ThrownRecallClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
+        DispenserBlock.registerBehavior(ItemRegistry.ROSE_QUARTZ_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                ThrownAmethystClayBall clayBall = new ThrownAmethystClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                clayBall.setType(1);
+                return clayBall;
+            }
+        });
+        DispenserBlock.registerBehavior(ItemRegistry.SCLAME_EGG.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return new ThrownSclameEgg(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+            }
+        });
+        DispenserBlock.registerBehavior(ItemRegistry.SKY_SLIME_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                ThrownAmethystClayBall clayBall = new ThrownAmethystClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+                clayBall.setType(3);
+                return clayBall;
+            }
+        });
+        DispenserBlock.registerBehavior(ItemRegistry.SNOW_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
+        {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return new ThrownSnowClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+            }
+        });
         DispenserBlock.registerBehavior(ItemRegistry.SPONGE_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior()
         {
             @Override
@@ -305,6 +372,12 @@ public class CommonSetup {
             @Override
             protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
                 return new ThrownTNTClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
+            }
+        });
+        DispenserBlock.registerBehavior(ItemRegistry.TRACKING_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
+            @Override
+            protected Projectile getProjectile(Level pLevel, Position pPosition, ItemStack pStack) {
+                return new ThrownTrackingClayBall(pLevel, pPosition.x(), pPosition.y(), pPosition.z());
             }
         });
         DispenserBlock.registerBehavior(ItemRegistry.ULTIMATE_EXPLODE_CLAY_BALL.get(), new AbstractProjectileDispenseBehavior() {
