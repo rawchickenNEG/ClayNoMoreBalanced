@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#@#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "clay_no_more_balanced:ender_clay_ball"
+    },
+    "@": {
+      "item": "minecraft:end_stone"
+    }
+  },
+  "result": {
+    "item": "clay_no_more_balanced:end_clay_ball"
+  }
+}

@@ -64,8 +64,10 @@ public class ItemRegistry {
     public static final RegistryObject<Item> BASE_CLAY_BALL = ITEMS.register("base_clay_ball", () -> new BaseClayBall(defaultBuilder()));
     public static final RegistryObject<Item> EGG_CLAY_BALL = ITEMS.register("egg_clay_ball", () -> new EggClayBall(defaultBuilder()));
     public static final RegistryObject<Item> ENDER_CLAY_BALL = ITEMS.register("ender_clay_ball", () -> new EnderClayBall(defaultBuilder()));
+    public static final RegistryObject<Item> END_CLAY_BALL = ITEMS.register("end_clay_ball", () -> new EndClayBall(defaultBuilder()));
     public static final RegistryObject<Item> EXCHANGE_CLAY_BALL = ITEMS.register("exchange_clay_ball", () -> new ExchangeClayBall(defaultBuilder()));
     public static final RegistryObject<Item> VEHICLE_CLAY_BALL = ITEMS.register("vehicle_clay_ball", () -> new VehicleClayBall(defaultBuilder()));
+    public static final RegistryObject<Item> BLAZE_RIDER_CLAY_BALL = ITEMS.register("blaze_rider_clay_ball", () -> new BlazeRiderClayBall(defaultBuilder()));
     public static final RegistryObject<Item> BURN_CLAY_BALL = ITEMS.register("burn_clay_ball", () -> new BurnClayBallItem(defaultBuilder()));
     public static final RegistryObject<Item> CACTUS_CLAY_BALL = ITEMS.register("cactus_clay_ball", () -> new CactusClayBallItem(defaultBuilder()));
     public static final RegistryObject<Item> SNOW_CLAY_BALL = ITEMS.register("snow_clay_ball", () -> new SnowClayBall(defaultBuilder()));
