@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "clay_no_more_balanced:phantom_clay_ball"
-    },
-    {
       "item": "clay_no_more_balanced:advanced_lightning_clay_ball"
     },
     {
       "item": "clay_no_more_balanced:obsidian_clay_ball"
     },
     {
-      "item": "minecraft:diamond"
+      "item": "clay_no_more_balanced:obsidian_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:obsidian_clay_ball"
     }
   ],
   "result": {
