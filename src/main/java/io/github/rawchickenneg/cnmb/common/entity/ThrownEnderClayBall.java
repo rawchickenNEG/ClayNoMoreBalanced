@@ -3,6 +3,7 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -21,6 +22,8 @@ import javax.annotation.Nullable;
 
 public class ThrownEnderClayBall extends ThrowableItemProjectile {
 
+    private int clayType = 0;
+
     public ThrownEnderClayBall(EntityType<? extends ThrownEnderClayBall> entityType, Level level) {
         super(entityType, level);
     }
@@ -38,6 +41,21 @@ public class ThrownEnderClayBall extends ThrowableItemProjectile {
         return ItemRegistry.ENDER_CLAY_BALL.get();
     }
 
+    public void setType(int clayType) {
+        this.clayType = clayType;
+    }
+
+    public void tick() {
+        super.tick();
+        if (this.clayType == 1) {
+            this.level.addParticle(ParticleTypes.PORTAL, this.getRandomX(0.6D), this.getRandomY(), this.getRandomZ(0.6D), 0.0D, 0.0D, 0.0D);
+            if (Math.abs(this.getDeltaMovement().x + this.getDeltaMovement().y + this.getDeltaMovement().z)< 0.01){
+                this.playSound(SoundEvents.ENDER_EYE_DEATH, 1.0F, 1.0F);
+                this.onVanish();
+            }
+        }
+    }
+
     protected void onHitEntity(EntityHitResult p_37486_) {
         super.onHitEntity(p_37486_);
         p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.ENDER.get());
@@ -51,11 +69,19 @@ public class ThrownEnderClayBall extends ThrowableItemProjectile {
                 entity.teleportTo(this.getX(), this.getY(), this.getZ());
                 entity.resetFallDistance();
             }
-            this.spawnAtLocation(ItemRegistry.ENDER_CLAY_BALL.get()).setPickUpDelay(0);
             this.playSound(SoundEvents.ENDERMAN_TELEPORT, 1.0F, 1.0F);
-            this.discard();
+            this.onVanish();
         }
 
+    }
+
+    protected void onVanish(){
+        if (this.clayType == 1) {
+            this.spawnAtLocation(ItemRegistry.END_CLAY_BALL.get()).setPickUpDelay(0);
+        } else {
+            this.spawnAtLocation(ItemRegistry.ENDER_CLAY_BALL.get()).setPickUpDelay(0);
+        }
+        this.discard();
     }
 
     @Nullable

@@ -50,6 +50,7 @@ public class ThrownDuplicateClayBall extends ThrowableItemProjectile {
     protected void onHitEntity(EntityHitResult p_37486_) {
         super.onHitEntity(p_37486_);
         p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), 0.0F);
+        LivingEntity livingEntity = (LivingEntity) p_37486_.getEntity();
     }
 
     protected void onHitBlock(BlockHitResult p_37488_){

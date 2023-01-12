@@ -34,6 +34,7 @@ public class VehicleClayBall extends Item {
         if (!level.isClientSide) {
             ThrownVehicleClayBall clayball = new ThrownVehicleClayBall(level, player);
             clayball.setItem(heldStack);
+            clayball.setType(0);
             clayball.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
             level.addFreshEntity(clayball);
         }
