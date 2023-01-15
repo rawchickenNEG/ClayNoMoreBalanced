@@ -6,10 +6,10 @@
     " # "
   ],
   "key": {
-    "#": {
+    "@": {
       "item": "clay_no_more_balanced:ender_clay_ball"
     },
-    "@": {
+    "#": {
       "item": "minecraft:end_stone"
     }
   },
