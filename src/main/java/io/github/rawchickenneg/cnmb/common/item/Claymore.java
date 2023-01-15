@@ -62,6 +62,10 @@ public class Claymore extends SwordItem {
     public boolean isFoil(ItemStack p_43138_) {
         return true;
     }
+    @Override
+    public boolean isEnchantable(ItemStack pStack) {
+        return this.getItemStackLimit(pStack) == 1;
+    }
 
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn)

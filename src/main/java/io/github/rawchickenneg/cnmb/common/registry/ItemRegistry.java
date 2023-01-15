@@ -4,6 +4,7 @@ import io.github.rawchickenneg.cnmb.ClayNoMoreBalanced;
 import io.github.rawchickenneg.cnmb.common.item.*;
 import io.github.rawchickenneg.cnmb.common.item.clayballs.*;
 import io.github.rawchickenneg.cnmb.common.item.throwableitems.*;
+import io.github.rawchickenneg.cnmb.common.item.tools.base.*;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -35,11 +36,11 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CLAY_ELYTRA = ITEMS.register("clay_elytra", () -> new Item(defaultBuilder().craftRemainder(Items.ELYTRA).stacksTo(1)));
     public static final RegistryObject<Item> CLAY_ROD = ITEMS.register("clay_rod", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CLAYMORE = ITEMS.register("claymore", () -> new Claymore(ItemTier.Clay, 0, -2.4F, defaultBuilder().rarity(Rarity.EPIC).fireResistant()));
-    public static final RegistryObject<Item> CLAY_HOE = ITEMS.register("clay_hoe", () -> new HoeItem(ItemTier.ClayIngot, -10, 0, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
-    public static final RegistryObject<Item> CLAY_AXE = ITEMS.register("clay_axe", () -> new AxeItem(ItemTier.ClayIngot, 5, -3.1F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
-    public static final RegistryObject<Item> CLAY_PICKAXE = ITEMS.register("clay_pickaxe", () -> new PickaxeItem(ItemTier.ClayIngot, -1, -2.8F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
-    public static final RegistryObject<Item> CLAY_SWORD = ITEMS.register("clay_sword", () -> new SwordItem(ItemTier.ClayIngot, 2, -2.4F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
-    public static final RegistryObject<Item> CLAY_SHOVEL = ITEMS.register("clay_shovel", () -> new ShovelItem(ItemTier.ClayIngot, 0, -1F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
+    public static final RegistryObject<Item> CLAY_HOE = ITEMS.register("clay_hoe", () -> new ClayHoe(ItemTier.ClayIngot, -10, 0, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
+    public static final RegistryObject<Item> CLAY_AXE = ITEMS.register("clay_axe", () -> new ClayAxe(ItemTier.ClayIngot, 5, -3.1F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
+    public static final RegistryObject<Item> CLAY_PICKAXE = ITEMS.register("clay_pickaxe", () -> new ClayPickaxe(ItemTier.ClayIngot, -1, -2.8F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
+    public static final RegistryObject<Item> CLAY_SWORD = ITEMS.register("clay_sword", () -> new ClaySword(ItemTier.ClayIngot, 2, -2.4F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
+    public static final RegistryObject<Item> CLAY_SHOVEL = ITEMS.register("clay_shovel", () -> new ClayShovel(ItemTier.ClayIngot, 0, -1F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
     public static final RegistryObject<Item> CLAY_BOW = ITEMS.register("clay_bow", () -> new ClayBowItem(defaultBuilder().rarity(Rarity.RARE).stacksTo(1).fireResistant()));
     public static final RegistryObject<Item> CLAY_WAND = ITEMS.register("clay_wand", () -> new ClayWand(defaultBuilder().rarity(Rarity.RARE).stacksTo(1).fireResistant()));
     public static final RegistryObject<Item> TORCH_WAND = ITEMS.register("torch_wand", () -> new TorchWand(defaultBuilder().rarity(Rarity.RARE).stacksTo(1)));
@@ -139,6 +140,7 @@ public class ItemRegistry {
             .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 1), 1.0F)
             .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600, 0), 1.0F).build())));
     public static final RegistryObject<Item> SCLAME_APPLE = ITEMS.register("sclame_apple", () -> new Item(defaultBuilder().food((new FoodProperties.Builder()).nutrition(8).saturationMod(1.2f).build())));
+    public static final RegistryObject<Item> SCLAME_CHORUS_FRUIT = ITEMS.register("sclame_chorus_fruit", () -> new SclameChorusFruit(defaultBuilder().food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.8f).alwaysEat().build())));
     public static final RegistryObject<Item> SCLAME_BREAD = ITEMS.register("sclame_bread", () -> new Item(defaultBuilder().food((new FoodProperties.Builder()).nutrition(10).saturationMod(1.1f).build())));
     public static final RegistryObject<Item> SCLAME_PIE = ITEMS.register("sclame_pie", () -> new Item(defaultBuilder().food((new FoodProperties.Builder()).nutrition(16).saturationMod(1.25f).build())));
     public static final RegistryObject<Item> SCLAME_CAKE = ITEMS.register("sclame_cake", () -> new ItemNameBlockItem(BlockRegistry.SCLAME_CAKE_BLOCK.get(), defaultBuilder()));

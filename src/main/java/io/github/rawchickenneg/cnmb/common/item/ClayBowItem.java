@@ -3,8 +3,6 @@ package io.github.rawchickenneg.cnmb.common.item;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -13,13 +11,12 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 
-import java.util.function.Predicate;
-
-public class ClayBowItem extends ProjectileWeaponItem implements Vanishable {
+public class ClayBowItem extends BowItem {
     public ClayBowItem(Item.Properties p_40660_) {
         super(p_40660_);
     }
 
+    @Override
     public void releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft) {
         if (pEntityLiving instanceof Player) {
             Player player = (Player)pEntityLiving;
@@ -96,38 +93,8 @@ public class ClayBowItem extends ProjectileWeaponItem implements Vanishable {
         return f;
     }
 
-    public int getUseDuration(ItemStack pStack) {
-        return 72000;
-    }
-
-    public UseAnim getUseAnimation(ItemStack pStack) {
-        return UseAnim.BOW;
-    }
-
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
-        ItemStack itemstack = pPlayer.getItemInHand(pHand);
-        boolean flag = !pPlayer.getProjectile(itemstack).isEmpty();
-
-        InteractionResultHolder<ItemStack> ret = net.minecraftforge.event.ForgeEventFactory.onArrowNock(itemstack, pLevel, pPlayer, pHand, flag);
-        if (ret != null) return ret;
-
-        if (!pPlayer.getAbilities().instabuild && !flag) {
-            return InteractionResultHolder.fail(itemstack);
-        } else {
-            pPlayer.startUsingItem(pHand);
-            return InteractionResultHolder.consume(itemstack);
-        }
-    }
-
-    public Predicate<ItemStack> getAllSupportedProjectiles() {
-        return ARROW_ONLY;
-    }
-
-    public AbstractArrow customArrow(AbstractArrow arrow) {
-        return arrow;
-    }
-
-    public int getDefaultProjectileRange() {
-        return 15;
+    @Override
+    public boolean isEnchantable(ItemStack pStack) {
+        return this.getItemStackLimit(pStack) == 1;
     }
 }
