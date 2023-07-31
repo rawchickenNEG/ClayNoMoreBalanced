@@ -41,18 +41,21 @@ public class ThrownPillagerClayBall extends ThrowableItemProjectile {
 
     protected void onHitEntity(EntityHitResult p_37486_) {
         super.onHitEntity(p_37486_);
-            LivingEntity livingEntity = (LivingEntity) p_37486_.getEntity();
-            for(EquipmentSlot equipmentslot : EquipmentSlot.values()) {
-                ItemStack itemstack = livingEntity.getItemBySlot(equipmentslot);
-                if (!itemstack.isEmpty()) {
-                    if (EnchantmentHelper.hasBindingCurse(itemstack)) {
-                        livingEntity.getSlot(equipmentslot.getIndex() + 300).set(itemstack);
-                    } else {
-                        this.spawnAtLocation(itemstack);
+        if (p_37486_.getEntity() instanceof LivingEntity livingEntity){
+            if (!(livingEntity instanceof Player) || Config.CONFIG.PILLAGERF.get()){
+                for(EquipmentSlot equipmentslot : EquipmentSlot.values()) {
+                    ItemStack itemstack = livingEntity.getItemBySlot(equipmentslot);
+                    if (!itemstack.isEmpty()) {
+                        if (EnchantmentHelper.hasBindingCurse(itemstack)) {
+                            livingEntity.getSlot(equipmentslot.getIndex() + 300).set(itemstack);
+                        } else {
+                            this.spawnAtLocation(itemstack);
+                        }
                     }
+                    livingEntity.setItemSlot(equipmentslot, ItemStack.EMPTY);
                 }
-                livingEntity.setItemSlot(equipmentslot, ItemStack.EMPTY);
             }
+        }
         Entity thrower = this.getOwner() instanceof Player player ? player : null;
         p_37486_.getEntity().hurt(DamageSource.playerAttack((Player) thrower), Config.CONFIG.PILLAGER.get());
     }

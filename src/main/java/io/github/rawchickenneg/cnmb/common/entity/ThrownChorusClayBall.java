@@ -44,20 +44,20 @@ public class ThrownChorusClayBall extends ThrowableItemProjectile {
     protected void onHitEntity(EntityHitResult p_37486_) {
         super.onHitEntity(p_37486_);
         if (!this.level.isClientSide) {
-            LivingEntity p_40714_ = (LivingEntity) p_37486_.getEntity();
+            if (p_37486_.getEntity() instanceof LivingEntity p_40714_){
+                for(int i = 0; i < 16; ++i) {
+                    double d3 = p_40714_.getX() + (p_40714_.getRandom().nextDouble() - 0.5D) * 32.0D;
+                    double d4 = Mth.clamp(p_40714_.getY() + (double)(p_40714_.getRandom().nextInt(16) - 8), this.level.getMinBuildHeight(), (this.level.getMinBuildHeight() + ((ServerLevel)this.level).getLogicalHeight() - 1));
+                    double d5 = p_40714_.getZ() + (p_40714_.getRandom().nextDouble() - 0.5D) * 32.0D;
+                    if (p_40714_.isPassenger()) {
+                        p_40714_.stopRiding();
+                    }
 
-            for(int i = 0; i < 16; ++i) {
-                double d3 = p_40714_.getX() + (p_40714_.getRandom().nextDouble() - 0.5D) * 32.0D;
-                double d4 = Mth.clamp(p_40714_.getY() + (double)(p_40714_.getRandom().nextInt(16) - 8), this.level.getMinBuildHeight(), (this.level.getMinBuildHeight() + ((ServerLevel)this.level).getLogicalHeight() - 1));
-                double d5 = p_40714_.getZ() + (p_40714_.getRandom().nextDouble() - 0.5D) * 32.0D;
-                if (p_40714_.isPassenger()) {
-                    p_40714_.stopRiding();
-                }
-
-                net.minecraftforge.event.entity.EntityTeleportEvent.ChorusFruit event = net.minecraftforge.event.ForgeEventFactory.onChorusFruitTeleport(p_40714_, d3, d4, d5);
-                if (p_40714_.randomTeleport(event.getTargetX(), event.getTargetY(), event.getTargetZ(), true)) {
-                    this.playSound(SoundEvents.CHORUS_FRUIT_TELEPORT, 1.0F, 1.0F);
-                    break;
+                    net.minecraftforge.event.entity.EntityTeleportEvent.ChorusFruit event = net.minecraftforge.event.ForgeEventFactory.onChorusFruitTeleport(p_40714_, d3, d4, d5);
+                    if (p_40714_.randomTeleport(event.getTargetX(), event.getTargetY(), event.getTargetZ(), true)) {
+                        this.playSound(SoundEvents.CHORUS_FRUIT_TELEPORT, 1.0F, 1.0F);
+                        break;
+                    }
                 }
             }
             p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.CHORUS.get());
