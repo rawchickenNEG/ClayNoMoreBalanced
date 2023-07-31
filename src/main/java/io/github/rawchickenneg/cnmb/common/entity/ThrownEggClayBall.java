@@ -3,9 +3,7 @@ package io.github.rawchickenneg.cnmb.common.entity;
 import io.github.rawchickenneg.cnmb.common.registry.EntityTypeRegistry;
 import io.github.rawchickenneg.cnmb.common.registry.ItemRegistry;
 import io.github.rawchickenneg.cnmb.config.Config;
-import net.minecraft.core.Registry;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
@@ -16,9 +14,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.network.NetworkHooks;
-
-import java.util.Objects;
 
 public class ThrownEggClayBall extends ThrowableItemProjectile {
 
@@ -42,9 +39,9 @@ public class ThrownEggClayBall extends ThrowableItemProjectile {
     protected void onHitEntity(EntityHitResult p_37486_) {
         super.onHitEntity(p_37486_);
         if (p_37486_.getEntity() instanceof LivingEntity livingEntity) {
-            String name = Objects.requireNonNull(livingEntity.getType().getRegistryName()).toString();
-            if (Registry.ITEM.get(new ResourceLocation(name + "_spawn_egg")) != ItemStack.EMPTY.getItem() && livingEntity.getHealth() <= 10.0F){
-                this.spawnAtLocation(Registry.ITEM.get(new ResourceLocation(name + "_spawn_egg")));
+            ItemStack egg = new ItemStack(ForgeSpawnEggItem.fromEntityType(livingEntity.getType()));
+            if (egg.getItem() != ItemStack.EMPTY.getItem() && livingEntity.getHealth() <= 10.0F){
+                this.spawnAtLocation(egg);
                 Level pLevel = this.getLevel();
                 pLevel.levelEvent(2009, livingEntity.getOnPos(), 0);
                 this.playSound(SoundEvents.PUFFER_FISH_BLOW_UP , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
