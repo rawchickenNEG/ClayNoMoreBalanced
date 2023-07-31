@@ -52,19 +52,21 @@ public class ThrownClayBall extends ThrowableItemProjectile {
             for(int i = 0; i < 8; ++i) {
                 this.level.addParticle(new ItemParticleOption(ParticleTypes.ITEM, this.getItem()), this.getX(), this.getY(), this.getZ(), ((double)this.random.nextFloat() - 0.5D) * d0, ((double)this.random.nextFloat() - 0.5D) * d0, ((double)this.random.nextFloat() - 0.5D) * d0);
             }
+        }
+    }
 
-            double r0 = 2.0D;
-            double n0 = 32.0D;
-            for(int i = 0; i < n0; ++i) {
-                double sin = r0 * Math.sin((0.5 * i / n0) * 180D * Math.PI);
-                double cos = Math.cos((0.5 * i / n0) * 180D * Math.PI);
-                if (i % 2 == 0){
-                    this.level.addParticle(ParticleTypes.DRIPPING_WATER, this.getX() + sin, this.getY(), this.getZ() + r0 * cos, 0, 0, 0);
-                }else {
-                    this.level.addParticle(ParticleTypes.DRIPPING_LAVA, this.getX() + sin, this.getY(), this.getZ() + r0 * cos, 0, 0, 0);
-                }
-
+    public void spawnParticle(){
+        double r0 = 2.0D;
+        double n0 = 32.0D;
+        for(int i = 0; i < n0; ++i) {
+            double sin = r0 * Math.sin((0.5 * i / n0) * 180D * Math.PI);
+            double cos = Math.cos((0.5 * i / n0) * 180D * Math.PI);
+            if (i % 2 == 0){
+                this.level.addParticle(ParticleTypes.DRIPPING_WATER, this.getX() + sin, this.getY(), this.getZ() + r0 * cos, 0, 0, 0);
+            }else {
+                this.level.addParticle(ParticleTypes.DRIPPING_LAVA, this.getX() + sin, this.getY(), this.getZ() + r0 * cos, 0, 0, 0);
             }
+
         }
     }
 
@@ -82,24 +84,30 @@ public class ThrownClayBall extends ThrowableItemProjectile {
             }else if (axolotl.getVariant() == Axolotl.Variant.CYAN){
                 this.spawnAtLocation(ItemRegistry.AXOLOTL_CLAY_BALL_CYAN.get());
             }
+            this.spawnParticle();
             p_37486_.getEntity().discard();
         } else if (p_37486_.getEntity() instanceof Rabbit rabbit){
             rabbit.setRabbitType(99);
+            this.spawnParticle();
         } else if (p_37486_.getEntity() instanceof Ravager ravager && ravager.getStunnedTick() != 0){
             this.playSound(SoundEvents.RAVAGER_ROAR, 1.0F, 1.0F);
             level.explode(this, this.getX(), this.getY(0.0625D), this.getZ(), 2.0F, Explosion.BlockInteraction.NONE);
             this.spawnAtLocation(ItemRegistry.RAVAGER_METAL_PARTS.get());
             this.spawnAtLocation(Items.SADDLE);
             ravager.discard();
+            this.spawnParticle();
         } else if (p_37486_.getEntity() instanceof Vex vex){
             this.spawnAtLocation(ItemRegistry.TINY_VEX_CLAY_BALL.get());
             vex.discard();
+            this.spawnParticle();
         } else if (p_37486_.getEntity() instanceof Bat bat){
             this.spawnAtLocation(ItemRegistry.BAT_CLAY_BALL.get());
             bat.discard();
+            this.spawnParticle();
         }else if (p_37486_.getEntity() instanceof Chicken chicken && chicken.isInLove() && chicken.isOnFire()){
             this.spawnAtLocation(ItemRegistry.CHICKEN_CHOP.get());
             chicken.discard();
+            this.spawnParticle();
         }else{
             p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.CLAY.get());
             this.spawnAtLocation(ItemRegistry.THROWABLE_CLAY_BALL.get());
