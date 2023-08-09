@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/stem_growth0",
+  "textures": {
+    "stem": "clay_no_more_balanced:block/sclame_melon_stem"
+  }
+}

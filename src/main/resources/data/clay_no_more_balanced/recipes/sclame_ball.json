@@ -8,13 +8,14 @@
       "tag": "forge:slimeballs"
     },
     {
-      "item": "minecraft:clay_ball"
+      "item": "clay_no_more_balanced:clay_dust"
     },
     {
       "item": "minecraft:milk_bucket"
     }
   ],
   "result": {
-    "item": "clay_no_more_balanced:sclame_ball"
+    "item": "clay_no_more_balanced:sclame_ball",
+    "count": 3
   }
 }

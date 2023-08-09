@@ -11,7 +11,7 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "minecraft:clay_ball"
+      "item": "clay_no_more_balanced:clay_dust"
     },
     {
       "tag": "forge:slimeballs"
@@ -23,7 +23,8 @@
   ],
   "results": [
     {
-      "item": "clay_no_more_balanced:sclame_ball"
+      "item": "clay_no_more_balanced:sclame_ball",
+      "count": 3
     }
   ]
 }

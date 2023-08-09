@@ -1,0 +1,1 @@
+{"type":"botanypots:crop","seed":{"item":"clay_no_more_balanced:sclame_seeds"},"categories":["dirt","farmland"],"growthTicks":1200,"display":{"block":"clay_no_more_balanced:sclame_melon"},"drops":[{"chance":1.00,"output":{"item":"clay_no_more_balanced:sclame_melon"}},{"chance":0.05,"output":{"item":"clay_no_more_balanced:sclame_seeds"}}]}
