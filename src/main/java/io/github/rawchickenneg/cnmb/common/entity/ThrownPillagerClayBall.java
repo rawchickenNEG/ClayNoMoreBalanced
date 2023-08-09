@@ -12,6 +12,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -41,6 +42,11 @@ public class ThrownPillagerClayBall extends ThrowableItemProjectile {
 
     protected void onHitEntity(EntityHitResult p_37486_) {
         super.onHitEntity(p_37486_);
+        Entity thrower = this.getOwner() instanceof Player player ? player : null;
+        if (p_37486_.getEntity() instanceof Boat && thrower != null){
+            thrower.hurt(DamageSource.MAGIC, ((Player) thrower).getHealth()/2);
+            this.spawnAtLocation(ItemRegistry.FRIED_RICE.get());
+        }
         if (p_37486_.getEntity() instanceof LivingEntity livingEntity){
             if (!(livingEntity instanceof Player) || Config.CONFIG.PILLAGERF.get()){
                 for(EquipmentSlot equipmentslot : EquipmentSlot.values()) {
@@ -56,7 +62,6 @@ public class ThrownPillagerClayBall extends ThrowableItemProjectile {
                 }
             }
         }
-        Entity thrower = this.getOwner() instanceof Player player ? player : null;
         p_37486_.getEntity().hurt(DamageSource.playerAttack((Player) thrower), Config.CONFIG.PILLAGER.get());
     }
 
