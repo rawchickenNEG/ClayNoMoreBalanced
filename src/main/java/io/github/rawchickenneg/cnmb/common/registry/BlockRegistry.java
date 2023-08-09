@@ -15,6 +15,14 @@ import static net.minecraft.world.level.block.Blocks.AMETHYST_CLUSTER;
 public class BlockRegistry {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ClayNoMoreBalanced.MOD_ID);
     public static final RegistryObject<Block> SCLAME_POTATO_BLOCK = BLOCKS.register("sclame_potato", () -> new SclamePotatoBlock(Block.Properties.copy(Blocks.WHEAT)));
+    public static final RegistryObject<Block> SCLAME_MELON_BLOCK = BLOCKS.register("sclame_melon", () -> new SclameMelonBlock(BlockBehaviour.Properties.of(Material.VEGETABLE, MaterialColor.COLOR_LIGHT_GREEN).strength(1.0F).sound(SoundType.WOOD)));
+    public static final RegistryObject<Block> SCLAME_MELON_STEM_BLOCK = BLOCKS.register("sclame_melon_stem", () -> new StemBlock((StemGrownBlock)SCLAME_MELON_BLOCK.get(), () -> {
+        return ItemRegistry.SCLAME_SEEDS.get().asItem();
+    }, BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.HARD_CROP)));
+    public static final RegistryObject<Block> ATTACHED_SCLAME_MELON_STEM_BLOCK = BLOCKS.register("attached_sclame_melon_stem", () -> new AttachedStemBlock((StemGrownBlock)SCLAME_MELON_BLOCK.get(), () -> {
+        return ItemRegistry.SCLAME_SEEDS.get().asItem();
+    }, BlockBehaviour.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.HARD_CROP)));
+    public static final RegistryObject<Block> SCLAME_BERRY_BUSH_BLOCK = BLOCKS.register("sclame_berry_bush", () -> new SclameBerryBushBlock(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH)));
     public static final RegistryObject<Block> SCLAME_CAKE_BLOCK = BLOCKS.register("sclame_cake", () -> new SclameCakeBlock(Block.Properties.copy(Blocks.CAKE)));
     public static final RegistryObject<Block> CLAY_BLOCK = BLOCKS.register("clay_block", () -> {
         return new CommonBlocks(Block.Properties.of(Material.METAL).strength(3.0F, 10F).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK));

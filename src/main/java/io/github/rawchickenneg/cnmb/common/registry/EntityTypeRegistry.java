@@ -25,6 +25,7 @@ public class EntityTypeRegistry {
     public static final RegistryObject<EntityType<ThrownClayBallFromBow>> THROWN_CLAY_BALL_FROM_BOW = throwableItem("clay_ball_from_bow", ThrownClayBallFromBow::new);
     public static final RegistryObject<EntityType<ThrownBurnClayBall>> THROWN_BURN_CLAY_BALL = throwableItem("burn_clay_ball", ThrownBurnClayBall::new);
     public static final RegistryObject<EntityType<ThrownBoneClayBall>> THROWN_BONE_CLAY_BALL = throwableItem("bone_clay_ball", ThrownBoneClayBall::new);
+    public static final RegistryObject<EntityType<ThrownLushClayBall>> THROWN_LUSH_CLAY_BALL = throwableItem("lush_clay_ball", ThrownLushClayBall::new);
     public static final RegistryObject<EntityType<ThrownCactusClayBall>> THROWN_CACTUS_CLAY_BALL = throwableItem("cactus_clay_ball", ThrownCactusClayBall::new);
     public static final RegistryObject<EntityType<ThrownSnowClayBall>> THROWN_SNOW_CLAY_BALL = throwableItem("snow_clay_ball", ThrownSnowClayBall::new);
     public static final RegistryObject<EntityType<ThrownTNTClayBall>> THROWN_TNT_CLAY_BALL = throwableItem("tnt_clay_ball", ThrownTNTClayBall::new);
@@ -48,6 +49,7 @@ public class EntityTypeRegistry {
     public static final RegistryObject<EntityType<ThrownBeehiveClayBall>> THROWN_BEEHIVE_CLAY_BALL = throwableItem("beehive_clay_ball", ThrownBeehiveClayBall::new);
     public static final RegistryObject<EntityType<ThrownBasketClayBall>> THROWN_BASKET_CLAY_BALL = throwableItem("basket_clay_ball", ThrownBasketClayBall::new);
     public static final RegistryObject<EntityType<ThrownEggClayBall>> THROWN_EGG_CLAY_BALL = throwableItem("egg_clay_ball", ThrownEggClayBall::new);
+    public static final RegistryObject<EntityType<ThrownCageClayBall>> THROWN_CAGE_CLAY_BALL = throwableItem("cage_clay_ball", ThrownCageClayBall::new);
     public static final RegistryObject<EntityType<ThrownGoldenClayBall>> THROWN_GOLDEN_CLAY_BALL = throwableItem("golden_clay_ball", ThrownGoldenClayBall::new);
     public static final RegistryObject<EntityType<ThrownGildedClayBall>> THROWN_GILDED_CLAY_BALL = throwableItem("gilded_clay_ball", ThrownGildedClayBall::new);
     public static final RegistryObject<EntityType<ThrownPrismarineClayBall>> THROWN_PRISMARINE_CLAY_BALL = throwableItem("prismarine_clay_ball", ThrownPrismarineClayBall::new);

@@ -44,6 +44,7 @@ public class Config {
     public final ForgeConfigSpec.ConfigValue<Integer> QUARTZ;
     public final ForgeConfigSpec.ConfigValue<Integer> OBSIDIAN;
     public final ForgeConfigSpec.ConfigValue<Integer> PILLAGER;
+    public final ForgeConfigSpec.ConfigValue<Boolean> PILLAGERF;
     public final ForgeConfigSpec.ConfigValue<Integer> RAVAGER;
     public final ForgeConfigSpec.ConfigValue<Integer> ENDER;
     public final ForgeConfigSpec.ConfigValue<Integer> EXCHANGE;
@@ -202,6 +203,11 @@ public class Config {
         builder.pop();
         builder.push("Ultimate Explode Clay Ball");
         ULTIMATE = builder.define("explode with terrain destruction", true);
+        builder.pop();
+        builder.pop();
+        builder.push("Projectile Function Settings");
+        builder.push("Pillager Clay Ball");
+        PILLAGERF = builder.define("Taking effects when hitting on player", true);
         builder.pop();
         builder.pop();
         builder.push("Other Settings");

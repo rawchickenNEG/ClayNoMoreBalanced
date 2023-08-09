@@ -38,6 +38,7 @@ public class ThrownBrick extends ThrowableItemProjectile {
     protected void onHitEntity(EntityHitResult p_37486_) {
         super.onHitEntity(p_37486_);
         p_37486_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.BRICK.get());
+
     }
 
     protected void onHit(HitResult p_37488_) {
@@ -47,6 +48,7 @@ public class ThrownBrick extends ThrowableItemProjectile {
             this.spawnAtLocation(ItemRegistry.THROWABLE_BRICK.get());
             this.discard();
         }
+
 
     }
 

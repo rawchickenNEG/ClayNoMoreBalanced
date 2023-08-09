@@ -1,6 +1,7 @@
 package io.github.rawchickenneg.cnmb.common.registry;
 
 import io.github.rawchickenneg.cnmb.ClayNoMoreBalanced;
+import io.github.rawchickenneg.cnmb.common.curios.*;
 import io.github.rawchickenneg.cnmb.common.item.*;
 import io.github.rawchickenneg.cnmb.common.item.clayballs.*;
 import io.github.rawchickenneg.cnmb.common.item.throwableitems.*;
@@ -20,6 +21,7 @@ public class ItemRegistry {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ClayNoMoreBalanced.MOD_ID);
     public static final RegistryObject<Item> CLAY_INGOT = ITEMS.register("clay_ingot", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CLAY_DUST = ITEMS.register("clay_dust", () -> new Item(defaultBuilder().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> CLAY_NUGGET = ITEMS.register("clay_nugget", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CLAY_SCRAP = ITEMS.register("clay_scrap", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CLAY_SHARD = ITEMS.register("clay_shard", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
@@ -31,6 +33,13 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CLAY_NO_MORE_BALANCED = ITEMS.register("clay_no_more_balanced", () -> new SimpleFoiledItem(defaultBuilder().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> INFINITE_CLAY_CATALYST = ITEMS.register("infinite_clay_catalyst", () -> new SimpleFoiledItem(defaultBuilder().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> CLAY_RING = ITEMS.register("clay_ring", () -> new ClayRing(defaultBuilder().stacksTo(1)));
+    public static final RegistryObject<Item> BRICK_RING = ITEMS.register("brick_ring", () -> new ClayRing(defaultBuilder().stacksTo(1)));
+    public static final RegistryObject<Item> ADVANCED_CLAY_RING = ITEMS.register("advanced_clay_ring", () -> new ClayRing(defaultBuilder().stacksTo(1)));
+    public static final RegistryObject<Item> RUNE_RING = ITEMS.register("rune_ring", () -> new RuneRing(defaultBuilder().stacksTo(1).rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> REPULSION_RING = ITEMS.register("repulsion_ring", () -> new RepulsionRing(defaultBuilder().stacksTo(1).rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> FLIGHT_RING = ITEMS.register("flight_ring", () -> new FlightRing(defaultBuilder().stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> GUARDIAN_RING = ITEMS.register("guardian_ring", () -> new GuardianRing(defaultBuilder().stacksTo(1).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> INVINCIBLE_RING = ITEMS.register("invincible_ring", () -> new InvincibleRing(defaultBuilder().stacksTo(1).rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> CLAY_TOTEM = ITEMS.register("clay_totem", () -> new Item(defaultBuilder()));
     public static final RegistryObject<Item> CLAY_TRIDENT = ITEMS.register("clay_trident", () -> new Item(defaultBuilder()));
     public static final RegistryObject<Item> CLAY_ELYTRA = ITEMS.register("clay_elytra", () -> new Item(defaultBuilder().craftRemainder(Items.ELYTRA).stacksTo(1)));
@@ -39,11 +48,15 @@ public class ItemRegistry {
     public static final RegistryObject<Item> CLAY_HOE = ITEMS.register("clay_hoe", () -> new ClayHoe(ItemTier.ClayIngot, -10, 0, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
     public static final RegistryObject<Item> CLAY_AXE = ITEMS.register("clay_axe", () -> new ClayAxe(ItemTier.ClayIngot, 5, -3.1F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
     public static final RegistryObject<Item> CLAY_PICKAXE = ITEMS.register("clay_pickaxe", () -> new ClayPickaxe(ItemTier.ClayIngot, -1, -2.8F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
+    //public static final RegistryObject<Item> ANNIHILATION_PICKAXE = ITEMS.register("annihilation_pickaxe", () -> new AnnihilationPickaxe(ItemTier.ClayIngot, -1, -2.8F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
+    //public static final RegistryObject<Item> PROBABILITY_PICKAXE = ITEMS.register("probability_pickaxe", () -> new ClayPickaxe(ItemTier.ClayIngot, -1, -2.8F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
     public static final RegistryObject<Item> CLAY_SWORD = ITEMS.register("clay_sword", () -> new ClaySword(ItemTier.ClayIngot, 2, -2.4F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
     public static final RegistryObject<Item> CLAY_SHOVEL = ITEMS.register("clay_shovel", () -> new ClayShovel(ItemTier.ClayIngot, 0, -1F, defaultBuilder().rarity(Rarity.RARE).fireResistant()));
     public static final RegistryObject<Item> CLAY_BOW = ITEMS.register("clay_bow", () -> new ClayBowItem(defaultBuilder().rarity(Rarity.RARE).stacksTo(1).fireResistant()));
     public static final RegistryObject<Item> CLAY_WAND = ITEMS.register("clay_wand", () -> new ClayWand(defaultBuilder().rarity(Rarity.RARE).stacksTo(1).fireResistant()));
     public static final RegistryObject<Item> TORCH_WAND = ITEMS.register("torch_wand", () -> new TorchWand(defaultBuilder().rarity(Rarity.RARE).stacksTo(1)));
+    public static final RegistryObject<Item> VEHICLE_LEVER = ITEMS.register("vehicle_lever", () -> new VehicleLever(defaultBuilder().rarity(Rarity.RARE).stacksTo(1)));
+    public static final RegistryObject<Item> BLAZE_LEVER = ITEMS.register("blaze_lever", () -> new BlazeLever(defaultBuilder().rarity(Rarity.RARE).stacksTo(1)));
     public static final RegistryObject<Item> AXOLOTL_CLAY_BALL_BLUE = ITEMS.register("axolotl_clay_ball_blue", () -> new Item(defaultBuilder().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> AXOLOTL_CLAY_BALL_CYAN = ITEMS.register("axolotl_clay_ball_cyan", () -> new Item(defaultBuilder().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> AXOLOTL_CLAY_BALL_LUCY = ITEMS.register("axolotl_clay_ball_lucy", () -> new Item(defaultBuilder().rarity(Rarity.UNCOMMON)));
@@ -97,6 +110,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> ENDER_SLIME_CLAY_BALL = ITEMS.register("ender_slime_clay_ball", () -> new EnderSlimeClayBall(defaultBuilder()));
     public static final RegistryObject<Item> GLOW_CLAY_BALL = ITEMS.register("glow_clay_ball", () -> new GlowClayBall(defaultBuilder()));
     public static final RegistryObject<Item> BONE_CLAY_BALL = ITEMS.register("bone_clay_ball", () -> new BoneClayBall(defaultBuilder()));
+    public static final RegistryObject<Item> LUSH_CLAY_BALL = ITEMS.register("lush_clay_ball", () -> new LushClayBall(defaultBuilder()));
     public static final RegistryObject<Item> RAVAGER_CLAY_BALL = ITEMS.register("ravager_clay_ball", () -> new RavagerClayBall(defaultBuilder()));
     public static final RegistryObject<Item> PILLAGER_CLAY_BALL = ITEMS.register("pillager_clay_ball", () -> new PillagerClayBall(defaultBuilder()));
     public static final RegistryObject<Item> PRISMARINE_CLAY_BALL = ITEMS.register("prismarine_clay_ball", () -> new PrismarineClayBall(defaultBuilder()));
@@ -129,7 +143,7 @@ public class ItemRegistry {
     public static final RegistryObject<Item> NETHERITE_SPONGE = ITEMS.register("netherite_sponge", () -> new ItemNameBlockItem(BlockRegistry.NETHERITE_SPONGE_BLOCK.get(), defaultBuilder().fireResistant()));
     public static final RegistryObject<Item> NETHERITE_SPONGE_ABSORBED = ITEMS.register("netherite_sponge_absorbed", () -> new ItemNameBlockItem(BlockRegistry.NETHERITE_SPONGE_ABSORBED_BLOCK.get(),
             defaultBuilder().craftRemainder(ItemRegistry.NETHERITE_SPONGE.get()).stacksTo(1).fireResistant()));
-    public static final RegistryObject<Item> SCLAME_BALL = ITEMS.register("sclame_ball", () -> new Item(defaultBuilder().food((new FoodProperties.Builder()).nutrition(6).saturationMod(0.5f).build())));
+    public static final RegistryObject<Item> SCLAME_BALL = ITEMS.register("sclame_ball", () -> new Item(defaultBuilder().rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(6).saturationMod(0.5f).build())));
 
     public static final RegistryObject<Item> SCLAME_POTATO = ITEMS.register("sclame_potato", () -> new ItemNameBlockItem(BlockRegistry.SCLAME_POTATO_BLOCK.get(),
             defaultBuilder().food((new FoodProperties.Builder()).nutrition(5).saturationMod(1f).build())));
@@ -140,11 +154,15 @@ public class ItemRegistry {
             .effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 600, 1), 1.0F)
             .effect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 600, 0), 1.0F).build())));
     public static final RegistryObject<Item> SCLAME_APPLE = ITEMS.register("sclame_apple", () -> new Item(defaultBuilder().food((new FoodProperties.Builder()).nutrition(8).saturationMod(1.2f).build())));
-    public static final RegistryObject<Item> SCLAME_CHORUS_FRUIT = ITEMS.register("sclame_chorus_fruit", () -> new SclameChorusFruit(defaultBuilder().food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.8f).alwaysEat().build())));
+    public static final RegistryObject<Item> ENCHANTED_SCLAME_APPLE = ITEMS.register("enchanted_sclame_apple", () -> new EnchantedSclameApple(defaultBuilder().food((new FoodProperties.Builder()).nutrition(8).saturationMod(1.2f).build())));
+    public static final RegistryObject<Item> SCLAME_CHORUS_FRUIT = ITEMS.register("sclame_chorus_fruit", () -> new SclameChorusFruit(defaultBuilder().food((new FoodProperties.Builder()).nutrition(8).saturationMod(0.8f).build())));
     public static final RegistryObject<Item> SCLAME_BREAD = ITEMS.register("sclame_bread", () -> new Item(defaultBuilder().food((new FoodProperties.Builder()).nutrition(10).saturationMod(1.1f).build())));
     public static final RegistryObject<Item> SCLAME_PIE = ITEMS.register("sclame_pie", () -> new Item(defaultBuilder().food((new FoodProperties.Builder()).nutrition(16).saturationMod(1.25f).build())));
     public static final RegistryObject<Item> SCLAME_CAKE = ITEMS.register("sclame_cake", () -> new ItemNameBlockItem(BlockRegistry.SCLAME_CAKE_BLOCK.get(), defaultBuilder()));
     public static final RegistryObject<Item> SCLAME_EGG = ITEMS.register("sclame_egg", () -> new SclameEgg(defaultBuilder().stacksTo(16)));
+    public static final RegistryObject<Item> SCLAME_SEEDS = ITEMS.register("sclame_seeds", () -> new ItemNameBlockItem(BlockRegistry.SCLAME_MELON_STEM_BLOCK.get(), defaultBuilder()));
+    public static final RegistryObject<Item> SCLAME_MELON = ITEMS.register("sclame_melon", () -> new ItemNameBlockItem(BlockRegistry.SCLAME_MELON_BLOCK.get(), defaultBuilder()));
+    public static final RegistryObject<Item> SCLAME_BERRIES = ITEMS.register("sclame_berries", () -> new ItemNameBlockItem(BlockRegistry.SCLAME_BERRY_BUSH_BLOCK.get(), defaultBuilder().food((new FoodProperties.Builder()).nutrition(4).saturationMod(0.5f).build())));
     public static final RegistryObject<Item> CLAY_CREAM = ITEMS.register("clay_cream", () -> new ClayCream(new Item.Properties().stacksTo(1).tab(ClayNoMoreBalanced.CREATIVE_TAB).rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> CLAY_CREAM_BALL = ITEMS.register("clay_cream_ball", () -> new ClayCreamBall(defaultBuilder()));
     public static final RegistryObject<Item> TERRACOTTA_DUST = ITEMS.register("terracotta_dust", () -> new Item(defaultBuilder()));
@@ -163,8 +181,12 @@ public class ItemRegistry {
     public static final RegistryObject<Item> TINY_BASE_POWDER = ITEMS.register("tiny_base_powder", () -> new Item(defaultBuilder()));
     public static final RegistryObject<Item> BASE_POWDER = ITEMS.register("base_powder", () -> new Item(defaultBuilder()));
     public static final RegistryObject<Item> CLAY_CHICKEN_SPAWN_EGG = ITEMS.register("clay_chicken_spawn_egg", () -> new ForgeSpawnEggItem(EntityTypeRegistry.CLAY_CHICKEN, -6050617, 16711680, defaultBuilder()));
-    public static final RegistryObject<Item> CHICKEN_CHOP = ITEMS.register("chicken_chop", () -> new Item(defaultBuilder().food((new FoodProperties.Builder()).nutrition(10).saturationMod(1.2f).alwaysEat()
+    public static final RegistryObject<Item> CHICKEN_CHOP = ITEMS.register("chicken_chop", () -> new ChickenChop(defaultBuilder().food((new FoodProperties.Builder()).nutrition(10).saturationMod(1.2f).alwaysEat()
             .effect(new MobEffectInstance(MobEffects.REGENERATION, 2400, 1), 1.0F).effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2400, 0), 1.0F).build())));
+    public static final RegistryObject<Item> FRIED_RICE = ITEMS.register("fried_rice", () -> new Item(defaultBuilder().food((new FoodProperties.Builder()).nutrition(14).saturationMod(1.2f).build())));
+    public static final RegistryObject<Item> ROCK_CANDY = ITEMS.register("rock_candy", () -> new RockCandy(defaultBuilder().rarity(Rarity.UNCOMMON).stacksTo(1)));
+    public static final RegistryObject<Item> FOX_TAIL = ITEMS.register("fox_tail", () -> new Foxtail(defaultBuilder().rarity(Rarity.UNCOMMON).stacksTo(1)));
+    public static final RegistryObject<Item> SACABAMBASPIS = ITEMS.register("sacabambaspis", () -> new Sacabambaspis(defaultBuilder().rarity(Rarity.UNCOMMON).stacksTo(1)));
     public static final RegistryObject<Item> BUDDING_ROSE_QUARTZ = ITEMS.register("budding_rose_quartz", () -> new ItemNameBlockItem(BlockRegistry.BUDDING_ROSE_QUARTZ.get(), defaultBuilder()));
     public static final RegistryObject<Item> SMALL_ROSE_QUARTZ_BUD = ITEMS.register("small_rose_quartz_bud", () -> new ItemNameBlockItem(BlockRegistry.SMALL_ROSE_QUARTZ_BUD.get(), defaultBuilder()));
     public static final RegistryObject<Item> MEDIUM_ROSE_QUARTZ_BUD = ITEMS.register("medium_rose_quartz_bud", () -> new ItemNameBlockItem(BlockRegistry.MEDIUM_ROSE_QUARTZ_BUD.get(), defaultBuilder()));
@@ -174,5 +196,4 @@ public class ItemRegistry {
     private static Item.Properties defaultBuilder() {
         return new Item.Properties().tab(ClayNoMoreBalanced.CREATIVE_TAB);
     }
-    
 }
