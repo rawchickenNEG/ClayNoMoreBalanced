@@ -5,12 +5,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.animal.Fox;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -34,13 +30,9 @@ public class SclameChorusFruit extends Item {
             double d0 = pEntityLiving.getX();
             double d1 = pEntityLiving.getY();
             double d2 = pEntityLiving.getZ();
-            double d = Math.rint(Math.random() * 3);
-            switch ((int) d) {
-                case 1 -> pEntityLiving.setPos(pEntityLiving.getX() + 1024, pEntityLiving.getY(), pEntityLiving.getZ() + 1024);
-                case 2 -> pEntityLiving.setPos(pEntityLiving.getX() - 1024, pEntityLiving.getY(), pEntityLiving.getZ() + 1024);
-                case 3 -> pEntityLiving.setPos(pEntityLiving.getX() + 1024, pEntityLiving.getY(), pEntityLiving.getZ() - 1024);
-                default -> pEntityLiving.setPos(pEntityLiving.getX() - 1024, pEntityLiving.getY(), pEntityLiving.getZ() - 1024);
-            }
+            double r = 1014;
+            double a = Math.random() * 2 * Math.PI;
+            pEntityLiving.setPos(d0 + Math.sin(a) * r * (1 + Math.random()), d1, d2 + Math.cos(a) * r * (1 + Math.random()));
 
 
             for(int i = 0; i < 64; ++i) {
@@ -54,9 +46,6 @@ public class SclameChorusFruit extends Item {
                 net.minecraftforge.event.entity.EntityTeleportEvent.ChorusFruit event = net.minecraftforge.event.ForgeEventFactory.onChorusFruitTeleport(pEntityLiving, d3, d4, d5);
                 if (event.isCanceled()) return itemstack;
                 if (pEntityLiving.randomTeleport(event.getTargetX(), event.getTargetY(), event.getTargetZ(), true)) {
-                    SoundEvent soundevent = pEntityLiving instanceof Fox ? SoundEvents.FOX_TELEPORT : SoundEvents.CHORUS_FRUIT_TELEPORT;
-                    pLevel.playSound(null, d0, d1, d2, soundevent, SoundSource.PLAYERS, 1.0F, 1.0F);
-                    pEntityLiving.playSound(soundevent, 1.0F, 1.0F);
                     break;
                 }
             }
