@@ -10,6 +10,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.Fox;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -37,6 +38,7 @@ public class ThrownVehicleClayBall extends ThrowableItemNoFrictionProjectileBase
     public boolean staticRide;
 
     private int clayType = 0;
+    private boolean isLever = false;
 
     public void setStaticRide(boolean staticRide) {
         this.staticRide = staticRide;
@@ -50,6 +52,7 @@ public class ThrownVehicleClayBall extends ThrowableItemNoFrictionProjectileBase
     public void setType(int clayType) {
         this.clayType = clayType;
     }
+    public void setLever(boolean isLever){this.isLever = isLever;}
 
     int i = 0;
     public void tick() {
@@ -72,7 +75,15 @@ public class ThrownVehicleClayBall extends ThrowableItemNoFrictionProjectileBase
     protected void onHitEntity(EntityHitResult p_37386_) {
         super.onHitEntity(p_37386_);
         if (!this.level.isClientSide || !this.staticRide) {
-            p_37386_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.VEHICLE.get());
+            if (p_37386_.getEntity() instanceof Fox fox && this.clayType == 0 && !this.isLever && fox.getFoxType()== Fox.Type.SNOW){
+                this.playSound(SoundEvents.PUFFER_FISH_BLOW_UP , 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
+                this.spawnAtLocation(ItemRegistry.ROCK_CANDY.get());
+                this.setLever(true);
+                this.onVanish();
+                fox.discard();
+            } else {
+                p_37386_.getEntity().hurt(DamageSource.thrown(this, this.getOwner()), Config.CONFIG.VEHICLE.get());
+            }
         }
     }
 
@@ -84,15 +95,20 @@ public class ThrownVehicleClayBall extends ThrowableItemNoFrictionProjectileBase
 
     }
 
+
     protected void onVanish(){
         if (!this.level.isClientSide) {
             if (!this.staticRide){
                 if (this.clayType == 0){
                     this.playSound(SoundEvents.WOOD_BREAK, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-                    this.spawnAtLocation(ItemRegistry.VEHICLE_CLAY_BALL.get());
+                    if (!isLever){
+                        this.spawnAtLocation(ItemRegistry.VEHICLE_CLAY_BALL.get());
+                    }
                 } else {
                     this.playSound(SoundEvents.BLAZE_HURT, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
-                    this.spawnAtLocation(ItemRegistry.BLAZE_RIDER_CLAY_BALL.get());
+                    if (!isLever){
+                        this.spawnAtLocation(ItemRegistry.BLAZE_RIDER_CLAY_BALL.get());
+                    }
                 }
 
             }
