@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "clay_no_more_balanced:advanced_clay_ring"
+  },
+  "addition": {
+    "item": "clay_no_more_balanced:the_ultimate_galaclay"
+  },
+  "result": {
+    "item": "clay_no_more_balanced:invincible_ring"
+  }
+}

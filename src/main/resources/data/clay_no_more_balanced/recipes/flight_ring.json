@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "clay_no_more_balanced:advanced_clay_ring"
+  },
+  "addition": {
+    "item": "clay_no_more_balanced:clay_gem"
+  },
+  "result": {
+    "item": "clay_no_more_balanced:flight_ring"
+  }
+}
