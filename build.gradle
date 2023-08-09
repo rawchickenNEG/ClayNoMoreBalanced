@@ -40,6 +40,9 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
+
             property 'forge.enabledGameTestNamespaces', 'clay_no_more_balanced'
 
             mods {
@@ -55,6 +58,9 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
 
             property 'forge.logging.console.level', 'debug'
+
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
 
             property 'forge.enabledGameTestNamespaces', 'clay_no_more_balanced'
 
@@ -102,13 +108,25 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-
+    maven { // TOP
+        url "https://cursemaven.com"
+    }
 }
 
 dependencies {
 
     minecraft 'net.minecraftforge:forge:1.18.2-40.1.0'
+}
 
+repositories {
+    maven {
+        url = "https://maven.theillusivec4.top/"
+    }
+}
+
+dependencies {
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.9.0")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.9.0:api")
 }
 
 jar {
