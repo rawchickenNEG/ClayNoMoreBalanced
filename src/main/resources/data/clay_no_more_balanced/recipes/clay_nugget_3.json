@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "clay_no_more_balanced:sclame_melon"
+    },
+    {
+      "item": "clay_no_more_balanced:sclame_melon"
+    },
+    {
+      "item": "clay_no_more_balanced:sclame_melon"
+    },
+    {
+      "item": "clay_no_more_balanced:sclame_melon"
+    }
+  ],
+  "result": {
+    "item": "clay_no_more_balanced:clay_nugget"
+  }
+}

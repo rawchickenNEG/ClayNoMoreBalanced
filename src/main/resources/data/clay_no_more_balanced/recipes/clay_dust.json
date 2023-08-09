@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "minecraft:terracotta"
+      "item": "clay_no_more_balanced:clay_ingot"
     },
     {
       "item": "clay_no_more_balanced:brick_ring"
     }
   ],
   "result": {
-    "item": "clay_no_more_balanced:terracotta_dust",
+    "item": "clay_no_more_balanced:clay_dust",
     "count": 4
   }
 }
