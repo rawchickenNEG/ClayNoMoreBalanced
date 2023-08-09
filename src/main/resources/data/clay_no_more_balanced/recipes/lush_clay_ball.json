@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "clay_no_more_balanced:bone_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:glow_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:flower_clay_ball"
+    },
+    {
+      "item": "clay_no_more_balanced:leaves_clay_ball"
+    }
+  ],
+  "result": {
+    "item": "clay_no_more_balanced:lush_clay_ball"
+  }
+}

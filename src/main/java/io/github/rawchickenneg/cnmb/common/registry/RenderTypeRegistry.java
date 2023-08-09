@@ -13,6 +13,9 @@ public class RenderTypeRegistry {
     public static void onRenderTypeSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             ItemBlockRenderTypes.setRenderLayer(BlockRegistry.SCLAME_POTATO_BLOCK.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(BlockRegistry.SCLAME_MELON_STEM_BLOCK.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(BlockRegistry.ATTACHED_SCLAME_MELON_STEM_BLOCK.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(BlockRegistry.SCLAME_BERRY_BUSH_BLOCK.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(BlockRegistry.SCLAME_CAKE_BLOCK.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(BlockRegistry.CLAY_TREE_SAPLING.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(BlockRegistry.LARGE_ROSE_QUARTZ_BUD.get(), RenderType.cutout());

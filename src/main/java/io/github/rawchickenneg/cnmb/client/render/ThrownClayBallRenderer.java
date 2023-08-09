@@ -24,6 +24,7 @@ public class ThrownClayBallRenderer {
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_CHORUS_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_FLINT_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_BONE_CLAY_BALL.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(EntityTypeRegistry.THROWN_LUSH_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_CACTUS_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_SNOW_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_LIGHTING_CLAY_BALL.get(), (p_174086_) -> new ThrownItemRenderer<>(p_174086_, 1.0F, true));
@@ -32,6 +33,7 @@ public class ThrownClayBallRenderer {
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_BEEHIVE_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_BASKET_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_EGG_CLAY_BALL.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(EntityTypeRegistry.THROWN_CAGE_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_PULL_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_GOLDEN_CLAY_BALL.get(), ThrownItemRenderer::new);
         event.registerEntityRenderer(EntityTypeRegistry.THROWN_GILDED_CLAY_BALL.get(), ThrownItemRenderer::new);
