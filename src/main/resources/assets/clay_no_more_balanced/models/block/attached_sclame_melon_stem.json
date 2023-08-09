@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/stem_fruit",
+  "textures": {
+    "stem": "clay_no_more_balanced:block/sclame_melon_stem",
+    "upperstem": "clay_no_more_balanced:block/attached_sclame_melon_stem"
+  }
+}
